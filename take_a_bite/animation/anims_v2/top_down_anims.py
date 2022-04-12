@@ -2,12 +2,6 @@
 Sample program to view characters animation tiles on row
 """
 
-"""
-TODO:
-- Change animations speed,
-- Add walk up, down animations
-"""
-
 # arcade library
 import arcade
 
