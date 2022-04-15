@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="14" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+ <tileset firstgid="1" source="mapas/Grass.tsx"/>
+ <layer id="1" name="Capa de patrones 1" width="20" height="14">
+  <data encoding="base64" compression="zlib">
+   eJyd0k0PgjAMBuANvShe/LigXDTxiwTkxoHo//9ZviZd0jRtkR2ewJL13SiNIYQCFhDZ+zJTdPI2Gby8QwaZ5+Fn1Qa+b+Wwcis4wonyrnCDOzyU9c8bPjD8kXc2XKCh5xxPQ5Mp9aaY6P9I391CBy/olfXc+ZX/U/ZPu8vUvCaDkpfmYQ0l1XjzKudI5m3JDvZUY80q35/IvMo5Q6vV8Novq7EU5g==
+  </data>
+ </layer>
+</map>
