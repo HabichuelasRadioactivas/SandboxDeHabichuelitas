@@ -1,0 +1,34 @@
+{ "compressionlevel":-1,
+ "height":14,
+ "infinite":false,
+ "layers":[
+        {
+         "compression":"zlib",
+         "data":"eJyd0k0PgjAMBuANvShe\/LigXDTxiwTkxoHo\/\/9ZviZd0jRtkR2ewJL13SiNIYQCFhDZ+zJTdPI2Gby8QwaZ5+Fn1Qa+b+Wwcis4wonyrnCDOzyU9c8bPjD8kXc2XKCh5xxPQ5Mp9aaY6P9I391CBy\/olfXc+ZX\/U\/ZPu8vUvCaDkpfmYQ0l1XjzKudI5m3JDvZUY80q35\/IvMo5Q6vV8Novq7EU5g==",
+         "encoding":"base64",
+         "height":14,
+         "id":1,
+         "name":"Capa de patrones 1",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"mapas\/Grass.tsx"
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.8",
+ "width":20
+}
