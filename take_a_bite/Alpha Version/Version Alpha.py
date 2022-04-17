@@ -131,6 +131,9 @@ class Player(arcade.AnimatedTimeBasedSprite):
         # Set initial picking state
         self.picking = WAITING_PICKING
 
+        # Status of which map the player is currently
+        self.map_number = 0
+
         # Used for flipping between image sequences
         self.cur_texture = 0
 
@@ -384,6 +387,12 @@ class MyGame(arcade.Window):
 
         self.player_list.append(self.player_sprite)
 
+    def draw_right_door(self):
+        arcade.draw_lrtb_rectangle_filled(SCREEN_WIDTH - 10, SCREEN_WIDTH, 300, 250, arcade.color.BLACK)
+
+    def draw_left_door(self):
+        arcade.draw_lrtb_rectangle_filled(0, 10, 300, 250, arcade.color.BLACK)
+
     def on_draw(self):
         arcade.start_render()
 
@@ -391,18 +400,36 @@ class MyGame(arcade.Window):
         self.player_list.draw()
 
         arcade.draw_text('WASD to move, X to attack, C to pick up', 5, SCREEN_HEIGHT - 21, arcade.color.BLACK, 12)
-        arcade.draw_lrtb_rectangle_filled(0, 10, 300, 250, arcade.color.BLACK)
-        arcade.draw_lrtb_rectangle_filled(SCREEN_WIDTH - 10, SCREEN_WIDTH, 300, 250, arcade.color.BLACK)
+        if self.player_sprite.map_number == 0:
+            self.draw_right_door()
+        if self.player_sprite.map_number == 1:
+            self.draw_left_door()
+
+    def player_is_right(self):
+        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 225 < self.player_sprite.center_y < 325
+
+    def player_is_left(self):
+        return self.player_sprite.center_x <= 15 and 225 < self.player_sprite.center_y < 325
 
     def on_update(self, delta_time):
         # Move the player
         self.player_list.update()
         self.player_list.update_animation()
 
-        if self.player_sprite.center_x <= 15 and 225 < self.player_sprite.center_y < 325:
-            arcade.set_background_color(arcade.color.GREEN)
-        if self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 225 < self.player_sprite.center_y < 325:
+
+        # If player is right
+        if  self.player_is_right() and self.player_sprite.map_number == 0:
             arcade.set_background_color(arcade.color.RED)
+            self.player_sprite.map_number = 1
+            self.player_sprite.center_x = 20
+            self.player_sprite.center_y = 260
+
+        # If player is left
+        if self.player_is_left() and self.player_sprite.map_number == 1:
+            arcade.set_background_color(arcade.color.GREEN)
+            self.player_sprite.map_number = 0
+            self.player_sprite.center_x = SCREEN_WIDTH - 20
+            self.player_sprite.center_y = 260
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:
