@@ -370,7 +370,7 @@ class MyGame(arcade.Window):
     def __init__(self, w, h, title):
         super().__init__(w, h, title)
         # Set bg color
-        arcade.set_background_color(arcade.csscolor.WHITE)
+        arcade.set_background_color(arcade.color.GREEN)
 
         # Set up the player info
         self.player_list = None
