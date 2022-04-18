@@ -123,19 +123,24 @@ class MyGame(arcade.Window):
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.UP:
-            self.player_sprite.face_direction = FACING_TOP
-            self.player_sprite.change_y = normal_or_boosted_speed(self.player_sprite.power_up)
+            if self.player_sprite.picking == WAITING_PICKING:
+                self.player_sprite.face_direction = FACING_TOP
+                self.player_sprite.change_y = normal_or_boosted_speed(self.player_sprite.power_up)
         elif key == arcade.key.DOWN:
-            self.player_sprite.face_direction = FACING_BOTTOM
-            self.player_sprite.change_y = -normal_or_boosted_speed(self.player_sprite.power_up)
+            if self.player_sprite.picking == WAITING_PICKING:
+                self.player_sprite.face_direction = FACING_BOTTOM
+                self.player_sprite.change_y = -normal_or_boosted_speed(self.player_sprite.power_up)
         elif key == arcade.key.LEFT:
-            self.player_sprite.face_direction = FACING_LEFT
-            self.player_sprite.change_x = -normal_or_boosted_speed(self.player_sprite.power_up)
+            if self.player_sprite.picking == WAITING_PICKING:
+                self.player_sprite.face_direction = FACING_LEFT
+                self.player_sprite.change_x = -normal_or_boosted_speed(self.player_sprite.power_up)
         elif key == arcade.key.RIGHT:
-            self.player_sprite.face_direction = FACING_RIGHT
-            self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up)
+            if self.player_sprite.picking == WAITING_PICKING:
+                self.player_sprite.face_direction = FACING_RIGHT
+                self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up)
         elif key == arcade.key.X:
-            self.player_sprite.attack = ATTACK
+            if self.player_sprite.picking == WAITING_PICKING:
+                self.player_sprite.attack = ATTACK
 
     def on_key_release(self, key, modifiers):
         if key == arcade.key.UP or key == arcade.key.DOWN:
