@@ -1,8 +1,7 @@
-
 import arcade.gui
 
-WIDTH = 1000
-HEIGHT = 800
+WIDTH = 600
+HEIGHT = 600
 SPRITE_SCALING = 0.5
 
 
@@ -14,6 +13,7 @@ class Menu(arcade.View):
         self.manager.enable()
 
         arcade.set_background_color(arcade.color.DARK_BLUE_GRAY)
+        self.background = arcade.load_texture("2022-04-18 (2).png")
 
         self.v_box = arcade.gui.UIBoxLayout()
 
@@ -48,6 +48,8 @@ class Menu(arcade.View):
 
     def on_draw(self):
         self.clear()
+        arcade.draw_texture_rectangle(300, 300, 600,
+                                      600, self.background)
         self.manager.draw()
         arcade.draw_text("Bean a Hero",
                          WIDTH / 2,
@@ -55,7 +57,7 @@ class Menu(arcade.View):
                          arcade.color.BLACK,
                          font_size=70,
                          font_name="Times New Roman",
-                         anchor_x="center")
+                         anchor_x="center", bold=True)
 
     def setup(self):
         # Replace 'pass' with the code to set up your game
@@ -67,6 +69,7 @@ class Game(arcade.View):
     def __init__(self):
         super().__init__()
         # Create variables here
+        # cambiar sprite por el personaje
         self.player_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
                                            SPRITE_SCALING)
         self.player_sprite.center_x = 50
@@ -131,13 +134,13 @@ class Pause(arcade.View):
                          arcade.color.BLACK, font_size=50, anchor_x="center")
 
         # Show tip to return or reset
-        arcade.draw_text("Press Esc. to return",
+        arcade.draw_text("Press Esc. to Return",
                          WIDTH / 2,
                          HEIGHT / 2,
                          arcade.color.BLACK,
                          font_size=20,
                          anchor_x="center")
-        arcade.draw_text("Press Enter to settings",
+        arcade.draw_text("Press Enter to Quit",
                          WIDTH / 2,
                          HEIGHT / 2 - 30,
                          arcade.color.BLACK,
@@ -148,8 +151,8 @@ class Pause(arcade.View):
         if key == arcade.key.ESCAPE:   # resume game
             self.window.show_view(self.game_view)
         elif key == arcade.key.ENTER:  # reset game
-            settings = Settings()
-            self.window.show_view(settings)
+            menu = Menu()
+            self.window.show_view(menu)
 
 
 class Settings(arcade.View):
