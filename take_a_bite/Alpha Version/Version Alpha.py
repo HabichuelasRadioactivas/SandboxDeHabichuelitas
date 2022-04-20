@@ -443,7 +443,12 @@ class MyGame(arcade.Window):
 
     def draw_second_map(self):
         self.clear()
-        self.background = arcade.load_texture("assets/maps/secunda_sala.png")
+        self.background = arcade.load_texture("assets/maps/segunda_sala_modificada.png")
+        arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+
+    def draw_third_map(self):
+        self.clear()
+        self.background = arcade.load_texture("assets/maps/tercera_sala.png")
         arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
 
     def on_draw(self):
@@ -461,6 +466,10 @@ class MyGame(arcade.Window):
             self.draw_second_map()
             self.player_list.draw()
 
+        if self.player_sprite.map_number == 2:
+            self.draw_third_map()
+            self.player_list.draw()
+
     """
     def player_is_right(self):
         return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 225 < self.player_sprite.center_y < 325
@@ -474,6 +483,12 @@ class MyGame(arcade.Window):
 
     def player_at_second_map_entry(self):
         return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
+
+    def player_at_second_map_exit(self):
+        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
+
+    def player_at_third_map_entry(self):
+        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= SCREEN_HEIGHT - 60
 
     def player_is_near_mr_bean(self):
         return 670 < self.player_sprite.center_x and 70 < self.player_sprite.center_y < 110
@@ -495,6 +510,18 @@ class MyGame(arcade.Window):
             self.player_sprite.map_number = 0
             self.player_sprite.center_x = SCREEN_WIDTH - 20
             self.player_sprite.center_y = 380
+
+        # If player is down
+        if self.player_sprite.map_number == 1 and self.player_at_second_map_exit():
+            self.player_sprite.map_number = 2
+            self.player_sprite.center_x = 400
+            self.player_sprite.center_y = SCREEN_HEIGHT - 60
+
+        # If player is up
+        if self.player_sprite.map_number == 2 and self.player_at_third_map_entry():
+            self.player_sprite.map_number = 1
+            self.player_sprite.center_x = 400
+            self.player_sprite.center_y = 60
 
         if self.player_is_near_mr_bean():
             self.mr_bean_sprite.celebrate()
