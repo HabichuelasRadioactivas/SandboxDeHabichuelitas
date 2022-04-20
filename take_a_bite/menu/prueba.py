@@ -13,7 +13,7 @@ class Menu(arcade.View):
         self.manager.enable()
 
         arcade.set_background_color(arcade.color.DARK_BLUE_GRAY)
-        self.background = arcade.load_texture("2022-04-18 (2).png")
+        self.background = arcade.load_texture("Escenario1.png")
 
         self.v_box = arcade.gui.UIBoxLayout()
 
