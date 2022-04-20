@@ -485,10 +485,10 @@ class MyGame(arcade.Window):
         return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
 
     def player_at_second_map_exit(self):
-        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
+        return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y <= 60
 
     def player_at_third_map_entry(self):
-        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= SCREEN_HEIGHT - 60
+        return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y >= SCREEN_HEIGHT - 40
 
     def player_is_near_mr_bean(self):
         return 670 < self.player_sprite.center_x and 70 < self.player_sprite.center_y < 110
@@ -498,9 +498,8 @@ class MyGame(arcade.Window):
         self.player_list.update()
         self.player_list.update_animation()
 
-
         # If player is right
-        if  self.player_sprite.map_number == 0 and self.player_at_first_map_exit():
+        if self.player_sprite.map_number == 0 and self.player_at_first_map_exit():
             self.player_sprite.map_number = 1
             self.player_sprite.center_x = 20
             self.player_sprite.center_y = 380
