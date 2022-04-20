@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJyV07sOgCAMBVBQlxoWjIvG\/\/9OIYGkabh9DGerrX2QU0p52Jq9OYYSML8hJgfw2jfLWxkKQLlXfWpkbZlT5vPOCVnNQkK9rep59mDNTNbW5keOmfW4b7B6QLtAN2vNL7KLovz3hPaCbjzyJqwbPx0xXDVcjhjuMbzND9SICSU=",
+         "data":"eJyV0zsOgDAIAFCqLjVdNC4aL6Gbg97\/WGLSJkgKlOFNtSCfBgAIWYd6NGTJodyJRHCguRcSdyKigxS7VqeG5+YxebzWPklqveCk2mr5WuZg9Yzn1voXG3r2fbdnVg3SLKSdtfrnmUVS\/ruQ5iLtuOdN3KDv+GicF3f2wP89cbNxXhzoRBdaFRt6AVGDCk8=",
          "encoding":"base64",
          "height":14,
          "id":1,
@@ -18,7 +18,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYMAE0kBsC6WpATSBWBGKQWwtIFYCYksgtgJiMxLMgpkBw4ZAbAQ1EwRA7rYjwV1aSDQlwBaLW0KBOAyIi7HgIEYGhmBGTHHkMEJ3VyoQpwFxMxacBDQrmRFTHGaGERbzUvD4pwjkNkZMcZgfsQF85pEDsJnHC8R8QMxPJfNEgVgMiMVxmLsIiBcD8RI09lIgLsFjF7K5yGATEG8G4i1o7K1A3MJAmf9IcQe9AABfniCh",
+         "data":"eJyt0ssJAjEUBdCXAtSVunClO2fnCILKWISiBfgrQO1AK\/HTgJ\/+vI9JICRvAtFcOCRkceclDJGfDhR6TZE+dDXeZ9CDMUxgFNFlOowB5LqTw3PPIubKrPWfFMIsS1jBUTBXRAvln9tv5M61gz2cBWt0bZR\/bjpyoW8buM+BZ1P+ubmjlFDfL5H6alCHRqK+JrSgXdF7hRvcnf0DToFv2b12nvCCt7P\/wIXK+w2p+o1jw3NMqfw\/UyS25wvHniFx",
          "encoding":"base64",
          "height":14,
          "id":2,
@@ -29,8 +29,22 @@
          "width":20,
          "x":0,
          "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYKAOEGRmYBBippJhQKAINEuJiuYNF3CLCUJ7AWlvJtzqCMnDwCuomiggHQ1lm2AJd2T5kQKMh2j6wxZ\/lAJywwIAjK8FuQ==",
+         "encoding":"base64",
+         "height":14,
+         "id":3,
+         "name":"objs",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":3,
+ "nextlayerid":4,
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -48,6 +62,10 @@
         {
          "firstgid":321,
          "source":"Struct.tsj"
+        }, 
+        {
+         "firstgid":577,
+         "source":"Props.tsj"
         }],
  "tilewidth":32,
  "type":"map",
