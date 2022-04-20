@@ -9,6 +9,18 @@ class Menu(arcade.View):
     def __init__(self):
         super().__init__()
 
+        self.habichuela_sprite = arcade.Sprite("Habichuela.png",
+                                           2.5)
+        self.habichuela_sprite.center_x = 50
+        self.habichuela_sprite.center_y = 50
+        self.habichuela_sprite.velocity = [0, 4]
+
+        self.habichuela2_sprite = arcade.Sprite("Habichuela.png",
+                                               2.5)
+        self.habichuela2_sprite.center_x = 550
+        self.habichuela2_sprite.center_y = 550
+        self.habichuela2_sprite.velocity = [0, 4]
+
         self.manager = arcade.gui.UIManager()
         self.manager.enable()
 
@@ -50,6 +62,9 @@ class Menu(arcade.View):
         self.clear()
         arcade.draw_texture_rectangle(300, 300, 600,
                                       600, self.background)
+        self.habichuela_sprite.draw()
+        self.habichuela2_sprite.draw()
+
         self.manager.draw()
         arcade.draw_text("Bean a Hero",
                          WIDTH / 2,
@@ -63,13 +78,30 @@ class Menu(arcade.View):
         # Replace 'pass' with the code to set up your game
         pass
 
+    def on_update(self, delta_time):
+        # Call update on all sprites
+        self.habichuela_sprite.update()
+
+        # Bounce off the edges
+        if self.habichuela_sprite.left < 0 or self.habichuela_sprite.right > WIDTH:
+            self.habichuela_sprite.change_x *= -1
+        if self.habichuela_sprite.bottom < 0 or self.habichuela_sprite.top > HEIGHT:
+            self.habichuela_sprite.change_y *= -1
+
+        self.habichuela2_sprite.update()
+
+        # Bounce off the edges
+        if self.habichuela2_sprite.left < 0 or self.habichuela2_sprite.right > WIDTH:
+            self.habichuela2_sprite.change_x *= -1
+        if self.habichuela2_sprite.bottom < 0 or self.habichuela2_sprite.top > HEIGHT:
+            self.habichuela2_sprite.change_y *= -1
+
 
 class Game(arcade.View):
 
     def __init__(self):
         super().__init__()
         # Create variables here
-        # cambiar sprite por el personaje
         self.player_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
                                            SPRITE_SCALING)
         self.player_sprite.center_x = 50
