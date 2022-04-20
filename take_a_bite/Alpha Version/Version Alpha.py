@@ -10,6 +10,10 @@ SCREEN_WIDTH = 800  # WIDTH
 SCREEN_HEIGHT = 600  # HEIGHT
 SCREEN_TITLE = "Animation Visualization"  # SCREEN_TITLE
 
+MR_BEAN_SPRITES = ["assets/MrBean/MrBeanCelebrating.png",
+                   "assets/MrBean/MrBeanOnOneFoot.png",
+                   "assets/MrBean/MrBeanWaiting.png"]
+
 IDLE_DOWN_SPRITES = [
     "assets/idle_anim/tile000.png",
     "assets/idle_anim/tile001.png",
@@ -87,7 +91,7 @@ PICK_UP_SPRITES = [
     "assets/pick_up_anim/tile004.png",
 ]
 
-MOVEMENT_SPEED = 5
+MOVEMENT_SPEED = 3
 
 SPRITE_SCALING = 2
 
@@ -364,6 +368,35 @@ class Player(arcade.AnimatedTimeBasedSprite):
             self.update_pick_up_anim()
 
 
+class MrBean(arcade.AnimatedTimeBasedSprite):
+    def __init__(self):
+        super().__init__()
+
+        # Texture scaling
+        self.scale = 0.3
+
+        # Idle textures
+        self.celebrating = arcade.load_texture(MR_BEAN_SPRITES[0])
+        self.on_one_foot = arcade.load_texture(MR_BEAN_SPRITES[1])
+        self.waiting = arcade.load_texture(MR_BEAN_SPRITES[2])
+
+        # Set initial texture
+        self.texture = self.waiting
+
+    def update(self):
+        # Move player
+        pass
+
+    def update_animation(self, delta_time: float = 1/60):
+        pass
+
+    def celebrate(self):
+        self.texture = self.celebrating
+
+    def wait(self):
+        self.texture = self.waiting
+
+
 class MyGame(arcade.Window):
     """Custom window class"""
 
@@ -376,22 +409,42 @@ class MyGame(arcade.Window):
         self.player_list = None
         self.player_sprite = None
 
+        # Set up the npc info
+        self.npc_list = None
+        self.mr_bean_sprite = None
+
+        self.background = None
+
     def setup(self):
+
         # Set up the player
         self.player_list = arcade.SpriteList()
         self.player_sprite = Player()
 
-        # Player initial position
-        self.player_sprite.center_x = SCREEN_WIDTH // 2
-        self.player_sprite.center_y = SCREEN_HEIGHT // 2
+        self.npc_list = arcade.SpriteList()
+        self.mr_bean_sprite = MrBean()
+
+        # Player initial position  - Spawn Point
+        self.player_sprite.center_x = 150
+        self.player_sprite.center_y = 550
+
+        # Mr.Bean initial position  - Waiting for the Player
+        self.mr_bean_sprite.center_x = SCREEN_WIDTH - 50
+        self.mr_bean_sprite.center_y = 100
 
         self.player_list.append(self.player_sprite)
+        self.npc_list.append(self.mr_bean_sprite)
 
-    def draw_right_door(self):
-        arcade.draw_lrtb_rectangle_filled(SCREEN_WIDTH - 10, SCREEN_WIDTH, 300, 250, arcade.color.BLACK)
+    def draw_first_map(self):
+        self.clear()
+        self.background = arcade.load_texture("assets/maps/primer_sala.png")
+        arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+        self.npc_list.draw()
 
-    def draw_left_door(self):
-        arcade.draw_lrtb_rectangle_filled(0, 10, 300, 250, arcade.color.BLACK)
+    def draw_second_map(self):
+        self.clear()
+        self.background = arcade.load_texture("assets/maps/secunda_sala.png")
+        arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
 
     def on_draw(self):
         arcade.start_render()
@@ -401,15 +454,29 @@ class MyGame(arcade.Window):
 
         arcade.draw_text('WASD to move, X to attack, C to pick up', 5, SCREEN_HEIGHT - 21, arcade.color.BLACK, 12)
         if self.player_sprite.map_number == 0:
-            self.draw_right_door()
-        if self.player_sprite.map_number == 1:
-            self.draw_left_door()
+            self.draw_first_map()
+            self.player_list.draw()
 
+        if self.player_sprite.map_number == 1:
+            self.draw_second_map()
+            self.player_list.draw()
+
+    """
     def player_is_right(self):
         return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 225 < self.player_sprite.center_y < 325
-
+    
     def player_is_left(self):
         return self.player_sprite.center_x <= 15 and 225 < self.player_sprite.center_y < 325
+    """
+
+    def player_at_first_map_exit(self):
+        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 360 < self.player_sprite.center_y < 390
+
+    def player_at_second_map_entry(self):
+        return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
+
+    def player_is_near_mr_bean(self):
+        return 670 < self.player_sprite.center_x and 70 < self.player_sprite.center_y < 110
 
     def on_update(self, delta_time):
         # Move the player
@@ -418,18 +485,21 @@ class MyGame(arcade.Window):
 
 
         # If player is right
-        if  self.player_is_right() and self.player_sprite.map_number == 0:
-            arcade.set_background_color(arcade.color.RED)
+        if  self.player_sprite.map_number == 0 and self.player_at_first_map_exit():
             self.player_sprite.map_number = 1
             self.player_sprite.center_x = 20
-            self.player_sprite.center_y = 260
+            self.player_sprite.center_y = 380
 
         # If player is left
-        if self.player_is_left() and self.player_sprite.map_number == 1:
-            arcade.set_background_color(arcade.color.GREEN)
+        if self.player_sprite.map_number == 1 and self.player_at_second_map_entry():
             self.player_sprite.map_number = 0
             self.player_sprite.center_x = SCREEN_WIDTH - 20
-            self.player_sprite.center_y = 260
+            self.player_sprite.center_y = 380
+
+        if self.player_is_near_mr_bean():
+            self.mr_bean_sprite.celebrate()
+        else:
+            self.mr_bean_sprite.wait()
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:
