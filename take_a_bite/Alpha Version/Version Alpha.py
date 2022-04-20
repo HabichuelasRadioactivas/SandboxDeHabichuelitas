@@ -488,7 +488,11 @@ class MyGame(arcade.Window):
         return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y <= 60
 
     def player_at_third_map_entry(self):
+<<<<<<< HEAD
         return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y >= SCREEN_HEIGHT - 40
+=======
+        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= SCREEN_HEIGHT
+>>>>>>> a089bed2378cec2e5fd0cd9c591def7dda90adfc
 
     def player_is_near_mr_bean(self):
         return 670 < self.player_sprite.center_x and 70 < self.player_sprite.center_y < 110
@@ -514,13 +518,16 @@ class MyGame(arcade.Window):
         if self.player_sprite.map_number == 1 and self.player_at_second_map_exit():
             self.player_sprite.map_number = 2
             self.player_sprite.center_x = 400
-            self.player_sprite.center_y = SCREEN_HEIGHT - 60
+            self.player_sprite.center_y = SCREEN_HEIGHT - 20
+            print("Exit 2 map")
 
         # If player is up
         if self.player_sprite.map_number == 2 and self.player_at_third_map_entry():
             self.player_sprite.map_number = 1
             self.player_sprite.center_x = 400
             self.player_sprite.center_y = 60
+            print("Exit 3 map")
+
 
         if self.player_is_near_mr_bean():
             self.mr_bean_sprite.celebrate()
