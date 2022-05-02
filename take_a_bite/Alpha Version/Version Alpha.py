@@ -425,8 +425,8 @@ class MyGame(arcade.Window):
         self.mr_bean_sprite = MrBean()
 
         # Player initial position  - Spawn Point
-        self.player_sprite.center_x = 150
-        self.player_sprite.center_y = 550
+        self.player_sprite.center_x = 143.5
+        self.player_sprite.center_y = 564
 
         # Mr.Bean initial position  - Waiting for the Player
         self.mr_bean_sprite.center_x = SCREEN_WIDTH - 50
@@ -470,16 +470,8 @@ class MyGame(arcade.Window):
             self.draw_third_map()
             self.player_list.draw()
 
-    """
-    def player_is_right(self):
-        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 225 < self.player_sprite.center_y < 325
-    
-    def player_is_left(self):
-        return self.player_sprite.center_x <= 15 and 225 < self.player_sprite.center_y < 325
-    """
-
     def player_at_first_map_exit(self):
-        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 320 < self.player_sprite.center_y < 390
+        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 305 < self.player_sprite.center_y < 390
 
     def player_at_second_map_entry(self):
         return self.player_sprite.center_x <= 15 and 320 < self.player_sprite.center_y < 390
