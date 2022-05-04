@@ -36,7 +36,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
         # Set initial picking state
         self.picking = WAITING_PICKING
 
-        # Status of which map the player is currently
+        # Status of which maps the player is currently
         self.map_number = 1  # 0 should be the start_menu
 
         # Used for flipping between image sequences

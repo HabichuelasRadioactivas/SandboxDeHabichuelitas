@@ -1,6 +1,6 @@
 import arcade
 
-SCREEN_TITLE = "Test map"
+SCREEN_TITLE = "Test maps"
 
 # Size of screen to show, in pixels
 SCREEN_WIDTH = 865
