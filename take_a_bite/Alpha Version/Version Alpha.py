@@ -488,11 +488,7 @@ class MyGame(arcade.Window):
         return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y <= 60
 
     def player_at_third_map_entry(self):
-<<<<<<< HEAD
-        return 350 < self.player_sprite.center_x < 450 and self.player_sprite.center_y >= SCREEN_HEIGHT - 40
-=======
         return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= SCREEN_HEIGHT
->>>>>>> a089bed2378cec2e5fd0cd9c591def7dda90adfc
 
     def player_is_near_mr_bean(self):
         return 670 < self.player_sprite.center_x and 70 < self.player_sprite.center_y < 110
