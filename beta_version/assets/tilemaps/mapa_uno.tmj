@@ -1,0 +1,72 @@
+{ "compressionlevel":-1,
+ "height":15,
+ "infinite":false,
+ "layers":[
+        {
+         "compression":"zlib",
+         "data":"eJzV008LgjAcxnEHvjHLS9ZF61J5UqgU+jdPBvXa+wo7\/A5OFw6kw4f56JjjYYvCIFhgiRjRxLxCgjU2HnKKDFvsPOQ9Djgit+RMMV\/Zv8vs0k\/BWqXy159mrUa59ffGB2eczHjp9iT6ke\/H+isGVBa12UNff7Vxwx0PtHjhKVTiWQ\/01zr01+Wr+YcemT\/H+fslT72v\/3Z\/v7N7ZQ4=",
+         "encoding":"base64",
+         "height":15,
+         "id":1,
+         "name":"suelo",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxzY2JgqABidAATm8mCKYcPhAH1dWAxDySWBsQrSTDPF4s5yKAMKL+TBPNiCZgHApuQzHsEZD8G4idA\/JSF9LAAgUNIej4B2Z+B+AsQf8Vi3hQi3IcPkOM+ZMDMTF3z0AG1zSMlLREDSElLxABQWkJPQ\/jAEmYExgZAaQk9DZFr1lAFAJKBIS8=",
+         "encoding":"base64",
+         "height":15,
+         "id":2,
+         "name":"colisiones",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":3,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.8.4",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":"Tileset Wall.tsx"
+        }, 
+        {
+         "firstgid":65,
+         "source":"Tileset Wall.tsx"
+        }, 
+        {
+         "firstgid":321,
+         "source":"Struct.tsx"
+        }, 
+        {
+         "firstgid":577,
+         "source":"Props.tsx"
+        }, 
+        {
+         "firstgid":833,
+         "source":"TX Plant.tsx"
+        }, 
+        {
+         "firstgid":1089,
+         "source":"Tileset Grass.tsx"
+        }, 
+        {
+         "firstgid":1153,
+         "source":"Tileset Wall.tsx"
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.8",
+ "width":20
+}

@@ -1,6 +1,7 @@
 import arcade
 
 from game_parameters import *
+from map import load_map
 from player import Player
 import friendly_npcs
 # import enemies
@@ -29,10 +30,14 @@ class BetaGame(arcade.Window):
 
         self.text_list = arcade.SpriteList()
 
-        self.background = None
+        self.scene = None
+        self.maps = {1: load_map(1), 2: load_map(2), 3: load_map(3), 4: load_map(4)}
+
+    def change_map(self, map_number):
+        self.player_sprite.map_number = map_number
+        self.scene = self.maps[map_number]
 
     def setup(self):
-
         # Set up the player
         self.player_sprite = Player()
         # Player initial position  - Spawn Point
@@ -48,6 +53,7 @@ class BetaGame(arcade.Window):
         self.player_list.append(self.player_sprite)
         self.npc_list.append(self.mr_bean_sprite)
 
+        self.change_map(1)
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
@@ -55,8 +61,8 @@ class BetaGame(arcade.Window):
 
     def first_map_logic(self):
         if self.player_at_first_map_exit():
+            self.change_map(2)
             self.npc_list.remove(self.mr_bean_sprite)  # remove mr_bean from npc list if first maps is left
-            self.player_sprite.map_number = 2
             self.player_sprite.center_x = 20
             self.player_sprite.center_y = 380
 
@@ -79,12 +85,12 @@ class BetaGame(arcade.Window):
 
     def second_map_logic(self):
         if self.player_at_second_map_entry():
+            self.change_map(1)
             self.npc_list.append(self.mr_bean_sprite)  # add mr_bean to npc list if first maps is entered
-            self.player_sprite.map_number = 1
             self.player_sprite.center_x = SCREEN_WIDTH - 20
             self.player_sprite.center_y = 380
         elif self.player_at_second_map_exit():
-            self.player_sprite.map_number = 3
+            self.change_map(3)
             self.player_sprite.center_x = 400
             # TODO BUG: Inconsistency with the screen sizes. Check size of maps and refactor code
             self.player_sprite.center_y = 560
@@ -102,7 +108,7 @@ class BetaGame(arcade.Window):
 
     def third_map_logic(self):
         if self.player_at_third_map_entry():
-            self.player_sprite.map_number = 2
+            self.change_map(2)
             self.player_sprite.center_x = 400
             self.player_sprite.center_y = 60
             print("Entry 3 maps")
@@ -129,8 +135,7 @@ class BetaGame(arcade.Window):
         # Draw all the sprites.
         if self.player_sprite.map_number == 1:
             self.clear()
-            self.background = arcade.load_texture("assets/sprites/player/maps/primer_sala.png")
-            arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+            self.scene.draw()
             self.player_list.draw()
             self.enemy_list.draw()
             self.npc_list.draw()
@@ -141,15 +146,13 @@ class BetaGame(arcade.Window):
 
         elif self.player_sprite.map_number == 2:
             self.clear()
-            self.background = arcade.load_texture("assets/sprites/player/maps/segunda_sala_modificada.png")
-            arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+            self.scene.draw()
             self.player_list.draw()
             self.npc_list.draw()
 
         elif self.player_sprite.map_number == 3:
             self.clear()
-            self.background = arcade.load_texture("assets/sprites/player/maps/tercera_sala.png")
-            arcade.draw_lrwh_rectangle_textured(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, self.background)
+            self.scene.draw()
             self.player_list.draw()
             self.npc_list.draw()
 

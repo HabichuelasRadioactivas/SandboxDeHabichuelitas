@@ -14,7 +14,7 @@ class MyGameWindow(arcade.Window):
         self.setup()
 
     def setup(self):
-        map_name = "./test_map.json" #nombre del archivo del mapa
+        map_name = "./test_map.tmx" #nombre del archivo del mapa
         map = arcade.load_tilemap(map_name)
 
 

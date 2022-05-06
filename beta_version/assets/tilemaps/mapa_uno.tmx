@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" source="Tileset Wall.tsx"/>
+ <tileset firstgid="65" source="Tileset Wall.tsx"/>
+ <tileset firstgid="321" source="Struct.tsx"/>
+ <tileset firstgid="577" source="Props.tsx"/>
+ <tileset firstgid="833" source="TX Plant.tsx"/>
+ <layer id="1" name="suelo" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzNk0kKAjEQRRN147BxBEfQjcNCsXdp0UPoDfQGen/wNSRYhBihDeLiNfyiEsjjt1ZKVaAKNdBf5jo0oAmtBLkNHehCL0EewgjGMLG5DwORzzzqol/Z35c55GMKM5GvfG46nb87hx76s78jGPv+JazsTPpw81PEX3FmDgtYl2Bj7y985ZCJ+b4EmUX6O9i7c8/HFnaeHxPwZd74/kX/ZHZdjPUz1D+34/fJdTHWz1D/3M6//b9PPzwZeQ==
+  </data>
+ </layer>
+ <layer id="2" name="colisiones" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxzY2JgqABidAATS8KUwgvCgPo6sJgHEktjIs08XyzmIIMyEs2LJWAeCBQhscOAOByII6A4kgS7YKAJiZ0GxOlAnAHF6G6fQoT78AFS4wodMDNT1zx0MNLMA6WlRUC8GIiXAPFSAuqXMCMwNgBKS5uAeDMQbwHirRSYNVQBABHNFsY=
+  </data>
+ </layer>
+</map>
