@@ -192,6 +192,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
         self.center_x += self.change_x
         self.center_y += self.change_y
 
+
         # out-of-bounds
         if self.left < 0:
             self.left = 0
@@ -202,6 +203,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
             self.bottom = 0
         elif self.top > SCREEN_HEIGHT - 1:
             self.top = SCREEN_HEIGHT - 1
+
 
     def update_animation(self, delta_time: float = 1 / 60):
         # Idle animation

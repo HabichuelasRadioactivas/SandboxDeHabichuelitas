@@ -30,10 +30,12 @@ class BetaGame(arcade.Window):
 
         self.text_list = arcade.SpriteList()
 
+        self.engine = None
         self.scene = None
         self.maps = {1: load_map(1), 2: load_map(2), 3: load_map(3), 4: load_map(4)}
 
     def change_map(self, map_number):
+        self.engine = None
         self.player_sprite.map_number = map_number
         self.scene = self.maps[map_number]
 
@@ -51,15 +53,19 @@ class BetaGame(arcade.Window):
         self.mr_bean_sprite.center_y = 100
 
         self.player_list.append(self.player_sprite)
-        self.npc_list.append(self.mr_bean_sprite)
 
-        self.change_map(1)
+        self.change_map(2)
+        self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
         return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 360 < self.player_sprite.center_y < 390
 
     def first_map_logic(self):
+        if self.engine is None:
+            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+        if self.mr_bean_sprite not in self.npc_list:
+            self.npc_list.append(self.mr_bean_sprite)
         if self.player_at_first_map_exit():
             self.change_map(2)
             self.npc_list.remove(self.mr_bean_sprite)  # remove mr_bean from npc list if first maps is left
@@ -84,6 +90,8 @@ class BetaGame(arcade.Window):
         return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
 
     def second_map_logic(self):
+        if self.engine is None:
+            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
         if self.player_at_second_map_entry():
             self.change_map(1)
             self.npc_list.append(self.mr_bean_sprite)  # add mr_bean to npc list if first maps is entered
@@ -107,6 +115,8 @@ class BetaGame(arcade.Window):
         pass
 
     def third_map_logic(self):
+        if self.engine is None:
+            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
         if self.player_at_third_map_entry():
             self.change_map(2)
             self.player_sprite.center_x = 400
@@ -169,6 +179,9 @@ class BetaGame(arcade.Window):
         # Move the player
         self.player_list.update()
         self.player_list.update_animation()
+        if self.engine is not None:
+            self.engine.update()
+
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:
