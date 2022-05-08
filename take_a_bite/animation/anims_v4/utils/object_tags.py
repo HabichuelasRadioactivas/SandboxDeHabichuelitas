@@ -1,0 +1,9 @@
+EMPTY = 0
+DEFAULT_CONSUMABLE = 1
+PINK_CONSUMABLE = 2
+
+available_consumables = {
+    0: EMPTY,
+    1: DEFAULT_CONSUMABLE,
+    2: PINK_CONSUMABLE
+}
