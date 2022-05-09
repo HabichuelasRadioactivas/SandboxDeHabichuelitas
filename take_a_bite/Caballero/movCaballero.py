@@ -381,7 +381,6 @@ class MyGame(arcade.Window):
         self.ball = Ball(50, 50, 0, 0, 15, arcade.color.AUBURN)
 
     def setup(self):
-
         # Set up the player
         self.finalKnight_list = arcade.SpriteList()
         self.finalKnight_sprite = FinalKnight()
@@ -390,7 +389,7 @@ class MyGame(arcade.Window):
         self.finalKnight_sprite.center_x = 150
         self.finalKnight_sprite.center_y = 550
 
-        self.finalKnight_list.append(self.knight_sprite)
+        self.finalKnight_list.append(self.finalKnight_sprite)
 
     def on_draw(self):
         """ Called whenever we need to draw the window. """
@@ -398,7 +397,6 @@ class MyGame(arcade.Window):
         self.ball.draw()
 
         arcade.draw_text('WASD to move', 5, SCREEN_HEIGHT - 21, arcade.color.BLACK, 12)
-
         self.finalKnight_list.draw()
 
     def on_update(self, delta_time):
@@ -429,6 +427,7 @@ class MyGame(arcade.Window):
 
 def main():
     window = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    window.setup()
     arcade.run()
 
 

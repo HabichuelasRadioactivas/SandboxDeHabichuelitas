@@ -66,7 +66,7 @@ class BetaGame(arcade.Window):
 
         self.player_list.append(self.player_sprite)
 
-        self.change_map(2)
+        self.change_map(1)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
         # self.set_update_rate(1/40) # TODO the engine increases the update rate. Has to be fixed
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
