@@ -18,7 +18,7 @@ class GameWindow(arcade.Window):
 
     def setup(self):
 
-        test = "mapa_cuatro.tmj"
+        test = "map_4.tmx"
         self.tile_map = arcade.load_tilemap(test,1.30)
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
 

@@ -39,6 +39,18 @@ class BetaGame(arcade.Window):
         self.player_sprite.map_number = map_number
         self.scene = self.maps[map_number]
 
+    def start_engine(self):
+        if self.engine is None:
+            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+
+    def draw_scene_and_sprites(self):
+        """Draws all sprites and the scene. If for any reason not all sprites should be drawn, do it manually"""
+        self.clear()
+        self.scene.draw()
+        self.player_list.draw()
+        self.enemy_list.draw()
+        self.npc_list.draw()
+
     def setup(self):
         # Set up the player
         self.player_sprite = Player()
@@ -56,14 +68,14 @@ class BetaGame(arcade.Window):
 
         self.change_map(2)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+        # self.set_update_rate(1/40) # TODO the engine increases the update rate. Has to be fixed
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
         return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 360 < self.player_sprite.center_y < 390
 
     def first_map_logic(self):
-        if self.engine is None:
-            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+        self.start_engine()
         if self.mr_bean_sprite not in self.npc_list:
             self.npc_list.append(self.mr_bean_sprite)
         if self.player_at_first_map_exit():
@@ -90,8 +102,7 @@ class BetaGame(arcade.Window):
         return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
 
     def second_map_logic(self):
-        if self.engine is None:
-            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+        self.start_engine()
         if self.player_at_second_map_entry():
             self.change_map(1)
             self.npc_list.append(self.mr_bean_sprite)  # add mr_bean to npc list if first maps is entered
@@ -115,8 +126,7 @@ class BetaGame(arcade.Window):
         pass
 
     def third_map_logic(self):
-        if self.engine is None:
-            self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
+        self.start_engine()
         if self.player_at_third_map_entry():
             self.change_map(2)
             self.player_sprite.center_x = 400
@@ -141,30 +151,16 @@ class BetaGame(arcade.Window):
 
     def on_draw(self):
         arcade.start_render()
-
-        # Draw all the sprites.
         if self.player_sprite.map_number == 1:
-            self.clear()
-            self.scene.draw()
-            self.player_list.draw()
-            self.enemy_list.draw()
-            self.npc_list.draw()
-            # Draw text of MrBean
+            self.draw_scene_and_sprites()
+            # This contains the text of MrBean. For more see at first_map_logic
             self.text_list.draw()  # TODO Text: Quick and dirty, other solution needed
-            self.player_list.draw()
-            self.npc_list.draw()
 
         elif self.player_sprite.map_number == 2:
-            self.clear()
-            self.scene.draw()
-            self.player_list.draw()
-            self.npc_list.draw()
+            self.draw_scene_and_sprites()
 
         elif self.player_sprite.map_number == 3:
-            self.clear()
-            self.scene.draw()
-            self.player_list.draw()
-            self.npc_list.draw()
+            self.draw_scene_and_sprites()
 
     def on_update(self, delta_time):
         if self.player_sprite.map_number == 1:
@@ -181,7 +177,6 @@ class BetaGame(arcade.Window):
         self.player_list.update_animation()
         if self.engine is not None:
             self.engine.update()
-
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:

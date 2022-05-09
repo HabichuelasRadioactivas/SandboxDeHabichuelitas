@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJyNkkEPgjAMhTflMvUyRZMpF71p4gFMTCDC\/\/9ZPuOaNE07OHxhHevrewPvnFuBNaiAF\/UIruAG+rxX4ghOBb0B3MEDfMBuBtkv6xdoQQeeYAI1g\/xQXdLz2V+fny3L3BjwfppFdQAbsFVy8Ts7g4uiJ\/1FsAcHkbFmuuRhiV7KtTzTCO2l\/qqcWeaWd0Z6vaHHiSwT5U7C09v9\/6ex4Cfkd0npl\/Vv3WVN0iMPkREM5Dcg7UHJlxjRQPNHa8uDZz6SgqVnebDmhBmv2uxS1qic5XpftEwUHA==",
+         "data":"eJzVkjsOwjAQBW2gIdDwaYA00IWOTxNEuAXcAG4Qzs9YeBXLkoMhbiimeF7paT1arZTqQR8GoDvmIWQwgnGCPIEpzGBu8xo2TvbnbXkBS1hBZbsK2ELuzU2+8sGbbrI\/l\/+fbY9wDPi58\/DQYX+yU+XsVbb4qSl46vDc3an8wZefC9ufBXx8m6Xrn+6vS47xI\/cd4++Tj4Nq7uiSwJ\/p28Feve8phT\/Tc4r09wJOthZ\/",
          "encoding":"base64",
          "height":15,
          "id":1,
@@ -18,7 +18,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYGBgmMWAAMhsQgCXvlVA7I\/EJhbA1Ppj0RdPgjnoAJvefCh9gwRzdqDpxQZekGDeCRzipLgJG9iBxifFTdgALnfCgCAjA4MQI4WWIAFFoFlKRJi3BIuaWiLMB+nDphebeC8F5lEDmNLIXFyAmPAzI9JNvgzEhR+xIBaIATvVFeM=",
+         "data":"eJxjYKAM+DNRaAAaiKeyeflEmhcKxGFAvAiIFwPxEiBeiiS\/CAljk0cHKUCcBsSbgHgzEG8B4q1I8puQMDZ5bObVkhg2vnjUg8zrBcpfI8HMWALmgQAp5rUxYYZnMRSXMJDu32lMmOHZDMUtDBD\/YgP\/gOL\/sciBws+NjPTIx8zAwM+MKQ4KvzAgToOaKQhUI4RFHamgDGqeItAsJSqYN5gBAIB6I8M=",
          "encoding":"base64",
          "height":15,
          "id":2,
@@ -43,11 +43,15 @@
         }, 
         {
          "firstgid":65,
-         "source":"Props.tsx"
+         "source":"Tileset Wall.tsx"
         }, 
         {
          "firstgid":321,
-         "source":"TX Plant.tsx"
+         "source":"Struct.tsx"
+        }, 
+        {
+         "firstgid":577,
+         "source":"Props.tsx"
         }],
  "tilewidth":32,
  "type":"map",

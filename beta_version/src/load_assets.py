@@ -91,7 +91,7 @@ PICK_UP_SPRITES = [
     f"{player_path}pick_up_anim{sep}tile004.png",
 ]
 
-MAP_PATH = [map_path + "mapa_uno.tmj",
-            map_path + "mapa_dos.tmj",
-            map_path + "mapa_tres.tmj",
-            map_path + "mapa_cuatro.tmj"]
+MAP_PATH = [map_path + "map_1.tmj",
+            map_path + "map_2.tmj",
+            map_path + "map_3.tmj",
+            map_path + "map_4.tmj"]
