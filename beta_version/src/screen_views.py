@@ -1,6 +1,13 @@
 """
 This file contains the Views for the start menu, pause menu, game over screen
 """
+import arcade.gui
+
+from game_parameters import *
+from player import Player
+import friendly_npcs
+
+
 class Menu(arcade.View):
     def __init__(self):
         super().__init__()
