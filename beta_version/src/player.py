@@ -18,7 +18,7 @@ WAITING_ATTACK = 0
 PICKING = 1
 WAITING_PICKING = 0
 
-UPDATES_PER_FRAME = 7
+UPDATES_PER_FRAME = 3
 
 
 class Player(arcade.AnimatedTimeBasedSprite):

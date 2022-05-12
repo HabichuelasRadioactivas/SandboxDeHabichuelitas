@@ -68,11 +68,11 @@ class BetaGame(arcade.Window):
 
         self.change_map(1)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
-        # self.set_update_rate(1/40) # TODO the engine increases the update rate. Has to be fixed
+        self.set_update_rate(1/35) # TODO the engine increases the update rate. Has to be fixed
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
-        return self.player_sprite.center_x >= SCREEN_WIDTH - 15 and 360 < self.player_sprite.center_y < 390
+        return self.player_sprite.center_x == SCREEN_WIDTH - PLAYER_WIDTH and 360 < self.player_sprite.center_y < 390
 
     def first_map_logic(self):
         self.start_engine()
@@ -120,7 +120,7 @@ class BetaGame(arcade.Window):
     def player_at_third_map_entry(self):
         # TODO BUG: Inconsistency with the screen sizes. Check size of maps
         # The very top of the game seems to be 567 and not 600 as defined in game_parameters.
-        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= 567
+        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= 587
 
     def player_at_third_map_exit(self):
         pass
