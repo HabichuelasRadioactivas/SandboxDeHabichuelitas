@@ -2,7 +2,6 @@ import arcade
 from utils.texture_loader import load_textures
 from utils.anims_state_updater import *
 
-
 IDLE_SPRITES = [
     "PNGs_Knights/2_KNIGHT/_IDLE/_IDLE_000.png",
     "PNGs_Knights/2_KNIGHT/_IDLE/_IDLE_001.png",
@@ -15,31 +14,52 @@ IDLE_SPRITES = [
 
 ATTACK_SPRITES = [
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_001.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_001.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_003.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_003.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_004.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_006.png",
     "PNGs_Knights/2_KNIGHT/_ATTACK/_ATTACK_006.png",
 ]
 
 DIE_SPRITES = [
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_000.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_000.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_001.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_001.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_002.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_002.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_003.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_003.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_004.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_004.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_005.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_005.png",
+    "PNGs_Knights/2_KNIGHT/_DIE/_DIE_006.png",
     "PNGs_Knights/2_KNIGHT/_DIE/_DIE_006.png",
 ]
 
 HURT_SPRITES = [
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_000.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_000.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_001.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_001.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_002.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_002.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_003.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_003.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_004.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_004.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_005.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_005.png",
+    "PNGs_Knights/2_KNIGHT/_HURT/HURT_006.png",
     "PNGs_Knights/2_KNIGHT/_HURT/HURT_006.png",
 ]
 
@@ -73,7 +93,7 @@ WALK_SPRITES = [
     "PNGs_Knights/2_KNIGHT/_WALK/_WALK_006.png",
 ]
 
-SPRITE_SCALING_KNIGHT = 0.1
+SPRITE_SCALING_KNIGHT = 0.075
 
 
 class Enemy(arcade.AnimatedTimeBasedSprite):

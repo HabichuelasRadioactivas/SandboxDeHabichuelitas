@@ -25,7 +25,7 @@ ATTACK = 1
 WAITING_ATTACK = 0
 HEALTH_KNIGHT = 10
 
-UPDATES_PER_FRAME = 7
+UPDATES_PER_FRAME = 6
 
 
 def load_texture_pair(filename):
@@ -238,7 +238,7 @@ class MyGame(arcade.Window):
                 enemy.left_or_right = 'left'
 
             # Move enemy towards player if is close enough
-            if x_diff <= 225 and y_diff <= 225 and not enemy.hit and not enemy.destroy_enemy and not enemy.attack:
+            if x_diff <= 300 and y_diff <= 300 and not enemy.hit and not enemy.destroy_enemy and not enemy.attack:
                 enemy.change_x = math.cos(angle) * ENEMY_MOVEMENT_SPEED
                 enemy.change_y = math.sin(angle) * ENEMY_MOVEMENT_SPEED
             else:
@@ -246,6 +246,8 @@ class MyGame(arcade.Window):
                 enemy.change_y = 0
 
             if enemy.destroy_enemy:
+                for i in range(0, len(DIE_SPRITES), 1):
+                    self.enemy_sprite = DIE_SPRITES[i]
                 enemy.remove_from_sprite_lists()
 
     def on_key_press(self, key, modifiers):
@@ -290,6 +292,7 @@ class MyGame(arcade.Window):
                 self.player_sprite.picking = PICKING
                 self.player_sprite.power_up = POWERUP_ENABLED
                 self.player_sprite.item_picked = self.pickup_object_sprite.tag
+
 
 def main():
     """Main method"""
