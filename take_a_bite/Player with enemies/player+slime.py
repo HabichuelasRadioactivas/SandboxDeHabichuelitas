@@ -111,7 +111,7 @@ class MyGame(arcade.Window):
         self.enemies_list.append(self.enemy_sprite)
 
         for enemy in self.enemies_list:
-            self.scene.add_sprite('Final Knight', enemy)
+            self.scene.add_sprite('Slime', enemy)
 
         for pickable_object in self.pickup_object_list:
             self.scene.add_sprite('Pick-able object', pickable_object)
