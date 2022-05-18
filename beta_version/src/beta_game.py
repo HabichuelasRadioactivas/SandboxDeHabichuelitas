@@ -72,7 +72,8 @@ class BetaGame(arcade.Window):
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
-        return self.player_sprite.center_x == SCREEN_WIDTH - PLAYER_WIDTH and 360 < self.player_sprite.center_y < 390
+        #return False
+        return (SCREEN_WIDTH - PLAYER_WIDTH - 6 <= self.player_sprite.center_x < SCREEN_WIDTH) and (330 < self.player_sprite.center_y < 390)
 
     def first_map_logic(self):
         self.start_engine()
@@ -99,7 +100,8 @@ class BetaGame(arcade.Window):
         return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
 
     def player_at_second_map_exit(self):
-        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
+        print((str)(self.player_sprite.center_x) + " " + (str)(self.player_sprite.center_y))
+        return 370 < self.player_sprite.center_x < 460 and self.player_sprite.center_y <= 60
 
     def second_map_logic(self):
         self.start_engine()
