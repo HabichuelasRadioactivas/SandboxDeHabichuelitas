@@ -142,6 +142,7 @@ class MyGame(arcade.Window):
         for power_up_item in power_up_items_hit_list:
             self.pickup_object_sprite = power_up_item
             if self.player_sprite.picking == PICKING:
+                print('destroy object')
                 power_up_item.remove_from_sprite_lists()
                 if self.player_sprite.item_picked == DEFAULT_CONSUMABLE:
                     self.player_sprite.health_points += 1
@@ -183,6 +184,7 @@ class MyGame(arcade.Window):
                 self.powerup_countdown = 0
                 self.total_time = 0.0
                 self.ability_icon = None
+                self.player_sprite.scale = SPRITE_SCALING
             else:
                 self.total_time += delta_time
                 seconds = int(self.total_time) % 60
@@ -272,6 +274,7 @@ class MyGame(arcade.Window):
                 self.powerup_countdown = 0
                 self.total_time = 0.0
                 self.ability_icon = None
+                self.player_sprite.scale = SPRITE_SCALING
             elif self.player_sprite.can_pick_up:
                 self.player_sprite.picking = PICKING
                 self.player_sprite.power_up = POWERUP_ENABLED

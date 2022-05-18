@@ -182,6 +182,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
 
     def set_texture_based_on_facing_position(self, frame_rate, current_anim, consumable):
         if consumable == DEFAULT_CONSUMABLE:
+            self.scale = 0.055
             # Player speed is reduced & health is increased
             if current_anim == IDLE:
                 if self.face_direction == FACING_TOP:
@@ -214,6 +215,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
                     return self.attack_right_textures_powerup[frame_rate]
 
         if consumable == PINK_CONSUMABLE:
+            self.scale = 0.055
             if current_anim == IDLE:
                 if self.face_direction == FACING_TOP:
                     return self.idle_up_textures_powerup_pink[frame_rate]
