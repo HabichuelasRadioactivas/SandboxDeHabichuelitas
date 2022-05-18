@@ -1,5 +1,11 @@
 import os
+import arcade
+from typing import List
 
+
+def load_textures(append_to: List, sprites: List[str], flip_hor=False):
+    for i in range(len(sprites)):
+        append_to.append(arcade.load_texture(sprites[i], flipped_horizontally=flip_hor))
 
 file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -95,3 +101,143 @@ MAP_PATH = [map_path + "map_1.tmj",
             map_path + "map_2.tmj",
             map_path + "map_3.tmj",
             map_path + "map_4.tmj"]
+
+ENEMY_SKELETON_IDLE_SPRITES = [
+    f"{enemies_path}Skeleton{sep}idle{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}idle{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}idle{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}idle{sep}tile003.png",
+]
+
+ENEMY_SKELETON_RUN_SPRITES = [
+    f"{enemies_path}Skeleton{sep}run{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}run{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}run{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}run{sep}tile003.png",
+]
+
+ENEMY_SKELETON_HIT_SPRITES = [
+    f"{enemies_path}Skeleton{sep}hit{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}hit{sep}tile003.png",
+]
+
+ENEMY_SKELETON_DEAD_SPRITES = [
+    f"{enemies_path}Skeleton{sep}dead{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}dead{sep}tile003.png",
+]
+
+ENEMY_SKELETON_ATTACK_SPRITES = [
+    f"{enemies_path}Skeleton{sep}attack{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile000.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile001.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile002.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile003.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile004.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile004.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile005.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile005.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile006.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile006.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile007.png",
+    f"{enemies_path}Skeleton{sep}attack{sep}tile007.png",
+]
+
+ENEMY_MUSHROOM_IDLE_SPRITES = [
+    f"{enemies_path}Mushroom{sep}idle{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}idle{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}idle{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}idle{sep}tile003.png",
+]
+
+ENEMY_MUSHROOM_RUN_SPRITES = [
+    f"{enemies_path}Mushroom{sep}run{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}run{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}run{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}run{sep}tile003.png",
+]
+
+ENEMY_MUSHROOM_HIT_SPRITES = [
+    f"{enemies_path}Mushroom{sep}hit{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}hit{sep}tile003.png",
+]
+
+ENEMY_MUSHROOM_DEAD_SPRITES = [
+    f"{enemies_path}Mushroom{sep}dead{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}dead{sep}tile003.png",
+]
+
+ENEMY_MUSHROOM_ATTACK_SPRITES = [
+    f"{enemies_path}Mushroom{sep}attack{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile000.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile001.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile002.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile003.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile004.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile004.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile005.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile005.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile006.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile006.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile007.png",
+    f"{enemies_path}Mushroom{sep}attack{sep}tile007.png",
+]
