@@ -23,8 +23,10 @@ NOT_PRESSED = 99
 
 ATTACK = 1
 WAITING_ATTACK = 0
-HEALTH_SLIME = 4
-
+HEALTH_SLIME1 = 4
+SCALE_SLIME1 = 0.4
+HEALTH_SLIME2 = 8
+SCALE_SLIME2 = 0.8
 UPDATES_PER_FRAME = 6
 
 
@@ -106,7 +108,16 @@ class MyGame(arcade.Window):
         self.enemies_list = arcade.SpriteList()
 
         self.enemy_sprite = Slime()
+        self.scale1 = 0.1
+        self.health1 = 4
         self.enemy_sprite.center_x = 65
+        self.enemy_sprite.center_y = 56
+        self.enemies_list.append(self.enemy_sprite)
+
+        self.enemy_sprite = Slime()
+        self.scale2 = 0.6
+        self.health2 = 8
+        self.enemy_sprite.center_x = 200
         self.enemy_sprite.center_y = 56
         self.enemies_list.append(self.enemy_sprite)
 
