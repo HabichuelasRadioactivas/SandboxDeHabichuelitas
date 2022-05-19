@@ -1,5 +1,5 @@
 from load_assets import *
-from helpers.game_parameters import *
+from game_parameters import *
 
 
 class Player(arcade.AnimatedTimeBasedSprite):

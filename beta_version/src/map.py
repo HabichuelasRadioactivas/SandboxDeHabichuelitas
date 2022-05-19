@@ -1,5 +1,5 @@
 import arcade
-from beta_version.src.load_assets import MAP_PATH
+from load_assets import MAP_PATH
 
 
 def load_map(map_number):

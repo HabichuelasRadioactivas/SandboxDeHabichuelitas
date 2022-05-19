@@ -1,6 +1,6 @@
 import arcade.gui
 
-from helpers.game_parameters import *
+from game_parameters import *
 from game_view import Game
 from friendly_npcs import MrBean
 from load_assets import MR_BEAN_DIALOGUE

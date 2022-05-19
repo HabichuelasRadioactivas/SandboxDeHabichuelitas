@@ -2,8 +2,8 @@ import arcade
 import math
 import random
 
-from helpers.game_parameters import *
-from helpers.map import load_map
+from game_parameters import *
+from map import load_map
 from player import Player
 import friendly_npcs
 from enemies import Enemy

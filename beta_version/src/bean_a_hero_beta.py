@@ -1,6 +1,6 @@
 import arcade
 
-from helpers.game_parameters import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE
+from game_parameters import SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE
 from game_view import Game
 from menu_views import Menu, Story, Controls, TheEnd, Credits, GameOver, Pause, MrBeanCutScene
 

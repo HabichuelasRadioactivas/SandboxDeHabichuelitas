@@ -1,5 +1,5 @@
 from load_assets import *
-from helpers.anims_state_updater import *
+from anims_state_updater import *
 
 
 class Enemy(arcade.AnimatedTimeBasedSprite):
