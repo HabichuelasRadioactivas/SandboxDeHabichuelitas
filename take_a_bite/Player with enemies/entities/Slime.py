@@ -135,13 +135,14 @@ HURT_SPRITES = [
     "SlimeAnimations/SlimeDamage/SlimeDamageTop03.png",
 ]
 
-SPRITE_SCALING_SLIME = 0.45
+SPRITE_SCALING_SLIME = 0.4
+SPRITE_HEALTH_SLIME = 0.6
 
 
 class Slime(arcade.AnimatedTimeBasedSprite):
     """Slime Class"""
 
-    def __init__(self, enemy_type='finalKnight'):
+    def __init__(self, enemy_type='slime'):
         super().__init__()
 
         # Set type of enemy (skeleton, goblin, slime, knight)
@@ -182,7 +183,7 @@ class Slime(arcade.AnimatedTimeBasedSprite):
         self.updates_per_frame = UPDATES_PER_FRAME
 
         # Enemy health points
-        self.health_points = 4
+        self.health_points = SPRITE_HEALTH_SLIME
 
         # Toggle between left & right run anims
         self.left_or_right = None
