@@ -1,4 +1,4 @@
-from utils.sprites import *
+from utils.sprites import PLAYER_PICK_UP_SPRITES
 from utils.constants import *
 
 

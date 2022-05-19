@@ -5,6 +5,7 @@ from utils.object_tags import *
 from utils.animations_list import *
 from utils.anims_state_updater import *
 from utils.texture_loader import load_textures
+from utils.sprites import *
 
 
 class Player(arcade.AnimatedTimeBasedSprite):
@@ -46,7 +47,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
         self.attack_up_status = 0
         self.attack_side_status = 0
         self.pick_up_status = 0
-        
+
         # Player frame rate
         self.updates_per_frame = UPDATES_PER_FRAME
 
@@ -182,6 +183,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
 
     def set_texture_based_on_facing_position(self, frame_rate, current_anim, consumable):
         if consumable == DEFAULT_CONSUMABLE:
+            self.scale = 0.055
             # Player speed is reduced & health is increased
             if current_anim == IDLE:
                 if self.face_direction == FACING_TOP:
@@ -214,6 +216,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
                     return self.attack_right_textures_powerup[frame_rate]
 
         if consumable == PINK_CONSUMABLE:
+            self.scale = 0.055
             if current_anim == IDLE:
                 if self.face_direction == FACING_TOP:
                     return self.idle_up_textures_powerup_pink[frame_rate]
@@ -246,8 +249,10 @@ class Player(arcade.AnimatedTimeBasedSprite):
 
     def set_texture_base_on_consumable(self, consumable, frame_rate, current_anim):
         available_textures_based_on_consumable = {
-            DEFAULT_CONSUMABLE: self.set_texture_based_on_facing_position(frame_rate, current_anim, consumable=DEFAULT_CONSUMABLE),
-            PINK_CONSUMABLE: self.set_texture_based_on_facing_position(frame_rate, current_anim, consumable=PINK_CONSUMABLE)
+            DEFAULT_CONSUMABLE: self.set_texture_based_on_facing_position(frame_rate, current_anim,
+                                                                          consumable=DEFAULT_CONSUMABLE),
+            PINK_CONSUMABLE: self.set_texture_based_on_facing_position(frame_rate, current_anim,
+                                                                       consumable=PINK_CONSUMABLE)
         }
         for consumable_key in available_textures_based_on_consumable:
             if consumable_key == consumable:
@@ -365,17 +370,24 @@ class Player(arcade.AnimatedTimeBasedSprite):
 
         # Attack powerup animations
         if self.attack == utils.constants.ATTACK and self.change_x == 0 and self.change_y == 0 and self.face_direction == FACING_BOTTOM and self.power_up == POWERUP_ENABLED:
-            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_down_frame, current_anim=ATTACK_ANIM)
-            self.attack_down_status = update_attack_down_anim(self.attack_down_status, len(PLAYER_ATTACK_DOWN_POWERUP_SPRITES))
+            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_down_frame,
+                                                               current_anim=ATTACK_ANIM)
+            self.attack_down_status = update_attack_down_anim(self.attack_down_status,
+                                                              len(PLAYER_ATTACK_DOWN_POWERUP_SPRITES))
         elif self.attack == utils.constants.ATTACK and self.change_x == 0 and self.change_y == 0 and self.face_direction == FACING_TOP and self.power_up == POWERUP_ENABLED:
-            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_up_frame, current_anim=ATTACK_ANIM)
+            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_up_frame,
+                                                               current_anim=ATTACK_ANIM)
             self.attack_up_status = update_attack_up_anim(self.attack_up_status, len(PLAYER_ATTACK_UP_POWERUP_SPRITES))
         elif self.attack == utils.constants.ATTACK and self.change_x == 0 and self.change_y == 0 and self.face_direction == FACING_LEFT and self.power_up == POWERUP_ENABLED:
-            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_side_frame, current_anim=ATTACK_ANIM)
-            self.attack_side_status = update_attack_side_anim(self.attack_side_status, len(PLAYER_ATTACK_SIDE_POWERUP_SPRITES))
+            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_side_frame,
+                                                               current_anim=ATTACK_ANIM)
+            self.attack_side_status = update_attack_side_anim(self.attack_side_status,
+                                                              len(PLAYER_ATTACK_SIDE_POWERUP_SPRITES))
         elif self.attack == utils.constants.ATTACK and self.change_x == 0 and self.change_y == 0 and self.face_direction == FACING_RIGHT and self.power_up == POWERUP_ENABLED:
-            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_side_frame, current_anim=ATTACK_ANIM)
-            self.attack_side_status = update_attack_side_anim(self.attack_side_status, len(PLAYER_ATTACK_SIDE_POWERUP_SPRITES))
+            self.texture = self.set_texture_base_on_consumable(self.item_picked, attack_side_frame,
+                                                               current_anim=ATTACK_ANIM)
+            self.attack_side_status = update_attack_side_anim(self.attack_side_status,
+                                                              len(PLAYER_ATTACK_SIDE_POWERUP_SPRITES))
 
         # Pick up animation
         pick_up_frame = self.pick_up_status // self.updates_per_frame

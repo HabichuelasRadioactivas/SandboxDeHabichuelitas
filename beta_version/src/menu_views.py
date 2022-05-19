@@ -57,10 +57,9 @@ class Story(arcade.View):
         arcade.draw_text("Nos encontramos en la época medieval, una época con muchos habitantes y poco suministro de",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 160, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text(
-            "alimento para la gran cantidad de población que vivían en los pueblos de estos reinos antiguos.",
-            SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 140, arcade.color.WHITE, 15, anchor_x="center",
-            font_name="Times New Roman")
+        arcade.draw_text("alimento para la gran cantidad de población que vivían en los pueblos de estos reinos antiguos.",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 140, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
         arcade.draw_text("La gente desesperada, comenzaba a consumir cualquier tipo de alimento que encontraban.",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
@@ -81,10 +80,9 @@ class Story(arcade.View):
         arcade.draw_text("que nunca destaco entre los demás, pero",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 60, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("¿cómo podrá este escuálido caballero salvar al mundo?...",
+        arcade.draw_text("¿cómo podrá este escuálido caballero salvar al mundo...?",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 120, arcade.color.WHITE, 18, anchor_x="center",
                          font_name="Times New Roman", italic=True, bold=True)
-
 
         arcade.draw_text("Presiona Enter para Continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 250,
                          arcade.color.WHITE, 12, anchor_x="center", font_name="Times New Roman")
@@ -177,6 +175,84 @@ class Pause(arcade.View):
             self.window.show_view(menu)
 
 
+class TheEnd(arcade.View):
+
+    def on_show_view(self):
+        arcade.set_background_color(arcade.color.BLACK)
+
+    def on_draw(self):
+        self.clear()
+        arcade.draw_text("Días después de haber derrotado al ejercito del rey tirano,",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("la paz comenzaba a reinar en todos los rincones de aquel antiguo reino y la comida ya no escaseaba,",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 100, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("pues entre los tesoros del rey había un montón de semillas y de todo tipo de alimentos.",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 80, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
+
+        arcade.draw_text("Sin embargo, ciertas palabras seguían resonando en la cabeza del héroe que había traído la paz",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 20, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("“Perdóneme Gran Señor, le he fallado…”",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, arcade.color.WHITE, 15, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("¿Realmente la paz duraría para siempre…?",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 140, arcade.color.WHITE, 20, anchor_x="center",
+                         font_name="Times New Roman", italic=True, bold=True)
+
+        arcade.draw_text("Presiona Enter para Continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 250,
+                         arcade.color.WHITE, 12, anchor_x="center", font_name="Times New Roman")
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            credits = Credits()
+            self.window.show_view(credits)
+
+
+class Credits(arcade.View):
+
+    def on_show_view(self):
+        arcade.set_background_color(arcade.color.BLACK)
+
+    def on_draw(self):
+        self.clear()
+
+        arcade.draw_text("Creditos", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200,
+                         arcade.color.WHITE, 70, anchor_x="center", font_name="Times New Roman")
+
+        arcade.draw_text("Director del Videojuego..........Gjergj Kukaj",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Ingeniero de Sonido................Helena Pérez",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 80, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Diseñador de Mapas e Historia.......Gabriel Hernández",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 40, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Diseñadora de Sprites................Chenyu Castillo",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 , arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Programador Principal.................Javier Hérnandez",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 40, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Programador de Mecánicas.......Carlos Eguren",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 80, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+        arcade.draw_text("Programador de Interfaces.....Pablo Ruiz",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 120, arcade.color.WHITE, 16, anchor_x="center",
+                         font_name="Times New Roman")
+
+        arcade.draw_text("Presiona Enter para Continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 250,
+                         arcade.color.WHITE, 12, anchor_x="center", font_name="Times New Roman")
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            menu = Menu()
+            self.window.show_view(menu)
+
+
 class GameOver(arcade.View):
 
     def on_show_view(self):
@@ -198,4 +274,5 @@ class GameOver(arcade.View):
         elif key == arcade.key.ENTER:
             game = Game()
             self.window.show_view(game)
+
 

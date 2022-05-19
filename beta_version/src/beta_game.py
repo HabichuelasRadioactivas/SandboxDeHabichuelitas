@@ -1,8 +1,10 @@
 import arcade
+import math
 
 from game_parameters import *
 from map import load_map
 from player import Player
+from enemies import Enemy
 import friendly_npcs
 # import enemies
 
@@ -27,6 +29,7 @@ class BetaGame(arcade.Window):
 
         # Set up the enemy info
         self.enemy_list = arcade.SpriteList()
+        self.enemy_sprite = None
 
         self.text_list = arcade.SpriteList()
 
@@ -52,6 +55,9 @@ class BetaGame(arcade.Window):
         self.npc_list.draw()
 
     def setup(self):
+        # Creating the scene
+        self.scene = arcade.Scene()
+
         # Set up the player
         self.player_sprite = Player()
         # Player initial position  - Spawn Point
@@ -66,13 +72,25 @@ class BetaGame(arcade.Window):
 
         self.player_list.append(self.player_sprite)
 
+        self.enemy_list = arcade.SpriteList()
+
+        self.enemy_sprite = Enemy()
+        self.enemy_sprite.center_x = SCREEN_WIDTH // 2
+        self.enemy_sprite.center_y = SCREEN_HEIGHT // 2
+        self.enemy_list.append(self.enemy_sprite)
+        self.enemy_sprite = Enemy(enemy_type='mushroom')
+        self.enemy_sprite.center_x = 213
+        self.enemy_sprite.center_y = 98
+        self.enemy_list.append(self.enemy_sprite)
+
         self.change_map(1)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
         self.set_update_rate(1/35) # TODO the engine increases the update rate. Has to be fixed
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
     def player_at_first_map_exit(self):
-        return self.player_sprite.center_x == SCREEN_WIDTH - PLAYER_WIDTH and 360 < self.player_sprite.center_y < 390
+        #return False
+        return (SCREEN_WIDTH - PLAYER_WIDTH - 6 <= self.player_sprite.center_x < SCREEN_WIDTH) and (330 < self.player_sprite.center_y < 390)
 
     def first_map_logic(self):
         self.start_engine()
@@ -99,7 +117,8 @@ class BetaGame(arcade.Window):
         return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
 
     def player_at_second_map_exit(self):
-        return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y <= 60
+        print((str)(self.player_sprite.center_x) + " " + (str)(self.player_sprite.center_y))
+        return 370 < self.player_sprite.center_x < 460 and self.player_sprite.center_y <= 60
 
     def second_map_logic(self):
         self.start_engine()
@@ -177,6 +196,68 @@ class BetaGame(arcade.Window):
         self.player_list.update_animation()
         if self.engine is not None:
             self.engine.update()
+
+        enemies_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)
+
+        for enemy_hit in enemies_hit_list:
+            if self.player_sprite.attack == ATTACK:
+                if enemy_hit.health_points == 1:
+                    enemy_hit.health_points = 0
+                    enemy_hit.enemy_dead = True
+                else:
+                    enemy_hit.change_x = (-ENEMY_MOVEMENT_SPEED * 21) if enemy_hit.left_or_right == 'right' else (
+                            ENEMY_MOVEMENT_SPEED * 21)
+                    enemy_hit.change_y = 0
+                    enemy_hit.health_points -= 1
+                    enemy_hit.hit = True
+            else:
+                enemy_hit.attack = True
+                enemy_hit.attack_status = 0  # IMPORTANT ALLOW ATTACK ANIMATION TO REPEAT MULTIPLE TIMES
+                enemy_hit.change_x = (-ENEMY_MOVEMENT_SPEED * 19) if enemy_hit.left_or_right == 'right' else (
+                        ENEMY_MOVEMENT_SPEED * 19)
+                enemy_hit.change_y = 0
+                if self.player_sprite.health_points == 1:
+                    self.player_sprite.health_points = 0
+                    print('dead')
+                else:
+                    self.player_sprite.health_points -= 1
+
+        for enemy in self.enemy_list:
+            enemy.update()
+            enemy.update_animation()
+
+            # Position the start at the enemy's current location
+            start_x = enemy.center_x
+            start_y = enemy.center_y
+
+            # Get the destination location for the enemy
+            dest_x = self.player_sprite.center_x
+            dest_y = self.player_sprite.center_y
+
+            # Do math to calculate how to get the enemy to the destination.
+            # Calculation the angle in radians between the start points
+            # and end points. This is the angle the enemy will travel.
+            x_diff = dest_x - start_x
+            y_diff = dest_y - start_y
+            angle = math.atan2(y_diff, x_diff)
+
+            if x_diff >= 0:
+                # Player is on right side
+                enemy.left_or_right = 'right'
+            else:
+                # Player is on left side
+                enemy.left_or_right = 'left'
+
+            # Move enemy towards player if is close enough
+            if x_diff <= 225 and y_diff <= 225 and not enemy.hit and not enemy.destroy_enemy and not enemy.attack:
+                enemy.change_x = math.cos(angle) * ENEMY_MOVEMENT_SPEED
+                enemy.change_y = math.sin(angle) * ENEMY_MOVEMENT_SPEED
+            else:
+                enemy.change_x = 0
+                enemy.change_y = 0
+
+            if enemy.destroy_enemy:
+                enemy.remove_from_sprite_lists()
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:

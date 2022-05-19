@@ -1,6 +1,7 @@
 import arcade
 from utils.texture_loader import load_textures
 from utils.anims_state_updater import *
+from utils.sprites import *
 
 
 class Enemy(arcade.AnimatedTimeBasedSprite):

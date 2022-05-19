@@ -2,24 +2,6 @@ import arcade
 from load_assets import *
 from game_parameters import *
 
-MOVEMENT_SPEED = 3
-
-SPRITE_SCALING = 2
-
-FACING_TOP = 0
-FACING_RIGHT = 1
-FACING_BOTTOM = 2
-FACING_LEFT = 3
-NOT_PRESSED = 99
-
-ATTACK = 1
-WAITING_ATTACK = 0
-
-PICKING = 1
-WAITING_PICKING = 0
-
-UPDATES_PER_FRAME = 3
-
 
 class Player(arcade.AnimatedTimeBasedSprite):
     """Player Class"""
@@ -56,6 +38,9 @@ class Player(arcade.AnimatedTimeBasedSprite):
         self.attack_up_status = 0
         self.attack_side_status = 0
         self.pick_up_status = 0
+
+        # Player health points
+        self.health_points = 3
 
         # Idle textures
         self.idle_down_textures = []

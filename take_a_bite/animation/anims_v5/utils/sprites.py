@@ -7,19 +7,33 @@ PLAYER_IDLE_DOWN_SPRITES = [
 ]
 
 PLAYER_IDLE_DOWN_POWERUP_SPRITES = [
-    "assets/idle_anim_powerup/tile000.png",
-    "assets/idle_anim_powerup/tile001.png",
-    "assets/idle_anim_powerup/tile002.png",
-    "assets/idle_anim_powerup/tile003.png",
-    "assets/idle_anim_powerup/tile004.png",
+    # "assets/idle_anim_powerup/tile000.png",
+    # "assets/idle_anim_powerup/tile001.png",
+    # "assets/idle_anim_powerup/tile002.png",
+    # "assets/idle_anim_powerup/tile003.png",
+    # "assets/idle_anim_powerup/tile004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_IDLE_DOWN_POWERUP_PINK_SPRITES = [
-    "assets/idle_down_anim_powerup_pink/tile000.png",
-    "assets/idle_down_anim_powerup_pink/tile001.png",
-    "assets/idle_down_anim_powerup_pink/tile002.png",
-    "assets/idle_down_anim_powerup_pink/tile003.png",
-    "assets/idle_down_anim_powerup_pink/tile004.png",
+    # "assets/idle_down_anim_powerup_pink/tile000.png",
+    # "assets/idle_down_anim_powerup_pink/tile001.png",
+    # "assets/idle_down_anim_powerup_pink/tile002.png",
+    # "assets/idle_down_anim_powerup_pink/tile003.png",
+    # "assets/idle_down_anim_powerup_pink/tile004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_IDLE_UP_SPRITES = [
@@ -31,19 +45,33 @@ PLAYER_IDLE_UP_SPRITES = [
 ]
 
 PLAYER_IDLE_UP_POWERUP_SPRITES = [
-    "assets/idle_up_anim_powerup/tile000.png",
-    "assets/idle_up_anim_powerup/tile001.png",
-    "assets/idle_up_anim_powerup/tile002.png",
-    "assets/idle_up_anim_powerup/tile003.png",
-    "assets/idle_up_anim_powerup/tile004.png",
+    # "assets/idle_up_anim_powerup/tile000.png",
+    # "assets/idle_up_anim_powerup/tile001.png",
+    # "assets/idle_up_anim_powerup/tile002.png",
+    # "assets/idle_up_anim_powerup/tile003.png",
+    # "assets/idle_up_anim_powerup/tile004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_IDLE_UP_POWERUP_PINK_SPRITES = [
-    "assets/idle_up_anim_powerup_pink/tile000.png",
-    "assets/idle_up_anim_powerup_pink/tile001.png",
-    "assets/idle_up_anim_powerup_pink/tile002.png",
-    "assets/idle_up_anim_powerup_pink/tile003.png",
-    "assets/idle_up_anim_powerup_pink/tile004.png",
+    # "assets/idle_up_anim_powerup_pink/tile000.png",
+    # "assets/idle_up_anim_powerup_pink/tile001.png",
+    # "assets/idle_up_anim_powerup_pink/tile002.png",
+    # "assets/idle_up_anim_powerup_pink/tile003.png",
+    # "assets/idle_up_anim_powerup_pink/tile004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_IDLE_SIDE_SPRITES = [
@@ -55,19 +83,33 @@ PLAYER_IDLE_SIDE_SPRITES = [
 ]
 
 PLAYER_IDLE_SIDE_POWERUP_SPRITES = [
-    "assets/idle_side_anim_powerup/tile000.png",
-    "assets/idle_side_anim_powerup/tile001.png",
-    "assets/idle_side_anim_powerup/tile002.png",
-    "assets/idle_side_anim_powerup/tile003.png",
-    "assets/idle_side_anim_powerup/tile004.png",
+    # "assets/idle_side_anim_powerup/tile000.png",
+    # "assets/idle_side_anim_powerup/tile001.png",
+    # "assets/idle_side_anim_powerup/tile002.png",
+    # "assets/idle_side_anim_powerup/tile003.png",
+    # "assets/idle_side_anim_powerup/tile004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_IDLE_SIDE_POWERUP_PINK_SPRITES = [
-    "assets/idle_side_anim_powerup_pink/tile000.png",
-    "assets/idle_side_anim_powerup_pink/tile001.png",
-    "assets/idle_side_anim_powerup_pink/tile002.png",
-    "assets/idle_side_anim_powerup_pink/tile003.png",
-    "assets/idle_side_anim_powerup_pink/tile004.png",
+    # "assets/idle_side_anim_powerup_pink/tile000.png",
+    # "assets/idle_side_anim_powerup_pink/tile001.png",
+    # "assets/idle_side_anim_powerup_pink/tile002.png",
+    # "assets/idle_side_anim_powerup_pink/tile003.png",
+    # "assets/idle_side_anim_powerup_pink/tile004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_IDLE/_IDLE_006.png",
 ]
 
 PLAYER_WALK_DOWN_SPRITES = [
@@ -80,21 +122,35 @@ PLAYER_WALK_DOWN_SPRITES = [
 ]
 
 PLAYER_WALK_DOWN_POWERUP_SPRITES = [
-    "assets/walk_down_anim_powerup/tile000.png",
-    "assets/walk_down_anim_powerup/tile001.png",
-    "assets/walk_down_anim_powerup/tile002.png",
-    "assets/walk_down_anim_powerup/tile003.png",
-    "assets/walk_down_anim_powerup/tile004.png",
-    "assets/walk_down_anim_powerup/tile005.png",
+    # "assets/walk_down_anim_powerup/tile000.png",
+    # "assets/walk_down_anim_powerup/tile001.png",
+    # "assets/walk_down_anim_powerup/tile002.png",
+    # "assets/walk_down_anim_powerup/tile003.png",
+    # "assets/walk_down_anim_powerup/tile004.png",
+    # "assets/walk_down_anim_powerup/tile005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_WALK_DOWN_POWERUP_PINK_SPRITES = [
-    "assets/walk_down_anim_powerup_pink/tile000.png",
-    "assets/walk_down_anim_powerup_pink/tile001.png",
-    "assets/walk_down_anim_powerup_pink/tile002.png",
-    "assets/walk_down_anim_powerup_pink/tile003.png",
-    "assets/walk_down_anim_powerup_pink/tile004.png",
-    "assets/walk_down_anim_powerup_pink/tile005.png",
+    # "assets/walk_down_anim_powerup_pink/tile000.png",
+    # "assets/walk_down_anim_powerup_pink/tile001.png",
+    # "assets/walk_down_anim_powerup_pink/tile002.png",
+    # "assets/walk_down_anim_powerup_pink/tile003.png",
+    # "assets/walk_down_anim_powerup_pink/tile004.png",
+    # "assets/walk_down_anim_powerup_pink/tile005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_WALK_UP_SPRITES = [
@@ -107,21 +163,35 @@ PLAYER_WALK_UP_SPRITES = [
 ]
 
 PLAYER_WALK_UP_POWERUP_SPRITES = [
-    "assets/walk_up_anim_powerup/tile000.png",
-    "assets/walk_up_anim_powerup/tile001.png",
-    "assets/walk_up_anim_powerup/tile002.png",
-    "assets/walk_up_anim_powerup/tile003.png",
-    "assets/walk_up_anim_powerup/tile004.png",
-    "assets/walk_up_anim_powerup/tile005.png",
+    # "assets/walk_up_anim_powerup/tile000.png",
+    # "assets/walk_up_anim_powerup/tile001.png",
+    # "assets/walk_up_anim_powerup/tile002.png",
+    # "assets/walk_up_anim_powerup/tile003.png",
+    # "assets/walk_up_anim_powerup/tile004.png",
+    # "assets/walk_up_anim_powerup/tile005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_WALK_UP_POWERUP_PINK_SPRITES = [
-    "assets/walk_up_anim_powerup_pink/tile000.png",
-    "assets/walk_up_anim_powerup_pink/tile001.png",
-    "assets/walk_up_anim_powerup_pink/tile002.png",
-    "assets/walk_up_anim_powerup_pink/tile003.png",
-    "assets/walk_up_anim_powerup_pink/tile004.png",
-    "assets/walk_up_anim_powerup_pink/tile005.png",
+    # "assets/walk_up_anim_powerup_pink/tile000.png",
+    # "assets/walk_up_anim_powerup_pink/tile001.png",
+    # "assets/walk_up_anim_powerup_pink/tile002.png",
+    # "assets/walk_up_anim_powerup_pink/tile003.png",
+    # "assets/walk_up_anim_powerup_pink/tile004.png",
+    # "assets/walk_up_anim_powerup_pink/tile005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_SIDE_WALK_SPRITES = [
@@ -134,21 +204,35 @@ PLAYER_SIDE_WALK_SPRITES = [
 ]
 
 PLAYER_SIDE_WALK_POWERUP_SPRITES = [
-    "assets/side_walk_anim_powerup/tile000.png",
-    "assets/side_walk_anim_powerup/tile001.png",
-    "assets/side_walk_anim_powerup/tile002.png",
-    "assets/side_walk_anim_powerup/tile003.png",
-    "assets/side_walk_anim_powerup/tile004.png",
-    "assets/side_walk_anim_powerup/tile005.png",
+    # "assets/side_walk_anim_powerup/tile000.png",
+    # "assets/side_walk_anim_powerup/tile001.png",
+    # "assets/side_walk_anim_powerup/tile002.png",
+    # "assets/side_walk_anim_powerup/tile003.png",
+    # "assets/side_walk_anim_powerup/tile004.png",
+    # "assets/side_walk_anim_powerup/tile005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_SIDE_WALK_POWERUP_PINK_SPRITES = [
-    "assets/side_walk_anim_powerup_pink/tile000.png",
-    "assets/side_walk_anim_powerup_pink/tile001.png",
-    "assets/side_walk_anim_powerup_pink/tile002.png",
-    "assets/side_walk_anim_powerup_pink/tile003.png",
-    "assets/side_walk_anim_powerup_pink/tile004.png",
-    "assets/side_walk_anim_powerup_pink/tile005.png",
+    # "assets/side_walk_anim_powerup_pink/tile000.png",
+    # "assets/side_walk_anim_powerup_pink/tile001.png",
+    # "assets/side_walk_anim_powerup_pink/tile002.png",
+    # "assets/side_walk_anim_powerup_pink/tile003.png",
+    # "assets/side_walk_anim_powerup_pink/tile004.png",
+    # "assets/side_walk_anim_powerup_pink/tile005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_WALK/_WALK_006.png",
 ]
 
 PLAYER_ATTACK_DOWN_SPRITES = [
@@ -158,15 +242,45 @@ PLAYER_ATTACK_DOWN_SPRITES = [
 ]
 
 PLAYER_ATTACK_DOWN_POWERUP_SPRITES = [
-    "assets/attack_down_anim_powerup/tile000.png",
-    "assets/attack_down_anim_powerup/tile001.png",
-    "assets/attack_down_anim_powerup/tile002.png",
+    # "assets/attack_down_anim_powerup/tile000.png",
+    # "assets/attack_down_anim_powerup/tile001.png",
+    # "assets/attack_down_anim_powerup/tile002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
 ]
 
 PLAYER_ATTACK_DOWN_POWERUP_PINK_SPRITES = [
-    "assets/attack_down_anim_powerup_pink/tile000.png",
-    "assets/attack_down_anim_powerup_pink/tile001.png",
-    "assets/attack_down_anim_powerup_pink/tile002.png",
+    # "assets/attack_down_anim_powerup_pink/tile000.png",
+    # "assets/attack_down_anim_powerup_pink/tile001.png",
+    # "assets/attack_down_anim_powerup_pink/tile002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
 ]
 
 PLAYER_ATTACK_UP_SPRITES = [
@@ -176,15 +290,45 @@ PLAYER_ATTACK_UP_SPRITES = [
 ]
 
 PLAYER_ATTACK_UP_POWERUP_SPRITES = [
-    "assets/attack_up_anim_powerup/tile000.png",
-    "assets/attack_up_anim_powerup/tile001.png",
-    "assets/attack_up_anim_powerup/tile002.png",
+    # "assets/attack_up_anim_powerup/tile000.png",
+    # "assets/attack_up_anim_powerup/tile001.png",
+    # "assets/attack_up_anim_powerup/tile002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
 ]
 
 PLAYER_ATTACK_UP_POWERUP_PINK_SPRITES = [
-    "assets/attack_up_anim_powerup_pink/tile000.png",
-    "assets/attack_up_anim_powerup_pink/tile001.png",
-    "assets/attack_up_anim_powerup_pink/tile002.png",
+    # "assets/attack_up_anim_powerup_pink/tile000.png",
+    # "assets/attack_up_anim_powerup_pink/tile001.png",
+    # "assets/attack_up_anim_powerup_pink/tile002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
 ]
 
 PLAYER_ATTACK_SIDE_SPRITES = [
@@ -194,15 +338,45 @@ PLAYER_ATTACK_SIDE_SPRITES = [
 ]
 
 PLAYER_ATTACK_SIDE_POWERUP_SPRITES = [
-    "assets/attack_side_anim_powerup/tile000.png",
-    "assets/attack_side_anim_powerup/tile001.png",
-    "assets/attack_side_anim_powerup/tile002.png",
+    # "assets/attack_side_anim_powerup/tile000.png",
+    # "assets/attack_side_anim_powerup/tile001.png",
+    # "assets/attack_side_anim_powerup/tile002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_000.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_001.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_002.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_003.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_004.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_005.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_006.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
+    "assets/PNGs_Knights/1_KNIGHT/_ATTACK/ATTACK_007.png",
 ]
 
 PLAYER_ATTACK_SIDE_POWERUP_PINK_SPRITES = [
-    "assets/attack_side_anim_powerup_pink/tile000.png",
-    "assets/attack_side_anim_powerup_pink/tile001.png",
-    "assets/attack_side_anim_powerup_pink/tile002.png",
+    # "assets/attack_side_anim_powerup_pink/tile000.png",
+    # "assets/attack_side_anim_powerup_pink/tile001.png",
+    # "assets/attack_side_anim_powerup_pink/tile002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_000.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_001.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_002.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_003.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_004.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_005.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
+    "assets/PNGs_Knights/3_KNIGHT/_ATTACK/_ATTACK_006.png",
 ]
 
 PLAYER_PICK_UP_SPRITES = [

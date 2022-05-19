@@ -183,6 +183,7 @@ class MyGame(arcade.Window):
                 self.powerup_countdown = 0
                 self.total_time = 0.0
                 self.ability_icon = None
+                self.player_sprite.scale = SPRITE_SCALING
             else:
                 self.total_time += delta_time
                 seconds = int(self.total_time) % 60
@@ -272,6 +273,7 @@ class MyGame(arcade.Window):
                 self.powerup_countdown = 0
                 self.total_time = 0.0
                 self.ability_icon = None
+                self.player_sprite.scale = SPRITE_SCALING
             elif self.player_sprite.can_pick_up:
                 self.player_sprite.picking = PICKING
                 self.player_sprite.power_up = POWERUP_ENABLED
