@@ -1,17 +1,24 @@
 import arcade
 import math
-import random
 
-from beta_version.src.helpers.game_parameters import *
-from beta_version.src.helpers.map import load_map
+from game_parameters import *
+from map import load_map
 from player import Player
-import friendly_npcs
 from enemies import Enemy
+import friendly_npcs
+# import enemies
+
+# import io_functions
 
 
-class Game(arcade.View):
+class BetaGame(arcade.Window):
+    """Custom window class"""
+
     def __init__(self):
-        super().__init__()
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+        # Set bg color
+        arcade.set_background_color(arcade.color.GREEN)
+
         # Set up the player info
         self.player_list = arcade.SpriteList()
         self.player_sprite = None
@@ -29,17 +36,11 @@ class Game(arcade.View):
         self.engine = None
         self.scene = None
         self.maps = {1: load_map(1), 2: load_map(2), 3: load_map(3), 4: load_map(4), 5: load_map(5)}
-        self.map_enemies_killed = {1: True, 2: False, 3: False, 4: False, 5: True}
 
-    def change_map(self, map_number, x_pos, y_pos):
-        if self.map_enemies_killed[map_number] is False:
-            self.create_enemy('skeleton')
-            self.create_enemy('mushroom')
+    def change_map(self, map_number):
         self.engine = None
         self.player_sprite.map_number = map_number
         self.scene = self.maps[map_number]
-        self.player_sprite.center_x = x_pos
-        self.player_sprite.center_y = y_pos
 
     def start_engine(self):
         if self.engine is None:
@@ -73,35 +74,35 @@ class Game(arcade.View):
 
         self.enemy_list = arcade.SpriteList()
 
-        self.change_map(1, 150, 550)
+        self.enemy_sprite = Enemy()
+        self.enemy_sprite.center_x = SCREEN_WIDTH // 2
+        self.enemy_sprite.center_y = SCREEN_HEIGHT // 2
+        self.enemy_list.append(self.enemy_sprite)
+        self.enemy_sprite = Enemy(enemy_type='mushroom')
+        self.enemy_sprite.center_x = 213
+        self.enemy_sprite.center_y = 98
+        self.enemy_list.append(self.enemy_sprite)
+
+        self.change_map(1)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
-
-    def create_enemy(self, enemy_type='skeleton'):
-        enemy_sprite = Enemy(enemy_type)
-        enemy_sprite.center_x = random.randint(0, SCREEN_WIDTH)
-        enemy_sprite.center_y = random.randint(0, SCREEN_HEIGHT)
-        self.enemy_list.append(enemy_sprite)
-
+        self.set_update_rate(1/35) # TODO the engine increases the update rate. Has to be fixed
     """--------------------------------------------MAP LOGIC---------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
-
     def player_at_first_map_exit(self):
-        # return False
-        return (SCREEN_WIDTH - PLAYER_WIDTH - 6 <= self.player_sprite.center_x < SCREEN_WIDTH) and (
-                    330 < self.player_sprite.center_y < 390)
+        #return False
+        return (SCREEN_WIDTH - PLAYER_WIDTH - 6 <= self.player_sprite.center_x < SCREEN_WIDTH) and (330 < self.player_sprite.center_y < 390)
 
     def first_map_logic(self):
         self.start_engine()
         if self.mr_bean_sprite not in self.npc_list:
             self.npc_list.append(self.mr_bean_sprite)
         if self.player_at_first_map_exit():
-            self.change_map(2, 20, 380)
+            self.change_map(2)
             self.npc_list.remove(self.mr_bean_sprite)  # remove mr_bean from npc list if first map_pngs is left
+            self.player_sprite.center_x = 20
+            self.player_sprite.center_y = 380
 
         if self.mr_bean_sprite.is_near(self.player_sprite.center_x, self.player_sprite.center_y):
-            if self.mr_bean_sprite.talked_to_bean is False:
-                self.mr_bean_sprite.talk_to_bean()
-                self.window.open_bean_cutscene()
             self.mr_bean_sprite.celebrate()
             # TODO Text: Just a Placeholder. Will be changed later
             text = arcade.create_text_sprite("How are you my friend?", self.mr_bean_sprite.center_x - 100,
@@ -110,10 +111,8 @@ class Game(arcade.View):
         else:
             self.mr_bean_sprite.wait()
             self.text_list.clear()
-
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
-
     def player_at_second_map_entry(self):
         return self.player_sprite.center_x <= 15 and 360 < self.player_sprite.center_y < 390
 
@@ -122,64 +121,47 @@ class Game(arcade.View):
 
     def second_map_logic(self):
         self.start_engine()
-        if len(self.enemy_list) == 0:
-            self.map_enemies_killed[2] = True
-            if self.player_at_second_map_entry():
-                self.change_map(1, SCREEN_WIDTH - 20, 380)
-                self.npc_list.append(self.mr_bean_sprite)  # add mr_bean to npc list if first map_pngs is entered
-            elif self.player_at_second_map_exit():
-                self.change_map(3, 400, 560)
-
+        if self.player_at_second_map_entry():
+            self.change_map(1)
+            self.npc_list.append(self.mr_bean_sprite)  # add mr_bean to npc list if first map_pngs is entered
+            self.player_sprite.center_x = SCREEN_WIDTH - 20
+            self.player_sprite.center_y = 380
+        elif self.player_at_second_map_exit():
+            self.change_map(3)
+            self.player_sprite.center_x = 400
+            # TODO BUG: Inconsistency with the screen sizes. Check size of map_pngs and refactor code
+            self.player_sprite.center_y = 560
+        pass
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
-
     def player_at_third_map_entry(self):
         # TODO BUG: Inconsistency with the screen sizes. Check size of map_pngs
         # The very top of the game seems to be 567 and not 600 as defined in game_parameters.
         return 370 < self.player_sprite.center_x < 430 and self.player_sprite.center_y >= 587
 
     def player_at_third_map_exit(self):
-        return self.player_sprite.center_x >= SCREEN_WIDTH - PLAYER_WIDTH and 130 < self.player_sprite.center_y < 280
+        pass
 
     def third_map_logic(self):
         self.start_engine()
-        if len(self.enemy_list) == 0:
-            self.map_enemies_killed[3] = True
-            if self.player_at_third_map_entry():
-                self.change_map(2, 400, 60)
-            elif self.player_at_third_map_exit():
-                self.change_map(4, 20, 200)
-
+        if self.player_at_third_map_entry():
+            self.change_map(2)
+            self.player_sprite.center_x = 400
+            self.player_sprite.center_y = 60
+        elif self.player_at_third_map_exit():
+            pass
+        pass
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
-
     def player_at_fourth_map_entry(self):
-        return self.player_sprite.center_x <= PLAYER_WIDTH and 130 < self.player_sprite.center_y < 280
-
-    def player_at_fourth_map_exit(self):
-        return self.player_sprite.center_x >= SCREEN_WIDTH - PLAYER_WIDTH and 300 < self.player_sprite.center_y < 380
-
-    def fourth_map_logic(self):
-        self.start_engine()
-        if len(self.enemy_list) == 0:
-            self.map_enemies_killed[4] = True
-            if self.player_at_fourth_map_entry():
-                self.change_map(3, SCREEN_WIDTH - 20, 200)
-            elif self.player_at_fourth_map_exit():
-                self.change_map(5, SCREEN_WIDTH / 2, SCREEN_HEIGHT - PLAYER_HEIGHT - 5)
-
-    """--------------------------------------------------------------------------------------------------------------"""
-    """--------------------------------------------------------------------------------------------------------------"""
-
-    def player_at_fifth_map_exit(self):
-        return self.player_sprite.center_y <= PLAYER_HEIGHT
-
-    def fifth_map_logic(self):
-        self.start_engine()
-        if self.player_at_fifth_map_exit():
-            self.window.open_credits()
         pass
 
+    def fourth_map_logic(self):
+        if self.player_at_first_map_exit():
+            pass
+        elif self.player_at_second_map_entry():
+            pass
+        pass
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------MAP LOGIC END-----------------------------------------------------"""
 
@@ -196,13 +178,6 @@ class Game(arcade.View):
         elif self.player_sprite.map_number == 3:
             self.draw_scene_and_sprites()
 
-        elif self.player_sprite.map_number == 4:
-            self.draw_scene_and_sprites()
-            # arcade.draw_line(SCREEN_WIDTH-10, 380, SCREEN_WIDTH-10, 300, arcade.color.BLUE)
-
-        elif self.player_sprite.map_number == 5:
-            self.draw_scene_and_sprites()
-
     def on_update(self, delta_time):
         if self.player_sprite.map_number == 1:
             self.first_map_logic()
@@ -212,8 +187,6 @@ class Game(arcade.View):
             self.third_map_logic()
         elif self.player_sprite.map_number == 4:
             self.fourth_map_logic()
-        elif self.player_sprite.map_number == 5:
-            self.fifth_map_logic()
 
         # Move the player
         self.player_list.update()
@@ -242,8 +215,7 @@ class Game(arcade.View):
                 enemy_hit.change_y = 0
                 if self.player_sprite.health_points == 1:
                     self.player_sprite.health_points = 0
-                    print("dead")
-                    self.window.open_game_over()
+                    print('dead')
                 else:
                     self.player_sprite.health_points -= 1
 
@@ -297,20 +269,15 @@ class Game(arcade.View):
         elif key == arcade.key.D:
             self.player_sprite.face_direction = FACING_RIGHT
             self.player_sprite.change_x = MOVEMENT_SPEED
-        elif key == arcade.key.K:
+        elif key == arcade.key.X:
             self.player_sprite.attack = ATTACK
-        elif key == arcade.key.ESCAPE:
-            self.window.open_pause()
 
     def on_key_release(self, key, modifiers):
         if key == arcade.key.W or key == arcade.key.S:
             self.player_sprite.change_y = 0
         elif key == arcade.key.A or key == arcade.key.D:
             self.player_sprite.change_x = 0
-        elif key == arcade.key.K:
+        elif key == arcade.key.X:
             self.player_sprite.attack = WAITING_ATTACK
-        elif key == arcade.key.L:
+        elif key == arcade.key.C:
             self.player_sprite.picking = PICKING
-
-    def print_player_pos(self):
-        print(f"X:{self.player_sprite.center_x} --- Y:{self.player_sprite.center_y}")

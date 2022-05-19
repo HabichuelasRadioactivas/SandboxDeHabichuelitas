@@ -1,10 +1,11 @@
 import arcade
-from beta_game import BetaGame
+from bean_a_hero_beta import BeanAHeroBeta
 
 def main():
     """Main method"""
-    wn = BetaGame()
-    wn.setup()
+    bean_a_hero = BeanAHeroBeta()
+    # bean_a_hero.open_menu()
+    bean_a_hero.open_menu()
     arcade.run()
 
 if __name__ == '__main__':

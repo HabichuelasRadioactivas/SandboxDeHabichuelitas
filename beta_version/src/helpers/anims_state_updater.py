@@ -1,5 +1,5 @@
-from load_assets import PICK_UP_SPRITES
-from game_parameters import *
+from beta_version.src.load_assets import PICK_UP_SPRITES
+from beta_version.src.helpers.game_parameters import *
 
 
 def update_idle_down_anim(idle_down_status, anim_sprites_len):

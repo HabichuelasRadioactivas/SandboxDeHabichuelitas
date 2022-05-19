@@ -15,10 +15,15 @@ player_path = file_path + sep + "assets" + sep + "sprites" + sep + "player" + se
 mr_bean_path = file_path + sep + "assets" + sep + "sprites" + sep + "mr_bean" + sep
 enemies_path = file_path + sep + "assets" + sep + "sprites" + sep + "enemies" + sep
 map_path = file_path + sep + "assets" + sep + "tilemaps" + sep
+cutscene_path = file_path + sep+ "assets" + sep + "cutscenes" + sep
 
 MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
                    f"{mr_bean_path}MrBeanOnOneFoot.png",
                    f"{mr_bean_path}MrBeanWaiting.png"]
+
+MR_BEAN_DIALOGUE = [f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_1.png",
+                    f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_2.png",
+                    f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_3.png"]
 
 IDLE_DOWN_SPRITES = [
     f"{player_path}idle_anim{sep}tile000.png",
@@ -100,7 +105,8 @@ PICK_UP_SPRITES = [
 MAP_PATH = [map_path + "map_1.tmj",
             map_path + "map_2.tmj",
             map_path + "map_3.tmj",
-            map_path + "map_4.tmj"]
+            map_path + "map_4.tmj",
+            map_path + "map_5.tmj"]
 
 ENEMY_SKELETON_IDLE_SPRITES = [
     f"{enemies_path}Skeleton{sep}idle{sep}tile000.png",

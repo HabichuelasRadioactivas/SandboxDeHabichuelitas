@@ -1,8 +1,9 @@
 import arcade.gui
 
-from game_parameters import *
+from beta_version.src.helpers.game_parameters import *
 from game_view import Game
-
+from friendly_npcs import MrBean
+from load_assets import MR_BEAN_DIALOGUE
 
 class Menu(arcade.View):
     def __init__(self):
@@ -28,7 +29,8 @@ class Menu(arcade.View):
 
     def on_click_start(self, event):
         story = Story()
-        self.window.show_view(story)
+        # self.window.show_view(story)
+        self.window.open_story()
         self.manager.disable()
 
     def on_click_quit(self, event):
@@ -90,7 +92,8 @@ class Story(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             control = Controls()
-            self.window.show_view(control)
+            # self.window.show_view(control)
+            self.window.open_controls()
 
 
 class Controls(arcade.View):
@@ -121,18 +124,16 @@ class Controls(arcade.View):
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
-            game = Game()
-            game.setup()
-            self.window.show_view(game)
+            # self.window.show_view(game)
+            self.window.open_game()
 
 
 class Pause(arcade.View):
-    def __init__(self, game_view):
+    def __init__(self):
         super().__init__()
-        self.game_view = game_view
 
     def on_show_view(self):
-        arcade.set_background_color(arcade.color.ORANGE)
+        arcade.set_background_color(arcade.color.WHITE)
 
     def on_draw(self):
         self.clear()
@@ -140,10 +141,12 @@ class Pause(arcade.View):
         # Draw player, for effect, on pause screen.
         # The previous View (GameView) was passed in
         # and saved in self.game_view.
-        player_sprite = self.game_view.player_sprite
-        player_sprite.draw()
+
+        # player_sprite = self.game_view.player_sprite
+        # player_sprite.draw()
 
         # draw an orange filter over him
+        """
         arcade.draw_lrtb_rectangle_filled(left=player_sprite.left,
                                           right=player_sprite.right,
                                           top=player_sprite.top,
@@ -152,6 +155,7 @@ class Pause(arcade.View):
 
         arcade.draw_text("PAUSA", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 50,
                          arcade.color.BLACK, font_size=50, anchor_x="center", font_name="Times New Roman")
+        """
 
         # Show tip to return or reset
         arcade.draw_text("Presiona ESC para Volver",
@@ -169,10 +173,13 @@ class Pause(arcade.View):
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ESCAPE:  # resume game
-            self.window.show_view(self.game_view)
+            # self.window.show_view(self.game_view)
+            self.window.open_game()
         elif key == arcade.key.ENTER:  # reset game
             menu = Menu()
-            self.window.show_view(menu)
+            # self.window.show_view(menu)
+            self.window.reload_game()
+            self.window.open_menu()
 
 
 class TheEnd(arcade.View):
@@ -208,7 +215,8 @@ class TheEnd(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             credits = Credits()
-            self.window.show_view(credits)
+            # self.window.show_view(credits)
+            self.window.open_credtis()
 
 
 class Credits(arcade.View):
@@ -222,25 +230,25 @@ class Credits(arcade.View):
         arcade.draw_text("Creditos", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200,
                          arcade.color.WHITE, 70, anchor_x="center", font_name="Times New Roman")
 
-        arcade.draw_text("Director del Videojuego..........Gjergj Kukaj",
+        arcade.draw_text("Director del Videojuego...........................Gjergj Kukaj",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("Ingeniero de Sonido................Helena Pérez",
+        arcade.draw_text("Programador Principal.......................Javier Hérnandez",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 80, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
         arcade.draw_text("Diseñador de Mapas e Historia.......Gabriel Hernández",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 40, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("Diseñadora de Sprites................Chenyu Castillo",
+        arcade.draw_text("Ingeniero de Sonido.................................Helena Pérez",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 , arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("Programador Principal.................Javier Hérnandez",
+        arcade.draw_text("Programador........................................Chenyu Castillo",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 40, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("Programador de Mecánicas.......Carlos Eguren",
+        arcade.draw_text("Programador de Mecánicas....................Carlos Eguren",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 80, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("Programador de Interfaces.....Pablo Ruiz",
+        arcade.draw_text("Programador de Interfaces...........................Pablo Ruiz",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 120, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
 
@@ -250,7 +258,9 @@ class Credits(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             menu = Menu()
-            self.window.show_view(menu)
+            # self.window.show_view(menu)
+            self.window.reload_game()
+            self.window.open_menu()
 
 
 class GameOver(arcade.View):
@@ -270,9 +280,50 @@ class GameOver(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ESCAPE:
             menu = Menu()
-            self.window.show_view(menu)
+            # self.window.show_view(menu)
+            self.window.open_menu()
         elif key == arcade.key.ENTER:
             game = Game()
-            self.window.show_view(game)
+            # self.window.show_view(game)
+            self.window.reload_game()
+            self.window.open_game()
 
+class MrBeanCutScene(arcade.View):
+    def on_show_view(self):
+        self.mr_bean = MrBean()
+        self.mr_bean.scale = 1.1
+        self.mr_bean.center_x = SCREEN_WIDTH - 120
+        self.mr_bean.center_y = SCREEN_HEIGHT/2
+
+        self.dialogue_counter = 0
+
+        self.text_1 = arcade.Sprite(MR_BEAN_DIALOGUE[0], 0.6)  # 892x568
+        self.text_1.center_x = 892/2 * 0.6
+        self.text_1.center_y = SCREEN_HEIGHT - 568/2 * 0.6 - 20
+
+        self.text_2 = arcade.Sprite(MR_BEAN_DIALOGUE[1], 0.6)  # 896x578
+        self.text_2.center_x = 896/2 * 0.6
+        self.text_2.center_y = SCREEN_HEIGHT - 578/2 * 0.6 - 20
+
+        self.text_3 = arcade.Sprite(MR_BEAN_DIALOGUE[2], 0.6)  # 882x116
+        self.text_3.center_x = 882/2 * 0.6
+        self.text_3.center_y = SCREEN_HEIGHT - 116/2 * 0.6 - 20
+
+    def on_draw(self):
+        self.clear()
+        if self.dialogue_counter == 0:
+            self.text_1.draw()
+        elif self.dialogue_counter == 1:
+            self.text_2.draw()
+        elif self.dialogue_counter == 2:
+            self.mr_bean.celebrate()
+            self.text_3.draw()
+        else:
+            self.window.open_game()
+        arcade.set_background_color(arcade.color.WHITE)
+        self.mr_bean.draw()
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            self.dialogue_counter += 1
 

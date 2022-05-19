@@ -1,6 +1,5 @@
-import arcade
-from load_assets import *
-from anims_state_updater import *
+from beta_version.src.load_assets import *
+from beta_version.src.helpers.anims_state_updater import *
 
 
 class Enemy(arcade.AnimatedTimeBasedSprite):
@@ -56,6 +55,7 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.idle_right_textures, ENEMY_MUSHROOM_IDLE_SPRITES)
             load_textures(self.idle_left_textures, ENEMY_MUSHROOM_IDLE_SPRITES, flip_hor=True)
             self.idle_sprites_len = len(ENEMY_MUSHROOM_IDLE_SPRITES)
+        # TODO add slime
 
         # Run textures
         self.run_right_textures = []

@@ -1,6 +1,5 @@
-import arcade
-from load_assets import *
-from game_parameters import *
+from beta_version.src.load_assets import *
+from beta_version.src.helpers.game_parameters import *
 
 
 class Player(arcade.AnimatedTimeBasedSprite):
@@ -18,7 +17,7 @@ class Player(arcade.AnimatedTimeBasedSprite):
         # Set initial picking state
         self.picking = WAITING_PICKING
 
-        # Status of which maps the player is currently
+        # Status of which map_pngs the player is currently
         self.map_number = 1  # 0 should be the start_menu
 
         # Used for flipping between image sequences

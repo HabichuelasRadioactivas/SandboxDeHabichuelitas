@@ -1,5 +1,4 @@
-import arcade
-from load_assets import *
+from beta_version.src.load_assets import *
 
 
 class MrBean(arcade.AnimatedTimeBasedSprite):
@@ -17,6 +16,8 @@ class MrBean(arcade.AnimatedTimeBasedSprite):
         # Set initial texture
         self.texture = self.waiting
 
+        self.talked_to_bean = False
+
     def update(self):
         # Move player
         pass
@@ -32,3 +33,6 @@ class MrBean(arcade.AnimatedTimeBasedSprite):
 
     def is_near(self, x, y):
         return 670 < x and 70 < y < 110
+
+    def talk_to_bean(self):
+        self.talked_to_bean = True

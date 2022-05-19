@@ -1,6 +1,5 @@
 import arcade
-from load_assets import MAP_PATH
-from game_parameters import *
+from beta_version.src.load_assets import MAP_PATH
 
 
 def load_map(map_number):
@@ -12,6 +11,9 @@ def load_map(map_number):
         return arcade.Scene.from_tilemap(arcade.load_tilemap(MAP_PATH[2], 1.30))
     if map_number == 4:
         return arcade.Scene.from_tilemap(arcade.load_tilemap(MAP_PATH[3], 1.30))
+    if map_number == 5:
+        return arcade.Scene.from_tilemap(arcade.load_tilemap(MAP_PATH[4], 1.30))
+
     raise Exception(f"\n\nError while loading tilemap: There does no map number '{map_number}' exist!")
 
 
