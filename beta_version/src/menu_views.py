@@ -1,6 +1,6 @@
 import arcade.gui
 
-from beta_version.src.helpers.game_parameters import *
+from helpers.game_parameters import *
 from game_view import Game
 from friendly_npcs import MrBean
 from load_assets import MR_BEAN_DIALOGUE
@@ -119,7 +119,7 @@ class Controls(arcade.View):
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Recoger", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 100,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-         arcade.draw_text("ESC", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 160,
+        arcade.draw_text("ESC", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 160,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Pausar", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 160,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
