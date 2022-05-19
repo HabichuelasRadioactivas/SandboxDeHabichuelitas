@@ -119,6 +119,10 @@ class Controls(arcade.View):
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Recoger", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 100,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
+         arcade.draw_text("ESC", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 160,
+                         arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
+        arcade.draw_text("Para Pausar", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 160,
+                         arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Presiona Enter para Continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 250,
                          arcade.color.WHITE, 12, anchor_x="center", font_name="Times New Roman")
 
