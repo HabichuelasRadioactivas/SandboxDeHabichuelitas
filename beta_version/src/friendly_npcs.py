@@ -1,4 +1,4 @@
-from beta_version.src.load_assets import *
+from load_assets import *
 
 
 class MrBean(arcade.AnimatedTimeBasedSprite):

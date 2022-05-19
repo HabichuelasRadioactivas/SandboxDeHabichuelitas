@@ -111,11 +111,11 @@ class Controls(arcade.View):
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Moverse", SCREEN_WIDTH / 2 + 55, SCREEN_HEIGHT / 2 + 90,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("X", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2,
+        arcade.draw_text("K", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Atacar", SCREEN_WIDTH / 2 + 48, SCREEN_HEIGHT / 2,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("C", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 100,
+        arcade.draw_text("P", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 100,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Recoger", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 100,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
@@ -309,6 +309,10 @@ class MrBeanCutScene(arcade.View):
         self.text_3.center_x = 882/2 * 0.6
         self.text_3.center_y = SCREEN_HEIGHT - 116/2 * 0.6 - 20
 
+        self.bean = arcade.Sprite(MR_BEAN_DIALOGUE[3], 0.7)
+        self.bean.center_x = SCREEN_WIDTH/2 - 50
+        self.bean.center_y = SCREEN_HEIGHT/2
+
     def on_draw(self):
         self.clear()
         if self.dialogue_counter == 0:
@@ -318,6 +322,9 @@ class MrBeanCutScene(arcade.View):
         elif self.dialogue_counter == 2:
             self.mr_bean.celebrate()
             self.text_3.draw()
+            self.bean.draw()
+            arcade.draw_text("Presiona ENTER para coger la habichuela", 90, 150,
+                             arcade.color.BLACK, 18, anchor_x="left", font_name="Times New Roman")
         else:
             self.window.open_game()
         arcade.set_background_color(arcade.color.WHITE)

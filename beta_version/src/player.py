@@ -1,5 +1,5 @@
-from beta_version.src.load_assets import *
-from beta_version.src.helpers.game_parameters import *
+from load_assets import *
+from helpers.game_parameters import *
 
 
 class Player(arcade.AnimatedTimeBasedSprite):

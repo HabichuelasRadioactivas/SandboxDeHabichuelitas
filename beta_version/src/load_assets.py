@@ -23,7 +23,8 @@ MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
 
 MR_BEAN_DIALOGUE = [f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_1.png",
                     f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_2.png",
-                    f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_3.png"]
+                    f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_3.png",
+                    f"{cutscene_path}{sep}mr_bean_dialogue{sep}z_bean.png"]
 
 IDLE_DOWN_SPRITES = [
     f"{player_path}idle_anim{sep}tile000.png",
@@ -101,6 +102,145 @@ PICK_UP_SPRITES = [
     f"{player_path}pick_up_anim{sep}tile003.png",
     f"{player_path}pick_up_anim{sep}tile004.png",
 ]
+
+IDLE_DOWN_POWERUP_SPRITES = [
+    f"{player_path}idle_anim_powerup{sep}tile000.png",
+    f"{player_path}idle_anim_powerup{sep}tile001.png",
+    f"{player_path}idle_anim_powerup{sep}tile002.png",
+    f"{player_path}idle_anim_powerup{sep}tile003.png",
+    f"{player_path}idle_anim_powerup{sep}tile004.png",
+]
+
+IDLE_UP_POWERUP_SPRITES = [
+    f"{player_path}idle_up_anim_powerup{sep}tile000.png",
+    f"{player_path}idle_up_anim_powerup{sep}tile001.png",
+    f"{player_path}idle_up_animv_powerup{sep}tile002.png",
+    f"{player_path}idle_up_anim_powerup{sep}tile003.png",
+    f"{player_path}idle_up_anim_powerup{sep}tile004.png",
+]
+
+IDLE_SIDE_POWERUP_SPRITES = [
+    f"{player_path}idle_side_anim_powerup{sep}tile000.png",
+    f"{player_path}idle_side_anim_powerup{sep}tile001.png",
+    f"{player_path}idle_side_anim_powerup{sep}tile002.png",
+    f"{player_path}idle_side_anim_powerup{sep}tile003.png",
+    f"{player_path}idle_side_anim_powerup{sep}tile004.png",
+]
+
+WALK_DOWN_POWERUP_SPRITES = [
+    f"{player_path}walk_down_anim_powerup{sep}tile000.png",
+    f"{player_path}walk_down_anim_powerup{sep}tile001.png",
+    f"{player_path}walk_down_anim_powerup{sep}tile002.png",
+    f"{player_path}walk_down_anim_powerup{sep}tile003.png",
+    f"{player_path}walk_down_anim_powerup{sep}tile004.png",
+    f"{player_path}walk_down_anim_powerup{sep}tile005.png",
+]
+
+WALK_UP_POWERUP_SPRITES = [
+    f"{player_path}walk_up_anim_powerup{sep}tile000.png",
+    f"{player_path}walk_up_anim_powerup{sep}tile001.png",
+    f"{player_path}walk_up_anim_powerup{sep}tile002.png",
+    f"{player_path}walk_up_anim_powerup{sep}tile003.png",
+    f"{player_path}walk_up_anim_powerup{sep}tile004.png",
+    f"{player_path}walk_up_anim_powerup{sep}tile005.png",
+]
+
+SIDE_WALK_POWERUP_SPRITES = [
+    f"{player_path}side_walk_anim_powerup{sep}tile000.png",
+    f"{player_path}side_walk_anim_powerup{sep}tile001.png",
+    f"{player_path}side_walk_anim_powerup{sep}tile002.png",
+    f"{player_path}side_walk_anim_powerup{sep}tile003.png",
+    f"{player_path}side_walk_anim_powerup{sep}tile004.png",
+    f"{player_path}side_walk_anim_powerup{sep}tile005.png",
+]
+
+ATTACK_DOWN_POWERUP_SPRITES = [
+    f"{player_path}attack_down_anim_powerup{sep}tile000.png",
+    f"{player_path}attack_down_anim_powerup{sep}tile001.png",
+    f"{player_path}attack_down_anim_powerup{sep}tile002.png",
+]
+
+ATTACK_UP_POWERUP_SPRITES = [
+    f"{player_path}attack_up_anim_powerup{sep}tile000.png",
+    f"{player_path}attack_up_anim_powerup{sep}tile001.png",
+    f"{player_path}attack_up_anim_powerup{sep}tile002.png",
+]
+
+ATTACK_SIDE_POWERUP_SPRITES = [
+    f"{player_path}attack_side_anim_powerup{sep}tile000.png",
+    f"{player_path}attack_side_anim_powerup{sep}tile001.png",
+    f"{player_path}attack_side_anim_powerup{sep}tile002.png",
+]
+
+IDLE_DOWN_POWERUP_PINK_SPRITES = [
+    f"{player_path}idle_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}idle_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}idle_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}idle_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}idle_anim_powerup_pink{sep}tile004.png",
+]
+
+IDLE_UP_POWERUP_PINK_SPRITES = [
+    f"{player_path}idle_up_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}idle_up_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}idle_up_animv_powerup_pink{sep}tile002.png",
+    f"{player_path}idle_up_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}idle_up_anim_powerup_pink{sep}tile004.png",
+]
+
+IDLE_SIDE_POWERUP_PINK_SPRITES = [
+    f"{player_path}idle_side_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}idle_side_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}idle_side_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}idle_side_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}idle_side_anim_powerup_pink{sep}tile004.png",
+]
+
+WALK_DOWN_POWERUP_PINK_SPRITES = [
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}tile005.png",
+]
+
+WALK_UP_POWERUP_PINK_SPRITES = [
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}walk_up_anim_powerup_pink{sep}tile005.png",
+]
+
+SIDE_WALK_POWERUP_PINK_SPRITES = [
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile003.png",
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}side_walk_anim_powerup_pink{sep}tile005.png",
+]
+
+ATTACK_DOWN_POWERUP_PINK_SPRITES = [
+    f"{player_path}attack_down_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}tile002.png",
+]
+
+ATTACK_UP_POWERUP_PINK_SPRITES = [
+    f"{player_path}attack_up_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}attack_up_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}attack_up_anim_powerup_pink{sep}tile002.png",
+]
+
+ATTACK_SIDE_POWERUP_PINK_SPRITES = [
+    f"{player_path}attack_side_anim_powerup_pink{sep}tile000.png",
+    f"{player_path}attack_side_anim_powerup_pink{sep}tile001.png",
+    f"{player_path}attack_side_anim_powerup_pink{sep}tile002.png",
+]
+
 
 MAP_PATH = [map_path + "map_1.tmj",
             map_path + "map_2.tmj",

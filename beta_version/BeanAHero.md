@@ -21,7 +21,7 @@ primera habichuela otorgada (Un total de 2 habichuelas en el juego base) por el 
 - Primer nivel: 3 oleadas, siendo la tercera la del jefe (Segunda habichuela al
 derrotar al jefe)
 - Segundo nivel: 5 oleadas, 5 el jefe (Fin del juego). o Pierdes = Game Over.
-![img.png](Binding_of_isaac_reference_picture.png)
+![img.png](../take_a_bite/Binding_of_isaac_reference_picture.png)
 
 ### Tipos de enemigos.
 - Cuerpo a Cuerpo.

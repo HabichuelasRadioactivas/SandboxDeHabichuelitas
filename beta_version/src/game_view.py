@@ -2,8 +2,8 @@ import arcade
 import math
 import random
 
-from beta_version.src.helpers.game_parameters import *
-from beta_version.src.helpers.map import load_map
+from helpers.game_parameters import *
+from helpers.map import load_map
 from player import Player
 import friendly_npcs
 from enemies import Enemy
@@ -309,7 +309,7 @@ class Game(arcade.View):
             self.player_sprite.change_x = 0
         elif key == arcade.key.K:
             self.player_sprite.attack = WAITING_ATTACK
-        elif key == arcade.key.L:
+        elif key == arcade.key.P:
             self.player_sprite.picking = PICKING
 
     def print_player_pos(self):

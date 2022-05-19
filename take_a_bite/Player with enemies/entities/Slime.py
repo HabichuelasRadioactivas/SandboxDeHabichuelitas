@@ -181,7 +181,6 @@ class Slime(arcade.AnimatedTimeBasedSprite):
 
         # Enemy frame rate
         self.updates_per_frame = UPDATES_PER_FRAME
-
         # Enemy health points
         self.health_points = SPRITE_HEALTH_SLIME
 
