@@ -46,6 +46,8 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
         # Idle textures
         self.idle_right_textures = []
         self.idle_left_textures = []
+        self.idle_top_textures = []
+        self.idle_down_textures = []
         self.idle_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.idle_right_textures, ENEMY_SKELETON_IDLE_SPRITES)
@@ -55,11 +57,18 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.idle_right_textures, ENEMY_MUSHROOM_IDLE_SPRITES)
             load_textures(self.idle_left_textures, ENEMY_MUSHROOM_IDLE_SPRITES, flip_hor=True)
             self.idle_sprites_len = len(ENEMY_MUSHROOM_IDLE_SPRITES)
-        # TODO add slime
+        elif self.enemy_type == 'slime':
+            load_textures(self.idle_top_textures, ENEMY_SLIME_IDLE_TOP_SPRITES)
+            load_textures(self.idle_down_textures, ENEMY_SLIME_IDLE_DOWN_SPRITES)
+            load_textures(self.idle_right_textures, ENEMY_SLIME_IDLE_RIGHT_SPRITES)
+            load_textures(self.idle_left_textures, ENEMY_SLIME_IDLE_LEFT_SPRITES)
+            self.idle_sprites_len = len(ENEMY_SLIME_IDLE_TOP_SPRITES)
 
         # Run textures
         self.run_right_textures = []
         self.run_left_textures = []
+        self.run_top_textures = []
+        self.run_down_textures = []
         self.run_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.run_right_textures, ENEMY_SKELETON_RUN_SPRITES)
@@ -69,10 +78,17 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.run_right_textures, ENEMY_MUSHROOM_RUN_SPRITES)
             load_textures(self.run_left_textures, ENEMY_MUSHROOM_RUN_SPRITES, flip_hor=True)
             self.run_sprites_len = len(ENEMY_MUSHROOM_RUN_SPRITES)
+        elif self.enemy_type == 'slime':
+            load_textures(self.run_top_textures, ENEMY_SLIME_WALK_TOP_SPRITES)
+            load_textures(self.run_down_textures, ENEMY_SLIME_WALK_DOWN_SPRITES)
+            load_textures(self.run_left_textures, ENEMY_SLIME_WALK_LEFT_SPRITES)
+            load_textures(self.run_right_textures, ENEMY_SLIME_WALK_RIGHT_SPRITES)
+            self.run_sprites_len = len(ENEMY_SLIME_WALK_TOP_SPRITES)
 
         # Hit textures
         self.hit_right_textures = []
         self.hit_left_textures = []
+        self.hit_textures = []
         self.hit_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.hit_right_textures, ENEMY_SKELETON_HIT_SPRITES)
@@ -82,10 +98,14 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.hit_right_textures, ENEMY_MUSHROOM_HIT_SPRITES)
             load_textures(self.hit_left_textures, ENEMY_MUSHROOM_HIT_SPRITES, flip_hor=True)
             self.hit_sprites_len = len(ENEMY_MUSHROOM_HIT_SPRITES)
+        elif self.enemy_type == 'slime':
+            load_textures(self.hit_textures, ENEMY_SLIME_HIT_SPRITES)
+            self.hit_sprites_len = len(ENEMY_SLIME_HIT_SPRITES)
 
         # Dead textures
         self.dead_right_textures = []
         self.dead_left_textures = []
+        self.dead_textures = []
         self.dead_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.dead_right_textures, ENEMY_SKELETON_DEAD_SPRITES)
@@ -95,10 +115,15 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.dead_right_textures, ENEMY_MUSHROOM_DEAD_SPRITES)
             load_textures(self.dead_left_textures, ENEMY_MUSHROOM_DEAD_SPRITES, flip_hor=True)
             self.dead_sprites_len = len(ENEMY_MUSHROOM_DEAD_SPRITES)
+        elif self.enemy_type == 'slime':
+            load_textures(self.dead_textures, ENEMY_SLIME_DEAD_SPRITES)
+            self.dead_sprites_len = len(ENEMY_SLIME_DEAD_SPRITES)
 
         # Attack textures
         self.attack_right_textures = []
         self.attack_left_textures = []
+        self.attack_top_textures = []
+        self.attack_down_textures = []
         self.attack_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.attack_right_textures, ENEMY_SKELETON_ATTACK_SPRITES)
@@ -108,9 +133,18 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.attack_right_textures, ENEMY_MUSHROOM_ATTACK_SPRITES)
             load_textures(self.attack_left_textures, ENEMY_MUSHROOM_ATTACK_SPRITES, flip_hor=True)
             self.attack_sprites_len = len(ENEMY_MUSHROOM_ATTACK_SPRITES)
+        elif self.enemy_type == 'slime':
+            load_textures(self.attack_top_textures, ENEMY_SLIME_ATTACK_TOP_SPRITES)
+            load_textures(self.attack_down_textures, ENEMY_SLIME_ATTACK_DOWN_SPRITES)
+            load_textures(self.attack_left_textures, ENEMY_SLIME_ATTACK_lEFT_SPRITES)
+            load_textures(self.attack_right_textures, ENEMY_SLIME_ATTACK_RIGHT_SPRITES)
+            self.attack_sprites_len = len(ENEMY_SLIME_ATTACK_TOP_SPRITES)
 
         # Set initial texture
-        self.texture = self.run_right_textures[0]
+        if self.enemy_type == 'skeleton' or self.enemy_type == 'mushroom':
+            self.texture = self.run_right_textures[0]
+        elif self.enemy_type == 'slime':
+            self.texture = self.idle_top_textures[0]
 
     def update(self):
         # Move enemy

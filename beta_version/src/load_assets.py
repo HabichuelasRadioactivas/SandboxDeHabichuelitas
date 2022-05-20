@@ -387,3 +387,134 @@ ENEMY_MUSHROOM_ATTACK_SPRITES = [
     f"{enemies_path}Mushroom{sep}attack{sep}tile007.png",
     f"{enemies_path}Mushroom{sep}attack{sep}tile007.png",
 ]
+
+ENEMY_SLIME_IDLE_TOP_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop00.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop01.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop02.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop03.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop04.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleTop05.png",
+]
+
+ENEMY_SLIME_IDLE_DOWN_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown00.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown01.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown02.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown03.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown04.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleDown05.png",
+]
+
+ENEMY_SLIME_IDLE_LEFT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft00.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft01.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft02.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft03.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft04.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleLeft05.png",
+]
+
+ENEMY_SLIME_IDLE_RIGHT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight00.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight01.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight02.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight03.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight04.png",
+    f"{enemies_path}slime{sep}SlimeIdle{sep}SlimeIdleRight05.png",
+]
+
+ENEMY_SLIME_WALK_TOP_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop00.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop01.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop02.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop03.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop04.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkTop05.png",
+]
+
+ENEMY_SLIME_WALK_DOWN_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown00.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown01.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown02.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown03.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown04.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkDown05.png",
+]
+
+ENEMY_SLIME_WALK_LEFT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft00.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft01.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft02.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft03.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft04.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkLeft05.png",
+]
+
+ENEMY_SLIME_WALK_RIGHT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight00.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight01.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight02.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight03.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight04.png",
+    f"{enemies_path}slime{sep}SlimeWalk{sep}SlimeWalkRight05.png",
+]
+
+ENEMY_SLIME_DEAD_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath00.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath00.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath01.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath01.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath02.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath02.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath03.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath03.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath04.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath04.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath05.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath05.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath06.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath06.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath07.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath07.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath08.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath08.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath09.png",
+    f"{enemies_path}slime{sep}SlimeDeath{sep}SlimeDeath09.png",
+]
+
+ENEMY_SLIME_ATTACK_TOP_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop00.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop01.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop02.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop03.png",
+]
+
+ENEMY_SLIME_ATTACK_DOWN_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageDown00.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageDown01.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageDown02.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageDown03.png",
+]
+
+ENEMY_SLIME_ATTACK_lEFT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageLeft00.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageLeft01.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageLeft02.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageLeft03.png",
+]
+
+ENEMY_SLIME_ATTACK_RIGHT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageRight00.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageRight01.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageRight02.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageRight03.png",
+]
+
+ENEMY_SLIME_HIT_SPRITES = [
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop03.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop02.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop03.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop01.png",
+    f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop03.png",
+]
