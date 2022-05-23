@@ -5,7 +5,7 @@ from anims_state_updater import *
 class Enemy(arcade.AnimatedTimeBasedSprite):
     """Enemy Class"""
 
-    def __init__(self, enemy_type='skeleton'):
+    def __init__(self, enemy_type='skeleton', scale=1.5, health=2):
         super().__init__()
 
         # Set type of enemy (skeleton, goblin, slime)
@@ -18,7 +18,7 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
         self.attack = False
 
         # Texture scaling
-        self.scale = 1.5
+        self.scale = scale
 
         # Initial animations status
         self.idle_status = 0
@@ -31,7 +31,9 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
         self.updates_per_frame = UPDATES_PER_FRAME
 
         # Enemy health points
-        self.health_points = 2
+        if health == 0:
+            health = 1
+        self.health_points = health
 
         # Toggle between left & right run anims
         self.left_or_right = None
@@ -88,7 +90,6 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
         # Hit textures
         self.hit_right_textures = []
         self.hit_left_textures = []
-        self.hit_textures = []
         self.hit_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.hit_right_textures, ENEMY_SKELETON_HIT_SPRITES)
@@ -99,13 +100,13 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.hit_left_textures, ENEMY_MUSHROOM_HIT_SPRITES, flip_hor=True)
             self.hit_sprites_len = len(ENEMY_MUSHROOM_HIT_SPRITES)
         elif self.enemy_type == 'slime':
-            load_textures(self.hit_textures, ENEMY_SLIME_HIT_SPRITES)
+            load_textures(self.hit_right_textures, ENEMY_SLIME_HIT_SPRITES)
+            load_textures(self.hit_left_textures, ENEMY_SLIME_HIT_SPRITES, flip_hor=True)
             self.hit_sprites_len = len(ENEMY_SLIME_HIT_SPRITES)
 
         # Dead textures
         self.dead_right_textures = []
         self.dead_left_textures = []
-        self.dead_textures = []
         self.dead_sprites_len = 0
         if self.enemy_type == 'skeleton':
             load_textures(self.dead_right_textures, ENEMY_SKELETON_DEAD_SPRITES)
@@ -116,7 +117,8 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
             load_textures(self.dead_left_textures, ENEMY_MUSHROOM_DEAD_SPRITES, flip_hor=True)
             self.dead_sprites_len = len(ENEMY_MUSHROOM_DEAD_SPRITES)
         elif self.enemy_type == 'slime':
-            load_textures(self.dead_textures, ENEMY_SLIME_DEAD_SPRITES)
+            load_textures(self.dead_right_textures, ENEMY_SLIME_DEAD_SPRITES)
+            load_textures(self.dead_left_textures, ENEMY_SLIME_DEAD_SPRITES, flip_hor=True)
             self.dead_sprites_len = len(ENEMY_SLIME_DEAD_SPRITES)
 
         # Attack textures

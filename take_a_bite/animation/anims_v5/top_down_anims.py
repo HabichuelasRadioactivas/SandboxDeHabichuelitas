@@ -166,15 +166,18 @@ class MyGame(arcade.Window):
                     enemy_hit.hit = True
             else:
                 enemy_hit.attack = True
+                print(f"{enemy_hit.attack_status} --- {len(enemy_hit.attack_right_textures)}")
+                if enemy_hit.attack_status >= len(enemy_hit.attack_right_textures) - 1:
+                    if self.player_sprite.health_points == 1:
+                        self.player_sprite.health_points = 0
+                        print('dead')
+                    else:
+                        self.player_sprite.health_points -= 1
                 enemy_hit.attack_status = 0  # IMPORTANT ALLOW ATTACK ANIMATION TO REPEAT MULTIPLE TIMES
                 enemy_hit.change_x = (-ENEMY_MOVEMENT_SPEED * 19) if enemy_hit.left_or_right == 'right' else (
                         ENEMY_MOVEMENT_SPEED * 19)
                 enemy_hit.change_y = 0
-                if self.player_sprite.health_points == 1:
-                    self.player_sprite.health_points = 0
-                    print('dead')
-                else:
-                    self.player_sprite.health_points -= 1
+
 
         # Enable power up for x amount of seconds and display counter on screen
         if self.player_sprite.power_up == POWERUP_ENABLED:
@@ -257,7 +260,8 @@ class MyGame(arcade.Window):
                 self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up,
                                                                       self.player_sprite.item_picked)
         elif key == arcade.key.X:
-            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK\
+                    and self.player_sprite.change_x == 0 and self.player_sprite.change_y == 0:
                 self.player_sprite.attack = ATTACK
 
     def on_key_release(self, key, modifiers):

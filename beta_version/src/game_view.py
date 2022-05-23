@@ -35,6 +35,7 @@ class Game(arcade.View):
         if self.map_enemies_killed[map_number] is False:
             self.create_enemy('skeleton')
             self.create_enemy('mushroom')
+            self.create_enemy('slime')
         self.engine = None
         self.player_sprite.map_number = map_number
         self.scene = self.maps[map_number]
@@ -77,7 +78,8 @@ class Game(arcade.View):
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
 
     def create_enemy(self, enemy_type='skeleton'):
-        enemy_sprite = Enemy(enemy_type)
+        enemy_strength = random.randint(1, 20) * 0.1
+        enemy_sprite = Enemy(enemy_type, enemy_strength, int(3*enemy_strength))
         enemy_sprite.center_x = random.randint(0, SCREEN_WIDTH)
         enemy_sprite.center_y = random.randint(0, SCREEN_HEIGHT)
         self.enemy_list.append(enemy_sprite)
