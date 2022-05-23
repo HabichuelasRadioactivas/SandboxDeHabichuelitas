@@ -518,3 +518,84 @@ ENEMY_SLIME_HIT_SPRITES = [
     f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop01.png",
     f"{enemies_path}slime{sep}SlimeDamage{sep}SlimeDamageTop03.png",
 ]
+
+ENEMY_KNIGHT_IDLE_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_IDLE{sep}_IDLE_006.png",
+]
+
+ENEMY_KNIGHT_ATTACK_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_ATTACK{sep}_ATTACK_006.png",
+]
+
+ENEMY_KNIGHT_DEAD_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_DIE{sep}_DIE_006.png",
+]
+
+ENEMY_KNIGHT_HIT_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
+]
+
+ENEMY_KNIGHT_RUN_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_RUN{sep}_RUN_006.png",
+]
+
+ENEMY_KNIGHT_WALK_SPRITES = [
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_006.png",
+]
