@@ -26,6 +26,11 @@ MR_BEAN_DIALOGUE = [f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_1.png",
                     f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_3.png",
                     f"{cutscene_path}{sep}mr_bean_dialogue{sep}z_bean.png"]
 
+POST_CREDITS = [f"{cutscene_path}{sep}post_creditos{sep}text_4.png",
+                f"{cutscene_path}{sep}post_creditos{sep}text_5.png",
+                f"{cutscene_path}{sep}post_creditos{sep}text_6.png",
+]
+
 IDLE_DOWN_SPRITES = [
     f"{player_path}idle_anim{sep}tile000.png",
     f"{player_path}idle_anim{sep}tile001.png",
