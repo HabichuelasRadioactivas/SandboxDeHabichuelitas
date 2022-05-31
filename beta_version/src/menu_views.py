@@ -3,7 +3,7 @@ import arcade.gui
 from game_parameters import *
 from game_view import Game
 from friendly_npcs import MrBean
-from load_assets import MR_BEAN_DIALOGUE
+from load_assets import *
 
 class Menu(arcade.View):
     def __init__(self):
@@ -47,6 +47,11 @@ class Menu(arcade.View):
                          font_size=70,
                          font_name="Times New Roman",
                          anchor_x="center", bold=True)
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            self.window.open_story()
+            self.manager.disable()
+
 
 
 class Story(arcade.View):
@@ -219,7 +224,7 @@ class TheEnd(arcade.View):
         if key == arcade.key.ENTER:
             credits = Credits()
             # self.window.show_view(credits)
-            self.window.open_credtis()
+            self.window.open_credits()
 
 
 class Credits(arcade.View):
@@ -262,8 +267,7 @@ class Credits(arcade.View):
         if key == arcade.key.ENTER:
             menu = Menu()
             # self.window.show_view(menu)
-            self.window.reload_game()
-            self.window.open_menu()
+            self.window.open_post_credits()
 
 
 class GameOver(arcade.View):
@@ -291,6 +295,7 @@ class GameOver(arcade.View):
             self.window.reload_game()
             self.window.open_game()
 
+
 class MrBeanCutScene(arcade.View):
     def on_show_view(self):
         self.mr_bean = MrBean()
@@ -300,15 +305,15 @@ class MrBeanCutScene(arcade.View):
 
         self.dialogue_counter = 0
 
-        self.text_1 = arcade.Sprite(MR_BEAN_DIALOGUE[0], 0.75)  # 892x568
+        self.text_1 = arcade.Sprite(MR_BEAN_DIALOGUE[0], 0.8)
         self.text_1.center_x = 892/2 * 0.6
         self.text_1.center_y = SCREEN_HEIGHT - 568/2 * 0.6 - 20
 
-        self.text_2 = arcade.Sprite(MR_BEAN_DIALOGUE[1], 0.75)  # 896x578
+        self.text_2 = arcade.Sprite(MR_BEAN_DIALOGUE[1], 0.8)
         self.text_2.center_x = 896/2 * 0.6
         self.text_2.center_y = SCREEN_HEIGHT - 578/2 * 0.6 - 20
 
-        self.text_3 = arcade.Sprite(MR_BEAN_DIALOGUE[2], 0.75)  # 882x116
+        self.text_3 = arcade.Sprite(MR_BEAN_DIALOGUE[2], 0.8)
         self.text_3.center_x = 882/2 * 0.6
         self.text_3.center_y = SCREEN_HEIGHT - 116/2 * 0.6 - 20
 
@@ -320,8 +325,12 @@ class MrBeanCutScene(arcade.View):
         self.clear()
         if self.dialogue_counter == 0:
             self.text_1.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
         elif self.dialogue_counter == 1:
             self.text_2.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
         elif self.dialogue_counter == 2:
             self.mr_bean.celebrate()
             self.text_3.draw()
@@ -338,3 +347,52 @@ class MrBeanCutScene(arcade.View):
             self.dialogue_counter += 1
 
 
+class PostCredits(arcade.View):
+    def on_show_view(self):
+
+        self.mr_bean = MrBean()
+        self.mr_bean.scale = 1.1
+        self.mr_bean.center_x = SCREEN_WIDTH - 120
+        self.mr_bean.center_y = SCREEN_HEIGHT/2
+
+        self.dialogue_counter = 0
+
+        self.text_4 = arcade.Sprite(POST_CREDITS[0], 1)
+        self.text_4.center_x = 892 / 2 * 0.6 + 20
+        self.text_4.center_y = SCREEN_HEIGHT - 568 / 2 * 0.6 - 20
+
+        self.text_5 = arcade.Sprite(POST_CREDITS[1], 1)  # 896x578
+        self.text_5.center_x = 896 / 2 * 0.6 + 20
+        self.text_5.center_y = SCREEN_HEIGHT - 578 / 2 * 0.6 - 20
+
+        self.text_6 = arcade.Sprite(POST_CREDITS[2], 1)  # 882x116
+        self.text_6.center_x = 882 / 2 * 0.6 + 20
+        self.text_6.center_y = SCREEN_HEIGHT / 2 * 0.6 + 220
+
+    def on_draw(self):
+        self.clear()
+        if self.dialogue_counter == 0:
+            self.text_4.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+
+        elif self.dialogue_counter == 1:
+            self.text_5.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+        elif self.dialogue_counter == 2:
+            self.text_6.draw()
+            self.mr_bean.celebrate()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+        else:
+            self.window.open_game()
+        arcade.set_background_color(arcade.color.WHITE)
+        self.mr_bean.draw()
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            self.dialogue_counter += 1
+        if key == arcade.key.ENTER and self.dialogue_counter == 3:
+            self.window.reload_game()
+            self.window.open_menu()
