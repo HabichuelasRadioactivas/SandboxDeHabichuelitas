@@ -4,10 +4,13 @@ from game_parameters import *
 from game_view import Game
 from friendly_npcs import MrBean
 from load_assets import *
+from sound_player import SoundPlayer
 
 class Menu(arcade.View):
     def __init__(self):
         super().__init__()
+
+        self.sound_player = SoundPlayer()
 
         self.manager = arcade.gui.UIManager()
         self.manager.enable()
@@ -51,8 +54,6 @@ class Menu(arcade.View):
         if key == arcade.key.ENTER:
             self.window.open_story()
             self.manager.disable()
-
-
 
 class Story(arcade.View):
 
@@ -133,7 +134,6 @@ class Controls(arcade.View):
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
-            # self.window.show_view(game)
             self.window.open_game()
 
 
@@ -142,7 +142,9 @@ class Pause(arcade.View):
         super().__init__()
 
     def on_show_view(self):
+        self.sound_player = SoundPlayer()
         arcade.set_background_color(arcade.color.WHITE)
+        self.sound_player.play_sound(sound_name="heroic_background_music")
 
     def on_draw(self):
         self.clear()
@@ -182,10 +184,12 @@ class Pause(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ESCAPE:  # resume game
             # self.window.show_view(self.game_view)
+            self.sound_player.pause_sound(sound_name="heroic_background_music")
             self.window.open_game()
         elif key == arcade.key.ENTER:  # reset game
             menu = Menu()
             # self.window.show_view(menu)
+            self.sound_player.pause_sound(sound_name="heroic_background_music")
             self.window.reload_game()
             self.window.open_menu()
 

@@ -7,6 +7,8 @@ from map import load_map
 from player import Player
 import friendly_npcs
 from enemies import Enemy
+from finalKnight import FinalKnight
+from sound_player import SoundPlayer
 
 
 class Game(arcade.View):
@@ -73,6 +75,7 @@ class Game(arcade.View):
         self.player_list.append(self.player_sprite)
 
         self.enemy_list = arcade.SpriteList()
+        self.final_knight = FinalKnight()
 
         self.change_map(1, 150, 550)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
@@ -94,6 +97,8 @@ class Game(arcade.View):
 
     def first_map_logic(self):
         self.start_engine()
+        if self.final_knight not in self.enemy_list:
+            self.enemy_list.append(self.final_knight)
         if self.mr_bean_sprite not in self.npc_list:
             self.npc_list.append(self.mr_bean_sprite)
         if self.player_at_first_map_exit():
