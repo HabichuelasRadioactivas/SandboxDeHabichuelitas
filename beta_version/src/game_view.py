@@ -83,7 +83,7 @@ class Game(arcade.View):
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
 
     def create_enemy(self, enemy_type='skeleton'):
-        enemy_strength = random.randint(1, 20) * 0.1
+        enemy_strength = random.randint(4, 20) * 0.1
         enemy_sprite = Enemy(enemy_type, enemy_strength, int(3*enemy_strength))
         enemy_sprite.center_x = random.randint(0, SCREEN_WIDTH)
         enemy_sprite.center_y = random.randint(0, SCREEN_HEIGHT)
@@ -99,8 +99,6 @@ class Game(arcade.View):
 
     def first_map_logic(self):
         self.start_engine()
-        if self.final_knight not in self.enemy_list:
-            self.enemy_list.append(self.final_knight)
         if self.mr_bean_sprite not in self.npc_list:
             self.npc_list.append(self.mr_bean_sprite)
         if self.player_at_first_map_exit():
@@ -157,6 +155,8 @@ class Game(arcade.View):
             if self.player_at_third_map_entry():
                 self.change_map(2, 400, 60)
             elif self.player_at_third_map_exit():
+                if self.final_knight not in self.enemy_list:
+                    self.enemy_list.append(self.final_knight)
                 self.change_map(4, 20, 200)
 
     """--------------------------------------------------------------------------------------------------------------"""
@@ -175,7 +175,7 @@ class Game(arcade.View):
             if self.player_at_fourth_map_entry():
                 self.change_map(3, SCREEN_WIDTH - 20, 200)
             elif self.player_at_fourth_map_exit():
-                self.change_map(5, SCREEN_WIDTH / 2, SCREEN_HEIGHT - PLAYER_HEIGHT - 5)
+                self.change_map(5, 20, 350)
 
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""

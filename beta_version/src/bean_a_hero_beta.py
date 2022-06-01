@@ -3,7 +3,7 @@ import arcade
 from game_parameters import *
 from load_assets import *
 from game_view import Game
-from menu_views import Menu, Story, Controls, TheEnd, Credits, GameOver, Pause, MrBeanCutScene
+from menu_views import *
 
 
 class BeanAHeroBeta(arcade.Window):
@@ -47,6 +47,9 @@ class BeanAHeroBeta(arcade.Window):
 
     def open_bean_cutscene(self):
         self.show_view(MrBeanCutScene())
+
+    def open_post_credits(self):
+        self.show_view(PostCredits())
 
     def reload_game(self):
         self.game = Game()
