@@ -11,6 +11,10 @@ class Menu(arcade.View):
         super().__init__()
 
         self.sound_player = SoundPlayer()
+        
+        self.back = arcade.Sprite(BACKGROUND[0], 1)
+        self.back.center_x = SCREEN_WIDTH / 2
+        self.back.center_y = SCREEN_HEIGHT / 2
 
         self.manager = arcade.gui.UIManager()
         self.manager.enable()
@@ -41,6 +45,8 @@ class Menu(arcade.View):
 
     def on_draw(self):
         self.clear()
+        
+        self.back.draw()
 
         self.manager.draw()
         arcade.draw_text("Bean a Hero",
