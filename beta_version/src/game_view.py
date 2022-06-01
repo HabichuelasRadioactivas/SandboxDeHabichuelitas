@@ -326,10 +326,9 @@ class Game(arcade.View):
                 self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up,
                                                                       self.player_sprite.item_picked)
         elif key == arcade.key.K:
-            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK and self.player_sprite.change_x == 0 and self.player_sprite.change_y == 0:
                 self.player_sprite.attack = ATTACK
-            self.player_sprite.attack = ATTACK
-            # self.sound_player.play_sound(sound_name="attack_sound")
+                # self.sound_player.play_sound(sound_name="attack_sound")
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 
