@@ -16,12 +16,9 @@ mr_bean_path = file_path + sep + "assets" + sep + "sprites" + sep + "mr_bean" + 
 enemies_path = file_path + sep + "assets" + sep + "sprites" + sep + "enemies" + sep
 map_path = file_path + sep + "assets" + sep + "tilemaps" + sep
 cutscene_path = file_path + sep+ "assets" + sep + "cutscenes" + sep
-<<<<<<< HEAD
 sound_path = file_path + sep + "assets" + sep + "soud" + sep
 icons_path = file_path + sep + "assets" + sep + "sprites" + sep + "icons" + sep
-=======
 sound_path = file_path + sep + "assets" + sep + "sound" + sep
->>>>>>> 4f199567b0800391342eaf307fe606816310e58d
 
 MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
                    f"{mr_bean_path}MrBeanOnOneFoot.png",
