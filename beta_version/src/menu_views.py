@@ -153,6 +153,11 @@ class Controls(arcade.View):
 class Pause(arcade.View):
     def __init__(self):
         super().__init__()
+                
+        self.back = arcade.Sprite(BACKGROUND[0], 1)
+        self.back.center_x = SCREEN_WIDTH / 2
+        self.back.center_y = SCREEN_HEIGHT / 2
+
 
     def on_show_view(self):
         self.sound_player = SoundPlayer()
@@ -161,6 +166,8 @@ class Pause(arcade.View):
 
     def on_draw(self):
         self.clear()
+        
+        self.back.draw()
 
         # Draw player, for effect, on pause screen.
         # The previous View (GameView) was passed in
@@ -176,9 +183,10 @@ class Pause(arcade.View):
                                           top=player_sprite.top,
                                           bottom=player_sprite.bottom,
                                           color=arcade.color.ORANGE + (200,))
+        """
         arcade.draw_text("PAUSA", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 50,
                          arcade.color.BLACK, font_size=50, anchor_x="center", font_name="Times New Roman")
-        """
+        
 
         # Show tip to return or reset
         arcade.draw_text("Presiona ESC para Volver",
