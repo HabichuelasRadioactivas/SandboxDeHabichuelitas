@@ -35,6 +35,8 @@ class Menu(arcade.View):
 
         self.manager.add(arcade.gui.UIAnchorWidget(anchor_x="center_x", anchor_y="center_y", child=self.v_box))
 
+        #arcade.play_sound(arcade.load_sound(BACKGROUND_MUSIC))
+
     def on_click_start(self, event):
         story = Story()
         # self.window.show_view(story)

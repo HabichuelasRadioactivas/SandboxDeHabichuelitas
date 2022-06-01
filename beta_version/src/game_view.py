@@ -328,7 +328,7 @@ class Game(arcade.View):
         elif key == arcade.key.K:
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK and self.player_sprite.change_x == 0 and self.player_sprite.change_y == 0:
                 self.player_sprite.attack = ATTACK
-                # self.sound_player.play_sound(sound_name="attack_sound")
+                self.sound_player.play_sound(sound_name="attack_sound")
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 
@@ -339,6 +339,7 @@ class Game(arcade.View):
             self.player_sprite.change_x = 0
         elif key == arcade.key.K:
             self.player_sprite.attack = WAITING_ATTACK
+
         elif key == arcade.key.P:
             self.player_sprite.picking = PICKING
 
