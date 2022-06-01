@@ -6,12 +6,13 @@ from friendly_npcs import MrBean
 from load_assets import *
 from sound_player import SoundPlayer
 
+
 class Menu(arcade.View):
     def __init__(self):
         super().__init__()
 
         self.sound_player = SoundPlayer()
-        
+
         self.back = arcade.Sprite(BACKGROUND[0], 1)
         self.back.center_x = SCREEN_WIDTH / 2
         self.back.center_y = SCREEN_HEIGHT / 2
@@ -45,7 +46,7 @@ class Menu(arcade.View):
 
     def on_draw(self):
         self.clear()
-        
+
         self.back.draw()
 
         self.manager.draw()
@@ -56,10 +57,12 @@ class Menu(arcade.View):
                          font_size=70,
                          font_name="Times New Roman",
                          anchor_x="center", bold=True)
+
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             self.window.open_story()
             self.manager.disable()
+
 
 class Story(arcade.View):
 
@@ -71,9 +74,10 @@ class Story(arcade.View):
         arcade.draw_text("Nos encontramos en la época medieval, una época con muchos habitantes y poco suministro de",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 160, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("alimento para la gran cantidad de población que vivían en los pueblos de estos reinos antiguos.",
-                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 140, arcade.color.WHITE, 15, anchor_x="center",
-                         font_name="Times New Roman")
+        arcade.draw_text(
+            "alimento para la gran cantidad de población que vivían en los pueblos de estos reinos antiguos.",
+            SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 140, arcade.color.WHITE, 15, anchor_x="center",
+            font_name="Times New Roman")
         arcade.draw_text("La gente desesperada, comenzaba a consumir cualquier tipo de alimento que encontraban.",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
@@ -116,7 +120,7 @@ class Controls(arcade.View):
     def on_draw(self):
         self.clear()
         arcade.draw_text("Controles", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 200,
-                         arcade.color.WHITE, 70, anchor_x="center", font_name="Times New Roman" )
+                         arcade.color.WHITE, 70, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("W", SCREEN_WIDTH / 2 - 61, SCREEN_HEIGHT / 2 + 100,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("A S D", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 + 80,
@@ -140,6 +144,7 @@ class Controls(arcade.View):
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
+            self.window.reload_game()
             self.window.open_game()
 
 
@@ -210,16 +215,18 @@ class TheEnd(arcade.View):
         arcade.draw_text("Días después de haber derrotado al ejercito del rey tirano,",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 120, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
-        arcade.draw_text("la paz comenzaba a reinar en todos los rincones de aquel antiguo reino y la comida ya no escaseaba,",
-                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 100, arcade.color.WHITE, 15, anchor_x="center",
-                         font_name="Times New Roman")
+        arcade.draw_text(
+            "la paz comenzaba a reinar en todos los rincones de aquel antiguo reino y la comida ya no escaseaba,",
+            SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 100, arcade.color.WHITE, 15, anchor_x="center",
+            font_name="Times New Roman")
         arcade.draw_text("pues entre los tesoros del rey había un montón de semillas y de todo tipo de alimentos.",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 80, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
 
-        arcade.draw_text("Sin embargo, ciertas palabras seguían resonando en la cabeza del héroe que había traído la paz",
-                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 20, arcade.color.WHITE, 15, anchor_x="center",
-                         font_name="Times New Roman")
+        arcade.draw_text(
+            "Sin embargo, ciertas palabras seguían resonando en la cabeza del héroe que había traído la paz",
+            SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 20, arcade.color.WHITE, 15, anchor_x="center",
+            font_name="Times New Roman")
         arcade.draw_text("“Perdóneme Gran Señor, le he fallado…”",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, arcade.color.WHITE, 15, anchor_x="center",
                          font_name="Times New Roman")
@@ -258,7 +265,7 @@ class Credits(arcade.View):
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 40, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
         arcade.draw_text("Ingeniero de Sonido.................................Helena Pérez",
-                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 , arcade.color.WHITE, 16, anchor_x="center",
+                         SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, arcade.color.WHITE, 16, anchor_x="center",
                          font_name="Times New Roman")
         arcade.draw_text("Programador........................................Chenyu Castillo",
                          SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 40, arcade.color.WHITE, 16, anchor_x="center",
@@ -311,25 +318,25 @@ class MrBeanCutScene(arcade.View):
         self.mr_bean = MrBean()
         self.mr_bean.scale = 1.1
         self.mr_bean.center_x = SCREEN_WIDTH - 120
-        self.mr_bean.center_y = SCREEN_HEIGHT/2
+        self.mr_bean.center_y = SCREEN_HEIGHT / 2
 
         self.dialogue_counter = 0
 
         self.text_1 = arcade.Sprite(MR_BEAN_DIALOGUE[0], 0.8)
-        self.text_1.center_x = 892/2 * 0.6
-        self.text_1.center_y = SCREEN_HEIGHT - 568/2 * 0.6 - 20
+        self.text_1.center_x = 892 / 2 * 0.6
+        self.text_1.center_y = SCREEN_HEIGHT - 568 / 2 * 0.6 - 20
 
         self.text_2 = arcade.Sprite(MR_BEAN_DIALOGUE[1], 0.8)
-        self.text_2.center_x = 896/2 * 0.6
-        self.text_2.center_y = SCREEN_HEIGHT - 578/2 * 0.6 - 20
+        self.text_2.center_x = 896 / 2 * 0.6
+        self.text_2.center_y = SCREEN_HEIGHT - 578 / 2 * 0.6 - 20
 
         self.text_3 = arcade.Sprite(MR_BEAN_DIALOGUE[2], 0.8)
-        self.text_3.center_x = 882/2 * 0.6
-        self.text_3.center_y = SCREEN_HEIGHT - 116/2 * 0.6 - 20
+        self.text_3.center_x = 882 / 2 * 0.6
+        self.text_3.center_y = SCREEN_HEIGHT - 116 / 2 * 0.6 - 20
 
         self.bean = arcade.Sprite(MR_BEAN_DIALOGUE[3], 0.5)
-        self.bean.center_x = SCREEN_WIDTH/2 - 50
-        self.bean.center_y = SCREEN_HEIGHT/2
+        self.bean.center_x = SCREEN_WIDTH / 2 - 50
+        self.bean.center_y = SCREEN_HEIGHT / 2
 
     def on_draw(self):
         self.clear()
@@ -363,7 +370,7 @@ class PostCredits(arcade.View):
         self.mr_bean = MrBean()
         self.mr_bean.scale = 1.1
         self.mr_bean.center_x = SCREEN_WIDTH - 120
-        self.mr_bean.center_y = SCREEN_HEIGHT/2
+        self.mr_bean.center_y = SCREEN_HEIGHT / 2
 
         self.dialogue_counter = 0
 
@@ -404,5 +411,4 @@ class PostCredits(arcade.View):
         if key == arcade.key.ENTER:
             self.dialogue_counter += 1
         if self.dialogue_counter == 3:
-            self.window.reload_game()
             self.window.open_menu()
