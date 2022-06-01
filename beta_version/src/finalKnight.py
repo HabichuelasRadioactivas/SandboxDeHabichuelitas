@@ -1,7 +1,7 @@
 from load_assets import *
 from anims_state_updater import *
 
-class Enemy(arcade.AnimatedTimeBasedSprite):
+class FinalKnight(arcade.AnimatedTimeBasedSprite):
     """Enemy Class"""
     def __init__(self, enemy_type='finalKnight'):
         super().__init__()
@@ -14,6 +14,8 @@ class Enemy(arcade.AnimatedTimeBasedSprite):
 
         # Set initial attack state
         self.attack = False
+
+        self.health_points = 6
 
         # Texture scaling
         self.scale = 0.1

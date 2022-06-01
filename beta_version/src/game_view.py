@@ -14,6 +14,8 @@ from sound_player import SoundPlayer
 class Game(arcade.View):
     def __init__(self):
         super().__init__()
+
+        self.sound_player = SoundPlayer()
         # Set up the player info
         self.player_list = arcade.SpriteList()
         self.player_sprite = None
@@ -249,7 +251,6 @@ class Game(arcade.View):
                 enemy_hit.change_y = 0
                 if self.player_sprite.health_points == 1:
                     self.player_sprite.health_points = 0
-                    print("dead")
                     self.window.open_game_over()
                 else:
                     self.player_sprite.health_points -= 1
@@ -306,6 +307,7 @@ class Game(arcade.View):
             self.player_sprite.change_x = MOVEMENT_SPEED
         elif key == arcade.key.K:
             self.player_sprite.attack = ATTACK
+            # self.sound_player.play_sound(sound_name="attack_sound")
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 

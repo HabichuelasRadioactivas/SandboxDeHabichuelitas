@@ -570,20 +570,20 @@ ENEMY_KNIGHT_DEAD_SPRITES = [
 ]
 
 ENEMY_KNIGHT_HIT_SPRITES = [
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_006.png",
 ]
 
 ENEMY_KNIGHT_RUN_SPRITES = [
