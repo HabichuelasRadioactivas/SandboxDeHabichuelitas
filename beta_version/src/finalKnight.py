@@ -1,6 +1,12 @@
 from load_assets import *
 from anims_state_updater import *
 
+BOSS_STATE = 0
+BOSS_SCALE = 0.1
+BOSS_MOVEMENT_SPEED = 2
+BOSS_HEALTH_POINTS = 10
+
+
 class FinalKnight(arcade.AnimatedTimeBasedSprite):
     """Enemy Class"""
     def __init__(self, enemy_type='finalKnight'):
@@ -15,10 +21,11 @@ class FinalKnight(arcade.AnimatedTimeBasedSprite):
         # Set initial attack state
         self.attack = False
 
-        self.health_points = 6
-
-        # Texture scaling
-        self.scale = 0.1
+        # Set state
+        self.state = BOSS_STATE
+        self.scale = BOSS_SCALE
+        self.movement_speed = BOSS_MOVEMENT_SPEED
+        self.health_points = BOSS_HEALTH_POINTS
 
         # Initial animations status
         self.idle_status = 0
@@ -82,6 +89,12 @@ class FinalKnight(arcade.AnimatedTimeBasedSprite):
         # Move enemy
         self.center_x += self.change_x
         self.center_y += self.change_y
+
+        if self.health_points <= 5:
+            self.state = 1
+        if self.state == 1:
+            self.scale = BOSS_SCALE * 1.2
+            self.movement_speed = BOSS_MOVEMENT_SPEED * 2
 
         # out-of-bounds
         if self.left < 0:
