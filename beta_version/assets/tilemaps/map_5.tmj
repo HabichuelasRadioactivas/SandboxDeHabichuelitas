@@ -4,7 +4,7 @@
  "layers":[
         {
          "compression":"zlib",
-         "data":"eJytkjsOgkAYhEFtfDQqjY9mDQ1qg1aQ4Ck4AVeQG+jBnWI3mUx+sphQfMXkn8xmJpsmSTIDc7AAqWgHLh6+dwP+JViBNdgYugBXn8f3bsC\/BTuwBxnoRZfg4fMy8neig\/8t9NQvEDq\/wAEcwQmcDf0Rvr4f4yhT91JdeEIvC0c7xvYuDSrfo6G88J7upVr7t6Jv1LUy\/KpjezSUdx\/hj+3B\/9m6x\/6fav7P1j22n2r+z\/kE+9XU2br\/u9+T8qbYr6YN8xH+H44+Hhs=",
+         "data":"eJytkr0OgkAQhPGnQW1UGn8aDA1qg1aQ4MPwCvIG+uBOsZdMJksOE4qvmOzcXmaysyRJ5mABlmAmOgcXg+fdgD8FK7AGG0eX4Gr7eN4N+LdgB\/YgA73p1HQFHrYvI38nOrx\/Cz3lC4TML3AAR3ACZ0d\/hK\/lY3LaqX2pLo2QyyOnHmN9Vw615WhpX\/hP+1Kt+VPRN8paO37VsT5a2ncf4Y\/1wffszWP3p5rv2ZvH+lPN91xM0F9Dmb35v\/09ad8U\/TXUYTHC\/wOvrx3G",
          "encoding":"base64",
          "height":15,
          "id":1,
@@ -18,7 +18,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJytk9EOgjAMRbvpi7iX4TRhMP\/\/M+1im1ybGjOE5CTQlkNZt0BEgYnMiTkD0clpTON35gH5Hr8wE3NlksST1NucxtTXmKfx6TduTJH3yo\/+7P\/o\/ejl+RI8H+ErdKxv+9NnZ4S+nluYyqySW6HG82V6z1DniL68w9frm3Gqb9nZHzrtfh71Raj\/tp9xLUZ8G32e0eCshdZNjm8S0JcAnX2D3rVudnyzgL4CZMn3s2vXsTq+Cmgd8gLFrAwf",
+         "data":"eJytk9EOgjAMRbvpi7gXZZqAzJ\/Uz\/PjvItrUpqOZeqSE6BtDqMdjogc8GAH9gJv5DjG8Qu4inyOH8AAjiCUeCj1Oscx9iVwVz5+xwgieLltrO\/h+4fiSdvL8gXx3LssX\/yzb\/nRp2ckfa3eW74TfWbIc5S+nJvADG4lx9eaL9cn5WTf9IWP95DIPs+9Pi\/qa+dZ9qLHt9D6H3VGL1q+QfmCgGefxN5bvrPyRUHubc6PRh9rvlnVSd5OVybW",
          "encoding":"base64",
          "height":15,
          "id":2,
@@ -32,7 +32,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYCAPJOEQD0bDIRSahw5SoLQHI3XMAwFbItQUAfEiIF4MxEuAeCkQF5NgBzpoAuJNQLwZiLcA8VYgbqbAPGTgSyBsiAHo4esJ5ZMbv8hmIJtdjIZLSHQjul+b0XALCebBgD\/QTHdGCI1uHwiEERm+nljUwcTcGRF2kQrQ\/QwzA1v4EmOOO5J6DzQxYv1KLwAA4H8Y1Q==",
+         "data":"eJxjYCAPJOEQD0bDIRSahw5SoPQeRuqYBwK2RKgpAuJFQLwYiJcA8VIgLibBDnTQBMSbgHgzEG8B4q1A3EyBecjAl0DYEAM80MzwpIKZMDOQzSY3vcDMQfdrMRouIcOd\/kAz3RkhNChOkHELEIcRGRbYwgwm5s6IsItUgO5nmBnYwpcYc9yR1HugiRHrV3oBADs8GQA=",
          "encoding":"base64",
          "height":15,
          "id":3,
@@ -62,6 +62,10 @@
         {
          "firstgid":321,
          "source":"Fruits.tsx"
+        }, 
+        {
+         "firstgid":345,
+         "source":"TX Plant.tsx"
         }],
  "tilewidth":32,
  "type":"map",
