@@ -310,11 +310,13 @@ class Game(arcade.View):
                 self.player_sprite.face_direction = FACING_TOP
                 self.player_sprite.change_y = normal_or_boosted_speed(self.player_sprite.power_up,
                                                                       self.player_sprite.item_picked)
+                self.sound_player.play_sound(sound_name="player_walk_sound")
         elif key == arcade.key.S:
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
                 self.player_sprite.face_direction = FACING_BOTTOM
                 self.player_sprite.change_y = -normal_or_boosted_speed(self.player_sprite.power_up,
                                                                        self.player_sprite.item_picked)
+                #self.sound_player.play_sound(sound_name="player_walk_sound")
         elif key == arcade.key.A:
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
                 self.player_sprite.face_direction = FACING_LEFT
@@ -342,6 +344,7 @@ class Game(arcade.View):
 
         elif key == arcade.key.P:
             self.player_sprite.picking = PICKING
+
 
         # View character powerup, to change player use marked properties below
         elif key == arcade.key.T:
