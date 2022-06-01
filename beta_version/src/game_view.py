@@ -7,13 +7,20 @@ from map import load_map
 from player import Player
 import friendly_npcs
 from enemies import Enemy
+<<<<<<< HEAD
 from utils import normal_or_boosted_speed, draw_player_health, set_ability_icon
 from object_tags import *
+=======
+from finalKnight import FinalKnight
+from sound_player import SoundPlayer
+>>>>>>> 4f199567b0800391342eaf307fe606816310e58d
 
 
 class Game(arcade.View):
     def __init__(self):
         super().__init__()
+
+        self.sound_player = SoundPlayer()
         # Set up the player info
         self.ability_icon = None
         self.player_list = arcade.SpriteList()
@@ -80,13 +87,19 @@ class Game(arcade.View):
         self.player_list.append(self.player_sprite)
 
         self.enemy_list = arcade.SpriteList()
+        self.final_knight = FinalKnight()
 
         self.change_map(1, 150, 550)
         self.engine = arcade.PhysicsEngineSimple(self.player_sprite, self.scene.get_sprite_list("colisiones"))
 
     def create_enemy(self, enemy_type='skeleton'):
+<<<<<<< HEAD
         enemy_strength = random.randint(1, 20) * 0.1
         enemy_sprite = Enemy(enemy_type, enemy_strength, int(3 * enemy_strength))
+=======
+        enemy_strength = random.randint(4, 20) * 0.1
+        enemy_sprite = Enemy(enemy_type, enemy_strength, int(3*enemy_strength))
+>>>>>>> 4f199567b0800391342eaf307fe606816310e58d
         enemy_sprite.center_x = random.randint(0, SCREEN_WIDTH)
         enemy_sprite.center_y = random.randint(0, SCREEN_HEIGHT)
         self.enemy_list.append(enemy_sprite)
@@ -157,6 +170,8 @@ class Game(arcade.View):
             if self.player_at_third_map_entry():
                 self.change_map(2, 400, 60)
             elif self.player_at_third_map_exit():
+                if self.final_knight not in self.enemy_list:
+                    self.enemy_list.append(self.final_knight)
                 self.change_map(4, 20, 200)
 
     """--------------------------------------------------------------------------------------------------------------"""
@@ -175,7 +190,7 @@ class Game(arcade.View):
             if self.player_at_fourth_map_entry():
                 self.change_map(3, SCREEN_WIDTH - 20, 200)
             elif self.player_at_fourth_map_exit():
-                self.change_map(5, SCREEN_WIDTH / 2, SCREEN_HEIGHT - PLAYER_HEIGHT - 5)
+                self.change_map(5, 20, 350)
 
     """--------------------------------------------------------------------------------------------------------------"""
     """--------------------------------------------------------------------------------------------------------------"""
@@ -254,7 +269,6 @@ class Game(arcade.View):
                 enemy_hit.change_y = 0
                 if self.player_sprite.health_points == 1:
                     self.player_sprite.health_points = 0
-                    print("dead")
                     self.window.open_game_over()
                 else:
                     self.player_sprite.health_points -= 1
@@ -318,8 +332,13 @@ class Game(arcade.View):
                 self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up,
                                                                       self.player_sprite.item_picked)
         elif key == arcade.key.K:
+<<<<<<< HEAD
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
                 self.player_sprite.attack = ATTACK
+=======
+            self.player_sprite.attack = ATTACK
+            # self.sound_player.play_sound(sound_name="attack_sound")
+>>>>>>> 4f199567b0800391342eaf307fe606816310e58d
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 

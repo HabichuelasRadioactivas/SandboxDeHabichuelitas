@@ -16,8 +16,12 @@ mr_bean_path = file_path + sep + "assets" + sep + "sprites" + sep + "mr_bean" + 
 enemies_path = file_path + sep + "assets" + sep + "sprites" + sep + "enemies" + sep
 map_path = file_path + sep + "assets" + sep + "tilemaps" + sep
 cutscene_path = file_path + sep+ "assets" + sep + "cutscenes" + sep
+<<<<<<< HEAD
 sound_path = file_path + sep + "assets" + sep + "soud" + sep
 icons_path = file_path + sep + "assets" + sep + "sprites" + sep + "icons" + sep
+=======
+sound_path = file_path + sep + "assets" + sep + "sound" + sep
+>>>>>>> 4f199567b0800391342eaf307fe606816310e58d
 
 MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
                    f"{mr_bean_path}MrBeanOnOneFoot.png",
@@ -665,20 +669,20 @@ ENEMY_KNIGHT_DEAD_SPRITES = [
 ]
 
 ENEMY_KNIGHT_HIT_SPRITES = [
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_000.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_001.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_002.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_003.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_004.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_005.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
-    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}_HURT_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_000.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_001.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_002.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_003.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_004.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_005.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_006.png",
+    f"{enemies_path}2_KNIGHT{sep}_HURT{sep}HURT_006.png",
 ]
 
 ENEMY_KNIGHT_RUN_SPRITES = [
@@ -701,4 +705,4 @@ ENEMY_KNIGHT_WALK_SPRITES = [
     f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_006.png",
 ]
 
-BACKGROUND_MUSIC = f"hola"
+BACKGROUND_MUSIC = f"{sound_path}heroic-story-drums-ampamp-bass-9827.mp3"

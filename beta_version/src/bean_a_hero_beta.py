@@ -1,9 +1,9 @@
 import arcade
 
 from game_parameters import *
-import load_assets
+from load_assets import *
 from game_view import Game
-from menu_views import Menu, Story, Controls, TheEnd, Credits, GameOver, Pause, MrBeanCutScene
+from menu_views import *
 
 
 class BeanAHeroBeta(arcade.Window):
@@ -15,9 +15,11 @@ class BeanAHeroBeta(arcade.Window):
         self.game.setup()
         self.status = 1
         self.set_update_rate(1 / 35)  # TODO the engine increases the update rate. Has to be fixed
+<<<<<<< HEAD
         self.background_music = arcade.load_sound('../assets/sound/heroic-story-drums-ampamp-bass-9827.mp3')
+=======
+>>>>>>> 4f199567b0800391342eaf307fe606816310e58d
         self.open_menu()
-
 
     def on_update(self, delta_time):
         pass
@@ -49,6 +51,9 @@ class BeanAHeroBeta(arcade.Window):
 
     def open_bean_cutscene(self):
         self.show_view(MrBeanCutScene())
+
+    def open_post_credits(self):
+        self.show_view(PostCredits())
 
     def reload_game(self):
         self.game = Game()
