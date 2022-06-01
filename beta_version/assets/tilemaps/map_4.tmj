@@ -18,7 +18,21 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYGBgSGNiwABJQLwCizgh4AbUU8aEMLMNSF9jgphHDghjQpiZAsTTmCBmkmteCBPETBAogdIgM4uQ1CwH4mI0OhyII0mwpwmJvR2Im9HodCDOJMP9+MCoeaPmwUAQErsdB+4kwhxQ3n1GQX5Lg+Z\/NygG8b9BzfMgo3wBAIoTHnc=",
+         "data":"eJxjYBgFAwUiWahnVgbQrCggTqCimSD3JVLRvESoG6kFMqjo30ygOSFUdNsooA0AAByhBKY=",
+         "encoding":"base64",
+         "height":15,
+         "id":3,
+         "name":"detalles",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":20,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYGBgSGNiwABJQLwCKL6EmYHBDIgXMUPYIGwCpRchicNoN6CeMiaEmW1A+hoTxDxSAci8MCaEmSlAPI0JYia55oUwQcwEgRIoDTKzCEndciAuRqPDgTiSBLuakNjbgbgZjU4H4kwy\/IANOLNAaGqZ50kl87yA5ngDsQ+VzPMFmuMHxP5UMi8AaE4gEAdROfxggNbmgdIzLhCExG7HgTuJMA+Ud5+Rmd9AZUIaNP+7QTGI\/w1qngeWcgcZpEH1wMogEA0AVvYuUw==",
          "encoding":"base64",
          "height":15,
          "id":2,
@@ -30,7 +44,7 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":3,
+ "nextlayerid":4,
  "nextobjectid":1,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -52,6 +66,18 @@
         {
          "firstgid":577,
          "source":"Props.tsx"
+        }, 
+        {
+         "firstgid":833,
+         "source":"TX Plant.tsx"
+        }, 
+        {
+         "firstgid":1089,
+         "source":"TronoNuevoCorrect.tsx"
+        }, 
+        {
+         "firstgid":1107,
+         "source":"Fruits.tsx"
         }],
  "tilewidth":32,
  "type":"map",
