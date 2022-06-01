@@ -403,6 +403,6 @@ class PostCredits(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             self.dialogue_counter += 1
-        if key == arcade.key.ENTER and self.dialogue_counter == 3:
+        if self.dialogue_counter == 3:
             self.window.reload_game()
             self.window.open_menu()
