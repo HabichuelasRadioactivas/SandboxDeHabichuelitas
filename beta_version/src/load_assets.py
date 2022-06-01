@@ -16,6 +16,7 @@ mr_bean_path = file_path + sep + "assets" + sep + "sprites" + sep + "mr_bean" + 
 enemies_path = file_path + sep + "assets" + sep + "sprites" + sep + "enemies" + sep
 map_path = file_path + sep + "assets" + sep + "tilemaps" + sep
 cutscene_path = file_path + sep+ "assets" + sep + "cutscenes" + sep
+sound_path = file_path + sep + "assets" + sep + "soud" + sep
 
 MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
                    f"{mr_bean_path}MrBeanOnOneFoot.png",
@@ -604,3 +605,5 @@ ENEMY_KNIGHT_WALK_SPRITES = [
     f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_005.png",
     f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_006.png",
 ]
+
+BACKGROUND_MUSIC = f"hola"
