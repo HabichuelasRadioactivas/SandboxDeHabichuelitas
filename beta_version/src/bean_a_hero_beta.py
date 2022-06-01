@@ -15,7 +15,7 @@ class BeanAHeroBeta(arcade.Window):
         self.game.setup()
         self.status = 1
         self.set_update_rate(1 / 35)  # TODO the engine increases the update rate. Has to be fixed
-        self.background_music = arcade.load_sound()
+        self.background_music = arcade.load_sound('../assets/sound/heroic-story-drums-ampamp-bass-9827.mp3')
         self.open_menu()
 
 

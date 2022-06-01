@@ -7,12 +7,15 @@ from map import load_map
 from player import Player
 import friendly_npcs
 from enemies import Enemy
+from utils import normal_or_boosted_speed, draw_player_health, set_ability_icon
+from object_tags import *
 
 
 class Game(arcade.View):
     def __init__(self):
         super().__init__()
         # Set up the player info
+        self.ability_icon = None
         self.player_list = arcade.SpriteList()
         self.player_sprite = None
 
@@ -53,6 +56,10 @@ class Game(arcade.View):
         self.player_list.draw()
         self.enemy_list.draw()
         self.npc_list.draw()
+        draw_player_health(self)
+
+        if self.ability_icon is not None:
+            self.ability_icon.draw()
 
     def setup(self):
         # Creating the scene
@@ -79,7 +86,7 @@ class Game(arcade.View):
 
     def create_enemy(self, enemy_type='skeleton'):
         enemy_strength = random.randint(1, 20) * 0.1
-        enemy_sprite = Enemy(enemy_type, enemy_strength, int(3*enemy_strength))
+        enemy_sprite = Enemy(enemy_type, enemy_strength, int(3 * enemy_strength))
         enemy_sprite.center_x = random.randint(0, SCREEN_WIDTH)
         enemy_sprite.center_y = random.randint(0, SCREEN_HEIGHT)
         self.enemy_list.append(enemy_sprite)
@@ -90,7 +97,7 @@ class Game(arcade.View):
     def player_at_first_map_exit(self):
         # return False
         return (SCREEN_WIDTH - PLAYER_WIDTH - 6 <= self.player_sprite.center_x < SCREEN_WIDTH) and (
-                    330 < self.player_sprite.center_y < 390)
+                330 < self.player_sprite.center_y < 390)
 
     def first_map_logic(self):
         self.start_engine()
@@ -223,6 +230,9 @@ class Game(arcade.View):
         if self.engine is not None:
             self.engine.update()
 
+        if self.player_sprite.power_up == POWERUP_ENABLED:
+            self.ability_icon = set_ability_icon(self.player_sprite.item_picked)
+
         enemies_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.enemy_list)
 
         for enemy_hit in enemies_hit_list:
@@ -288,19 +298,28 @@ class Game(arcade.View):
 
     def on_key_press(self, key, modifiers):
         if key == arcade.key.W:
-            self.player_sprite.face_direction = FACING_TOP
-            self.player_sprite.change_y = MOVEMENT_SPEED
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+                self.player_sprite.face_direction = FACING_TOP
+                self.player_sprite.change_y = normal_or_boosted_speed(self.player_sprite.power_up,
+                                                                      self.player_sprite.item_picked)
         elif key == arcade.key.S:
-            self.player_sprite.face_direction = FACING_BOTTOM
-            self.player_sprite.change_y = -MOVEMENT_SPEED
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+                self.player_sprite.face_direction = FACING_BOTTOM
+                self.player_sprite.change_y = -normal_or_boosted_speed(self.player_sprite.power_up,
+                                                                       self.player_sprite.item_picked)
         elif key == arcade.key.A:
-            self.player_sprite.face_direction = FACING_LEFT
-            self.player_sprite.change_x = -MOVEMENT_SPEED
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+                self.player_sprite.face_direction = FACING_LEFT
+                self.player_sprite.change_x = -normal_or_boosted_speed(self.player_sprite.power_up,
+                                                                       self.player_sprite.item_picked)
         elif key == arcade.key.D:
-            self.player_sprite.face_direction = FACING_RIGHT
-            self.player_sprite.change_x = MOVEMENT_SPEED
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+                self.player_sprite.face_direction = FACING_RIGHT
+                self.player_sprite.change_x = normal_or_boosted_speed(self.player_sprite.power_up,
+                                                                      self.player_sprite.item_picked)
         elif key == arcade.key.K:
-            self.player_sprite.attack = ATTACK
+            if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
+                self.player_sprite.attack = ATTACK
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 
@@ -313,6 +332,28 @@ class Game(arcade.View):
             self.player_sprite.attack = WAITING_ATTACK
         elif key == arcade.key.P:
             self.player_sprite.picking = PICKING
+
+        # View character powerup, to change player use marked properties below
+        elif key == arcade.key.T:
+            if self.player_sprite.item_picked == PINK_CONSUMABLE:
+                self.player_sprite.power_up = POWERUP_DISABLED # <-
+                self.player_sprite.item_picked = EMPTY # <-
+                self.player_sprite.scale = SPRITE_SCALING # <-
+                self.ability_icon = None # <-
+            else:
+                self.player_sprite.power_up = POWERUP_ENABLED # <-
+                self.player_sprite.item_picked = PINK_CONSUMABLE # <-
+        elif key == arcade.key.Q:
+            if self.player_sprite.item_picked == DEFAULT_CONSUMABLE:
+                self.player_sprite.power_up = POWERUP_DISABLED # <-
+                self.player_sprite.item_picked = EMPTY # <-
+                self.player_sprite.health_points -= 1 # <-
+                self.player_sprite.scale = SPRITE_SCALING # <-
+                self.ability_icon = None
+            else:
+                self.player_sprite.power_up = POWERUP_ENABLED # <-
+                self.player_sprite.item_picked = DEFAULT_CONSUMABLE # <-
+                self.player_sprite.health_points += 1 # <-
 
     def print_player_pos(self):
         print(f"X:{self.player_sprite.center_x} --- Y:{self.player_sprite.center_y}")

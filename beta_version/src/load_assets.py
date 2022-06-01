@@ -17,6 +17,7 @@ enemies_path = file_path + sep + "assets" + sep + "sprites" + sep + "enemies" + 
 map_path = file_path + sep + "assets" + sep + "tilemaps" + sep
 cutscene_path = file_path + sep+ "assets" + sep + "cutscenes" + sep
 sound_path = file_path + sep + "assets" + sep + "soud" + sep
+icons_path = file_path + sep + "assets" + sep + "sprites" + sep + "icons" + sep
 
 MR_BEAN_SPRITES = [f"{mr_bean_path}MrBeanCelebrating.png",
                    f"{mr_bean_path}MrBeanOnOneFoot.png",
@@ -110,142 +111,236 @@ PICK_UP_SPRITES = [
 ]
 
 IDLE_DOWN_POWERUP_SPRITES = [
-    f"{player_path}idle_anim_powerup{sep}tile000.png",
-    f"{player_path}idle_anim_powerup{sep}tile001.png",
-    f"{player_path}idle_anim_powerup{sep}tile002.png",
-    f"{player_path}idle_anim_powerup{sep}tile003.png",
-    f"{player_path}idle_anim_powerup{sep}tile004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_000.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_001.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_002.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_003.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_005.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_006.png",
 ]
 
 IDLE_UP_POWERUP_SPRITES = [
-    f"{player_path}idle_up_anim_powerup{sep}tile000.png",
-    f"{player_path}idle_up_anim_powerup{sep}tile001.png",
-    f"{player_path}idle_up_animv_powerup{sep}tile002.png",
-    f"{player_path}idle_up_anim_powerup{sep}tile003.png",
-    f"{player_path}idle_up_anim_powerup{sep}tile004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_000.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_001.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_002.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_003.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_005.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_006.png",
 ]
 
 IDLE_SIDE_POWERUP_SPRITES = [
-    f"{player_path}idle_side_anim_powerup{sep}tile000.png",
-    f"{player_path}idle_side_anim_powerup{sep}tile001.png",
-    f"{player_path}idle_side_anim_powerup{sep}tile002.png",
-    f"{player_path}idle_side_anim_powerup{sep}tile003.png",
-    f"{player_path}idle_side_anim_powerup{sep}tile004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_000.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_001.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_002.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_003.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_004.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_005.png",
+    f"{player_path}idle_down_anim_powerup{sep}_IDLE_006.png",
 ]
 
 WALK_DOWN_POWERUP_SPRITES = [
-    f"{player_path}walk_down_anim_powerup{sep}tile000.png",
-    f"{player_path}walk_down_anim_powerup{sep}tile001.png",
-    f"{player_path}walk_down_anim_powerup{sep}tile002.png",
-    f"{player_path}walk_down_anim_powerup{sep}tile003.png",
-    f"{player_path}walk_down_anim_powerup{sep}tile004.png",
-    f"{player_path}walk_down_anim_powerup{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_006.png",
 ]
 
 WALK_UP_POWERUP_SPRITES = [
-    f"{player_path}walk_up_anim_powerup{sep}tile000.png",
-    f"{player_path}walk_up_anim_powerup{sep}tile001.png",
-    f"{player_path}walk_up_anim_powerup{sep}tile002.png",
-    f"{player_path}walk_up_anim_powerup{sep}tile003.png",
-    f"{player_path}walk_up_anim_powerup{sep}tile004.png",
-    f"{player_path}walk_up_anim_powerup{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_006.png",
 ]
 
 SIDE_WALK_POWERUP_SPRITES = [
-    f"{player_path}side_walk_anim_powerup{sep}tile000.png",
-    f"{player_path}side_walk_anim_powerup{sep}tile001.png",
-    f"{player_path}side_walk_anim_powerup{sep}tile002.png",
-    f"{player_path}side_walk_anim_powerup{sep}tile003.png",
-    f"{player_path}side_walk_anim_powerup{sep}tile004.png",
-    f"{player_path}side_walk_anim_powerup{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup{sep}_WALK_006.png",
 ]
 
 ATTACK_DOWN_POWERUP_SPRITES = [
-    f"{player_path}attack_down_anim_powerup{sep}tile000.png",
-    f"{player_path}attack_down_anim_powerup{sep}tile001.png",
-    f"{player_path}attack_down_anim_powerup{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
 ]
 
 ATTACK_UP_POWERUP_SPRITES = [
-    f"{player_path}attack_up_anim_powerup{sep}tile000.png",
-    f"{player_path}attack_up_anim_powerup{sep}tile001.png",
-    f"{player_path}attack_up_anim_powerup{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
 ]
 
 ATTACK_SIDE_POWERUP_SPRITES = [
-    f"{player_path}attack_side_anim_powerup{sep}tile000.png",
-    f"{player_path}attack_side_anim_powerup{sep}tile001.png",
-    f"{player_path}attack_side_anim_powerup{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
+    f"{player_path}attack_down_anim_powerup{sep}ATTACK_007.png",
 ]
 
 IDLE_DOWN_POWERUP_PINK_SPRITES = [
-    f"{player_path}idle_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}idle_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}idle_anim_powerup_pink{sep}tile002.png",
-    f"{player_path}idle_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}idle_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_000.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_001.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_002.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_003.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_005.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_006.png",
 ]
 
 IDLE_UP_POWERUP_PINK_SPRITES = [
-    f"{player_path}idle_up_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}idle_up_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}idle_up_animv_powerup_pink{sep}tile002.png",
-    f"{player_path}idle_up_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}idle_up_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_000.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_001.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_002.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_003.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_005.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_006.png",
 ]
 
 IDLE_SIDE_POWERUP_PINK_SPRITES = [
-    f"{player_path}idle_side_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}idle_side_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}idle_side_anim_powerup_pink{sep}tile002.png",
-    f"{player_path}idle_side_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}idle_side_anim_powerup_pink{sep}tile004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_000.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_001.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_002.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_003.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_004.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_005.png",
+    f"{player_path}idle_anim_powerup_pink{sep}_IDLE_006.png",
 ]
 
 WALK_DOWN_POWERUP_PINK_SPRITES = [
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile002.png",
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile004.png",
-    f"{player_path}walk_down_anim_powerup_pink{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_006.png",
 ]
 
 WALK_UP_POWERUP_PINK_SPRITES = [
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile002.png",
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile004.png",
-    f"{player_path}walk_up_anim_powerup_pink{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_006.png",
 ]
 
 SIDE_WALK_POWERUP_PINK_SPRITES = [
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile002.png",
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile003.png",
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile004.png",
-    f"{player_path}side_walk_anim_powerup_pink{sep}tile005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_000.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_001.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_002.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_003.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_004.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_005.png",
+    f"{player_path}walk_down_anim_powerup_pink{sep}_WALK_006.png",
 ]
 
 ATTACK_DOWN_POWERUP_PINK_SPRITES = [
-    f"{player_path}attack_down_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}attack_down_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}attack_down_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
 ]
 
 ATTACK_UP_POWERUP_PINK_SPRITES = [
-    f"{player_path}attack_up_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}attack_up_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}attack_up_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
 ]
 
 ATTACK_SIDE_POWERUP_PINK_SPRITES = [
-    f"{player_path}attack_side_anim_powerup_pink{sep}tile000.png",
-    f"{player_path}attack_side_anim_powerup_pink{sep}tile001.png",
-    f"{player_path}attack_side_anim_powerup_pink{sep}tile002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_000.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_001.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_002.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_003.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_004.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_005.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
+    f"{player_path}attack_down_anim_powerup_pink{sep}_ATTACK_006.png",
 ]
+
+HEART_ICON = f"{icons_path}health_icon.png"
+DEFAULT_ABILITY_ICON = f"{icons_path}blue_hability.png"
+PINK_ABILITY_ICON = f"{icons_path}pink_hability.png"
 
 
 MAP_PATH = [map_path + "map_1.tmj",
