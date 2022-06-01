@@ -34,6 +34,9 @@ POST_CREDITS = [f"{cutscene_path}{sep}post_credits{sep}text_4.png",
                 f"{cutscene_path}{sep}post_credits{sep}text_6.png",
 ]
 
+BACKGROUND = [f"{map_path}{sep}map_pngs{sep}Mapa de Fondo.png",
+]
+
 IDLE_DOWN_SPRITES = [
     f"{player_path}idle_anim{sep}tile000.png",
     f"{player_path}idle_anim{sep}tile001.png",
