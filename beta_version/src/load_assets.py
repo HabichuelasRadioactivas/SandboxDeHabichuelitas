@@ -708,4 +708,5 @@ ENEMY_KNIGHT_WALK_SPRITES = [
 BACKGROUND_MUSIC = f"{sound_path}heroic-story-drums-ampamp-bass-9827.mp3"
 PICKING_SOUND = f"{sound_path}habichuelas.wav"
 SWORD_SOUND = f"{sound_path}sword.wav"
-WALK_SOUND = f"{sound_path}mixkit-crunchy-road-fast-walking-loop-1274.wav"
+WALK_SOUND = f"{sound_path}walking_longaudio.wav"
+POWER_UP_SOUND = f"{sound_path}power_up.wav"

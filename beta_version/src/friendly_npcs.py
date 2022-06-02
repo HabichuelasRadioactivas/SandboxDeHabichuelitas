@@ -1,4 +1,5 @@
 from load_assets import *
+from sound_player import SoundPlayer
 
 
 class MrBean(arcade.AnimatedTimeBasedSprite):
@@ -6,6 +7,7 @@ class MrBean(arcade.AnimatedTimeBasedSprite):
         super().__init__()
 
         # Texture scaling
+
         self.scale = 0.3
 
         # Idle textures
@@ -17,6 +19,8 @@ class MrBean(arcade.AnimatedTimeBasedSprite):
         self.texture = self.waiting
 
         self.talked_to_bean = False
+
+
 
     def update(self):
         # Move player
@@ -36,3 +40,7 @@ class MrBean(arcade.AnimatedTimeBasedSprite):
 
     def talk_to_bean(self):
         self.talked_to_bean = True
+
+
+
+        #self.sound_player.pause_sound(sound_name="player_walk_sound")

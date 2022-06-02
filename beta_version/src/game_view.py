@@ -310,7 +310,7 @@ class Game(arcade.View):
                 self.player_sprite.face_direction = FACING_TOP
                 self.player_sprite.change_y = normal_or_boosted_speed(self.player_sprite.power_up,
                                                                       self.player_sprite.item_picked)
-                self.sound_player.play_sound(sound_name="player_walk_sound")
+
         elif key == arcade.key.S:
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK:
                 self.player_sprite.face_direction = FACING_BOTTOM
@@ -330,24 +330,37 @@ class Game(arcade.View):
         elif key == arcade.key.K:
             if self.player_sprite.picking == WAITING_PICKING and self.player_sprite.attack == WAITING_ATTACK and self.player_sprite.change_x == 0 and self.player_sprite.change_y == 0:
                 self.player_sprite.attack = ATTACK
-                self.sound_player.play_sound(sound_name="attack_sound")
+                #self.sound_player.play_sound(sound_name="attack_sound")
         elif key == arcade.key.ESCAPE:
             self.window.open_pause()
 
     def on_key_release(self, key, modifiers):
         if key == arcade.key.W or key == arcade.key.S:
             self.player_sprite.change_y = 0
+            self.sound_player.play_sound(sound_name="player_walk_sound")
+
         elif key == arcade.key.A or key == arcade.key.D:
             self.player_sprite.change_x = 0
+            self.sound_player.play_sound(sound_name="player_walk_sound")
+
+            #self.sound_player.reload_sound(sound_name="player_walk_sound")
+
         elif key == arcade.key.K:
             self.player_sprite.attack = WAITING_ATTACK
+            self.sound_player.pause_sound(sound_name="player_walk_sound")
+            self.sound_player.play_sound(sound_name="attack_sound")
+
+            #self.sound_player.reload_sound(sound_name="attack_sound")
 
         elif key == arcade.key.P:
             self.player_sprite.picking = PICKING
+            self.sound_player.play_sound(sound_name="picking_things_sound")
+
 
 
         # View character powerup, to change player use marked properties below
         elif key == arcade.key.T:
+            #self.sound_player.play_sound(sound_name="power_up_sound")
             if self.player_sprite.item_picked == PINK_CONSUMABLE:
                 self.player_sprite.power_up = POWERUP_DISABLED # <-
                 self.player_sprite.item_picked = EMPTY # <-
@@ -357,6 +370,9 @@ class Game(arcade.View):
                 self.player_sprite.power_up = POWERUP_ENABLED # <-
                 self.player_sprite.item_picked = PINK_CONSUMABLE # <-
         elif key == arcade.key.Q:
+            #self.sound_player.play_sound(sound_name="power_up_sound")
+
+
             if self.player_sprite.item_picked == DEFAULT_CONSUMABLE:
                 self.player_sprite.power_up = POWERUP_DISABLED # <-
                 self.player_sprite.item_picked = EMPTY # <-
@@ -367,6 +383,7 @@ class Game(arcade.View):
                 self.player_sprite.power_up = POWERUP_ENABLED # <-
                 self.player_sprite.item_picked = DEFAULT_CONSUMABLE # <-
                 self.player_sprite.health_points += 1 # <-
+
 
     def print_player_pos(self):
         print(f"X:{self.player_sprite.center_x} --- Y:{self.player_sprite.center_y}")
