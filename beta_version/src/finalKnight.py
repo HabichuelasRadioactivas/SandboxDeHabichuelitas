@@ -93,7 +93,7 @@ class FinalKnight(arcade.AnimatedTimeBasedSprite):
         if self.health_points <= 5:
             self.state = 1
         if self.state == 1:
-            self.scale = BOSS_SCALE * 1.2
+            self.scale = BOSS_SCALE * 1.4
             self.movement_speed = BOSS_MOVEMENT_SPEED * 2
 
         # out-of-bounds

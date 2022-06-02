@@ -712,6 +712,8 @@ ENEMY_KNIGHT_WALK_SPRITES = [
     f"{enemies_path}2_KNIGHT{sep}_WALK{sep}_RUN_006.png",
 ]
 
+KING_SPRITE = f"{enemies_path}king{sep}king.png"
+
 BACKGROUND_MUSIC = f"{sound_path}heroic-story-drums-ampamp-bass-9827.mp3"
 PICKING_SOUND = f"{sound_path}habichuelas.wav"
 SWORD_SOUND = f"{sound_path}sword.wav"

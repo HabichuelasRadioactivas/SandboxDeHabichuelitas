@@ -7,6 +7,8 @@ from load_assets import *
 from sound_player import SoundPlayer
 
 
+sound_player = SoundPlayer()
+
 class Menu(arcade.View):
     def __init__(self):
         super().__init__()
@@ -34,8 +36,6 @@ class Menu(arcade.View):
         quit_button.on_click = self.on_click_quit
 
         self.manager.add(arcade.gui.UIAnchorWidget(anchor_x="center_x", anchor_y="center_y", child=self.v_box))
-
-        # arcade.play_sound(arcade.load_sound(BACKGROUND_MUSIC))
 
     def on_click_start(self, event):
         story = Story()
@@ -133,13 +133,9 @@ class Controls(arcade.View):
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Para Atacar", SCREEN_WIDTH / 2 + 48, SCREEN_HEIGHT / 2,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("P", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 80,
+        arcade.draw_text("ESC", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 80,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("Para Recoger", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 80,
-                         arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("ESC", SCREEN_WIDTH / 2 - 60, SCREEN_HEIGHT / 2 - 160,
-                         arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
-        arcade.draw_text("Para Pausar", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 160,
+        arcade.draw_text("Para Pausar", SCREEN_WIDTH / 2 + 53, SCREEN_HEIGHT / 2 - 80,
                          arcade.color.WHITE, 17, anchor_x="center", font_name="Times New Roman")
         arcade.draw_text("Presiona Enter para Continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 250,
                          arcade.color.WHITE, 12, anchor_x="center", font_name="Times New Roman")
@@ -147,6 +143,7 @@ class Controls(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
             self.window.reload_game()
+            sound_player.play_sound(sound_name="heroic_background_music")
             self.window.open_game()
 
 
@@ -159,9 +156,7 @@ class Pause(arcade.View):
         self.back.center_y = SCREEN_HEIGHT / 2
 
     def on_show_view(self):
-        self.sound_player = SoundPlayer()
         arcade.set_background_color(arcade.color.WHITE)
-        self.sound_player.play_sound(sound_name="heroic_background_music")
 
     def on_draw(self):
         self.clear()
@@ -203,12 +198,10 @@ class Pause(arcade.View):
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ESCAPE:  # resume game
             # self.window.show_view(self.game_view)
-            self.sound_player.pause_sound(sound_name="heroic_background_music")
             self.window.open_game()
         elif key == arcade.key.ENTER:  # reset game
             menu = Menu()
             # self.window.show_view(menu)
-            self.sound_player.pause_sound(sound_name="heroic_background_music")
             self.window.reload_game()
             self.window.open_menu()
 
@@ -403,7 +396,7 @@ class PostCredits(arcade.View):
 
         elif self.dialogue_counter == 1:
             self.text_5.draw()
-            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 200,
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
                              arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
         elif self.dialogue_counter == 2:
             self.text_6.draw()
@@ -425,10 +418,10 @@ class PostCredits(arcade.View):
 class KingCutScene(arcade.View):
     def on_show_view(self):
 
-        self.mr_bean = MrBean()
-        self.mr_bean.scale = 1.1
-        self.mr_bean.center_x = SCREEN_WIDTH - 120
-        self.mr_bean.center_y = SCREEN_HEIGHT / 2
+        self.king = arcade.Sprite(KING_SPRITE)
+        self.king.scale = 0.7
+        self.king.center_x = SCREEN_WIDTH - 120
+        self.king.center_y = SCREEN_HEIGHT / 2
 
         self.dialogue_counter = 0
 
@@ -449,13 +442,13 @@ class KingCutScene(arcade.View):
 
         elif self.dialogue_counter == 1:
             self.text_8.draw()
-            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 200,
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
                              arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
 
         else:
             self.window.open_game()
         arcade.set_background_color(arcade.color.WHITE)
-        self.mr_bean.draw()
+        self.king.draw()
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:
@@ -464,11 +457,11 @@ class KingCutScene(arcade.View):
 
 class PostFightCutScene(arcade.View):
     def on_show_view(self):
-
-        self.mr_bean = MrBean()
-        self.mr_bean.scale = 1.1
-        self.mr_bean.center_x = SCREEN_WIDTH - 120
-        self.mr_bean.center_y = SCREEN_HEIGHT / 2
+        sound_player.pause_sound(sound_name="heroic_background_music")
+        self.king = arcade.Sprite(KING_SPRITE)
+        self.king.scale = 0.7
+        self.king.center_x = SCREEN_WIDTH - 120
+        self.king.center_y = SCREEN_HEIGHT / 2
 
         self.dialogue_counter = 0
 
@@ -486,7 +479,7 @@ class PostFightCutScene(arcade.View):
         else:
             self.window.open_game()
         arcade.set_background_color(arcade.color.WHITE)
-        self.mr_bean.draw()
+        self.king.draw()
 
     def on_key_press(self, key, _modifiers):
         if key == arcade.key.ENTER:

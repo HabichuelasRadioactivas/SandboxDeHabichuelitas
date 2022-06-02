@@ -1,8 +1,3 @@
-import arcade
-
-from game_parameters import *
-from load_assets import *
-from game_view import Game
 from menu_views import *
 
 
@@ -15,7 +10,6 @@ class BeanAHeroBeta(arcade.Window):
         self.game.setup()
         self.status = 1
         self.set_update_rate(1 / 35)  # TODO the engine increases the update rate. Has to be fixed
-        self.background_music = arcade.load_sound(BACKGROUND_MUSIC)
         self.open_menu()
 
     def on_update(self, delta_time):
