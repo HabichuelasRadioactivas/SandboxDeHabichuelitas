@@ -35,7 +35,7 @@ class Menu(arcade.View):
 
         self.manager.add(arcade.gui.UIAnchorWidget(anchor_x="center_x", anchor_y="center_y", child=self.v_box))
 
-        #arcade.play_sound(arcade.load_sound(BACKGROUND_MUSIC))
+        # arcade.play_sound(arcade.load_sound(BACKGROUND_MUSIC))
 
     def on_click_start(self, event):
         story = Story()
@@ -153,11 +153,10 @@ class Controls(arcade.View):
 class Pause(arcade.View):
     def __init__(self):
         super().__init__()
-                
+
         self.back = arcade.Sprite(BACKGROUND[0], 1)
         self.back.center_x = SCREEN_WIDTH / 2
         self.back.center_y = SCREEN_HEIGHT / 2
-
 
     def on_show_view(self):
         self.sound_player = SoundPlayer()
@@ -166,7 +165,7 @@ class Pause(arcade.View):
 
     def on_draw(self):
         self.clear()
-        
+
         self.back.draw()
 
         # Draw player, for effect, on pause screen.
@@ -186,7 +185,6 @@ class Pause(arcade.View):
         """
         arcade.draw_text("PAUSA", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 + 50,
                          arcade.color.BLACK, font_size=50, anchor_x="center", font_name="Times New Roman")
-        
 
         # Show tip to return or reset
         arcade.draw_text("Presiona ESC para Volver",
@@ -422,9 +420,9 @@ class PostCredits(arcade.View):
             self.dialogue_counter += 1
         if self.dialogue_counter == 3:
             self.window.open_menu()
-            
-            
- class KingCutScene(arcade.View):
+
+
+class KingCutScene(arcade.View):
     def on_show_view(self):
 
         self.mr_bean = MrBean()
@@ -463,7 +461,7 @@ class PostCredits(arcade.View):
         if key == arcade.key.ENTER:
             self.dialogue_counter += 1
 
-            
+
 class PostFightCutScene(arcade.View):
     def on_show_view(self):
 
@@ -484,7 +482,7 @@ class PostFightCutScene(arcade.View):
             self.text_9.draw()
             arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
                              arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
-            
+
         else:
             self.window.open_game()
         arcade.set_background_color(arcade.color.WHITE)
