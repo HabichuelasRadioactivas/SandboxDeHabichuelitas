@@ -422,3 +422,74 @@ class PostCredits(arcade.View):
             self.dialogue_counter += 1
         if self.dialogue_counter == 3:
             self.window.open_menu()
+            
+            
+ class KingCutScene(arcade.View):
+    def on_show_view(self):
+
+        self.mr_bean = MrBean()
+        self.mr_bean.scale = 1.1
+        self.mr_bean.center_x = SCREEN_WIDTH - 120
+        self.mr_bean.center_y = SCREEN_HEIGHT / 2
+
+        self.dialogue_counter = 0
+
+        self.text_7 = arcade.Sprite(KING_DIALOGUE[0], 1)
+        self.text_7.center_x = 892 / 2 * 0.6 + 20
+        self.text_7.center_y = SCREEN_HEIGHT - 568 / 2 * 0.6 - 20
+
+        self.text_8 = arcade.Sprite(KING_DIALOGUE[1], 1)
+        self.text_8.center_x = 896 / 2 * 0.6 + 20
+        self.text_8.center_y = SCREEN_HEIGHT - 578 / 2 * 0.6 - 20
+
+    def on_draw(self):
+        self.clear()
+        if self.dialogue_counter == 0:
+            self.text_7.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+
+        elif self.dialogue_counter == 1:
+            self.text_8.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+
+        else:
+            self.window.open_game()
+        arcade.set_background_color(arcade.color.WHITE)
+        self.mr_bean.draw()
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            self.dialogue_counter += 1
+
+            
+class PostFightCutScene(arcade.View):
+    def on_show_view(self):
+
+        self.mr_bean = MrBean()
+        self.mr_bean.scale = 1.1
+        self.mr_bean.center_x = SCREEN_WIDTH - 120
+        self.mr_bean.center_y = SCREEN_HEIGHT / 2
+
+        self.dialogue_counter = 0
+
+        self.text_9 = arcade.Sprite(POST_FIGHT_DIALOGUE[0], 1)
+        self.text_9.center_x = 892 / 2 * 0.6 + 20
+        self.text_9.center_y = SCREEN_HEIGHT - 568 / 2 * 0.6 - 20
+
+    def on_draw(self):
+        self.clear()
+        if self.dialogue_counter == 0:
+            self.text_9.draw()
+            arcade.draw_text("Presiona ENTER para continuar", SCREEN_WIDTH / 2 - 200, SCREEN_HEIGHT / 2 - 200,
+                             arcade.color.BLACK, 15, anchor_x="left", font_name="Times New Roman")
+            
+        else:
+            self.window.open_game()
+        arcade.set_background_color(arcade.color.WHITE)
+        self.mr_bean.draw()
+
+    def on_key_press(self, key, _modifiers):
+        if key == arcade.key.ENTER:
+            self.dialogue_counter += 1

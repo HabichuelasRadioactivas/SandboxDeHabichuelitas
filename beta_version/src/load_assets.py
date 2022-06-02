@@ -29,6 +29,13 @@ MR_BEAN_DIALOGUE = [f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_1.png",
                     f"{cutscene_path}{sep}mr_bean_dialogue{sep}text_3.png",
                     f"{cutscene_path}{sep}mr_bean_dialogue{sep}z_bean.png"]
 
+KING_DIALOGUE = [f"{cutscene_path}{sep}king_dialogue{sep}text_7.png",
+                 f"{cutscene_path}{sep}king_dialogue{sep}text_8.png",
+]
+
+POST_FIGHT_DIALOGUE = [f"{cutscene_path}{sep}post_fight_dialogue{sep}text_9.png",
+]
+
 POST_CREDITS = [f"{cutscene_path}{sep}post_credits{sep}text_4.png",
                 f"{cutscene_path}{sep}post_credits{sep}text_5.png",
                 f"{cutscene_path}{sep}post_credits{sep}text_6.png",
