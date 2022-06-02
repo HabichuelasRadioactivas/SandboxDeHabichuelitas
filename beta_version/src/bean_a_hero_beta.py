@@ -51,6 +51,12 @@ class BeanAHeroBeta(arcade.Window):
 
     def open_post_credits(self):
         self.show_view(PostCredits())
+     
+    def open_king_cutscene(self):
+        self.show_view(KingCutScene())
+
+    def open_post_fight_cutscene(self):
+        self.show_view(PostFightCutScene())
 
     def reload_game(self):
         self.game = Game()
